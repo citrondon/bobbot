@@ -1,4 +1,6 @@
 export const DEFAULT_OPENROUTER_MODEL_ID = "openai/gpt-6-luna";
+/** OpenCode Go's cheap vision model, billed against the subscription rather than a vendor key. */
+export const DEFAULT_OPENCODE_GO_MODEL_ID = "deepseek-v4.1-flash";
 
 /**
  * The deployment-wide model default: which provider a run falls back to when no user
@@ -14,10 +16,12 @@ export function resolveDeploymentModel(env: NodeJS.ProcessEnv = process.env) {
   const keys: Record<string, string | undefined> = {
     openrouter: env.OPENROUTER_API_KEY,
     anthropic: env.ANTHROPIC_API_KEY,
+    "opencode-go": env.OPENCODE_API_KEY,
   };
   const models: Record<string, string> = {
     openrouter: DEFAULT_OPENROUTER_MODEL_ID,
     anthropic: "claude-sonnet-5",
+    "opencode-go": DEFAULT_OPENCODE_GO_MODEL_ID,
   };
   return {
     provider,
