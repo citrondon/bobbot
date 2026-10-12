@@ -27,6 +27,7 @@ type PresetCategory =
 
 const PRESET_CATEGORIES: Record<PresetCategory, string[]> = {
   productivity: [
+    "bobbot-guide",
     "bot-team-coach",
     "chief-of-staff",
     "daily-brief",

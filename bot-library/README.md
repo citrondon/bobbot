@@ -22,7 +22,7 @@ Anlegen sichtbar sind. Der Bot muss sie trotzdem kennen, also stehen dieselben R
 `instructions`-Text – die Vorschau liest nur, was der Bot ohnehin befolgt. Ein Export eines
 importierten Bots wiederholt sie deshalb nicht.
 
-Die acht eigenen Presets führen das Feld; die 56 Profile aus `awesome-grokbot` nicht, weil ihr
+Die neun eigenen Presets führen das Feld; die 56 Profile aus `awesome-grokbot` nicht, weil ihr
 Text wortgetreu übernommen wird.
 
 ## Modell verbinden
@@ -40,10 +40,11 @@ Models** (oder im Onboarding) eine Verbindung anlegen:
 
 ## Eigene Presets
 
-Acht Presets sind hier entstanden; die anderen 56 sind wortgetreu übernommen (siehe unten).
+Neun Presets sind hier entstanden; die anderen 56 sind wortgetreu übernommen (siehe unten).
 
 | Datei | Bot | Anforderung ans Modell | Zweck |
 | --- | --- | --- | --- |
+| `bobbot-guide.v1.json` | **BobBot Erklärer** | schnelles Modell (viele kurze Fragen) | Einstiegshelfer in einfachen Worten: was ein Bot ist, wie ein Team entsteht, was ein Briefing braucht, wie Freigaben laufen und was bei Problemen hilft. Antwortet ohne Fachbegriffe und in der Sprache der Frage; das Merkblatt im Gedächtnis ist seine Grundlage. |
 | `openresearch.v1.json` | **OpenResearch** | starkes Reasoning-Modell | Wissenschafts- & Paper-Rechercheur: Literaturrecherche (arXiv, PubMed, OpenAlex), Methodik-Synthese und strukturierte Evidenzberichte. Methodik adaptiert aus [alphaXiv OpenResearch](https://github.com/alphaXiv/OpenResearch) (MIT). |
 | `grok-coder.v1.json` | **GrokCoder** | starkes Coding-Modell | Autonomer Fullstack- & Systems-Engineer: Terminal-Automation, Debugging, Code-Reviews, Git-Workflows und Test-Driven Development mit strikter Vorab-Verifikation. |
 | `trend-scout.v1.json` | **TrendScout** | schnelles Modell (viele Läufe/Tag) | Realtime Tech & AI Monitor: Autonomer Scanner für HackerNews, GitHub Trending und HuggingFace-Paper mit täglichem automatisierbarem Digest (Cron 07:30). |
@@ -55,7 +56,7 @@ Acht Presets sind hier entstanden; die anderen 56 sind wortgetreu übernommen (s
 
 ## Übernommene GrokBot-Profile
 
-**56** der 64 Presets stammen aus der CC0-Sammlung
+**56** der 65 Presets stammen aus der CC0-Sammlung
 [awesome-grokbot](https://github.com/mergisi/awesome-grokbot), vollständig: development (8),
 productivity (8), marketing (10), ops (17), sales (8), personal (5). Der Prompt-Text ist
 **wortgetreu** übernommen, weil die Sammlung ausdrücklich darum bittet, ein Profil unverändert zu
