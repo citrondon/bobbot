@@ -88,8 +88,12 @@ Deliverables entstehen.
 
 Die App für Android und iOS verbindet sich mit demselben BobBot wie der
 Browser. Beim Anmelden tippst du unten auf **Use a custom server** und trägst
-die Adresse deines Servers ein; zuhause im selben Netz ist das
-`http://127.0.0.1:3100`.
+die Adresse deines Servers ein — dieselbe, die du auch im Browser benutzt.
+Von unterwegs oder aus dem eigenen Netz ist das die Adresse aus
+[BobBot von unterwegs erreichen](./bobbot-fernzugriff-tailscale.md), zum
+Beispiel `https://mein-pc.tailnet-1234.ts.net`. Wichtig: die Adresse
+`http://127.0.0.1:3100` erreicht von einem echten Handy nur das Handy selbst;
+sie funktioniert nur in einem Simulator auf demselben Rechner.
 
 Was auf dem Handy (noch) anders ist:
 

@@ -59,6 +59,17 @@ the installer secret list, non-reuse rules, and recovery, see
 optional providers before startup, run `bash install-images.sh --prepare-only`, edit `.env`, then
 run `bash install-images.sh`. Flags may be combined in either order: `--prepare-only`, `--local`.
 
+On a Linux Mint, Ubuntu, or Debian desktop, `install-linux-mint.sh` wraps that flow: it checks
+and installs Docker if needed, adds your user to the `docker` group, and then runs
+`install-images.sh` in `~/bobbot`. It accepts the same flags plus `--dir=<path>` and prints its
+progress in German:
+
+```bash
+mkdir -p ~/bobbot && cd ~/bobbot &&
+curl -fsSLO https://raw.githubusercontent.com/elie222/rakazo/main/infra/compose/install-linux-mint.sh &&
+bash install-linux-mint.sh
+```
+
 `SANDBOX_PROVIDER` defaults to `docker`. The images Compose file runs a sandbox supervisor
 (from the app image, on the internal network only) and pulls `ghcr.io/elie222/rakazo/computer`.
 Signup and local Docker computers work without an E2B account. Optional remote providers: set
@@ -1084,3 +1095,8 @@ The optional marketing site in `apps/www` can be hosted separately.
 ## Connect mobile clients
 
 The iOS and Android app can also point at a self-hosted origin at runtime. On the sign-in screen, tap **Use a custom server** and enter the same HTTPS origin as `WEB_ORIGIN` (for example `https://app.example.com`). Store builds still default to `EXPO_PUBLIC_API_URL`; the in-app setting is an override for people running their own API. Changing the server signs the device out of any previous session.
+
+Home machines without a domain or certificate can use a Tailscale tailnet instead: the app stays on
+loopback, `tailscale serve` terminates HTTPS, and the phone connects over `https://<host>.<tailnet>.ts.net`.
+The step-by-step guide (Linux Mint and Android, in German) is
+[BobBot von unterwegs erreichen](./bobbot-fernzugriff-tailscale.md).

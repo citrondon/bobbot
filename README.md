@@ -87,6 +87,10 @@ script URL — see
 
 For an agent-assisted install, use [SETUP_PROMPT.md](./SETUP_PROMPT.md).
 
+On a Linux Mint, Ubuntu, or Debian desktop, [`install-linux-mint.sh`](./infra/compose/install-linux-mint.sh)
+installs Docker if it is missing, adds your user to the `docker` group, and then runs the same
+installer in `~/bobbot`.
+
 ## Run on a server
 
 Bots stay on when the backend runs on a server. Use the same installer on a VPS, then connect from
@@ -100,7 +104,9 @@ bash install-images.sh
 
 Put HTTPS in front of port 5173; [docs/self-host.md](./docs/self-host.md#public-single-vm-deployment)
 covers the Caddy setup and host hardening. In the desktop app choose **Existing instance** and enter
-the `https://` address.
+the `https://` address. Without a domain, a Tailscale tailnet plus `tailscale serve` gives you the
+same origin — see [docs/bobbot-fernzugriff-tailscale.md](./docs/bobbot-fernzugriff-tailscale.md)
+(German).
 
 ## Local development (source checkout)
 
@@ -234,6 +240,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for the development workflow and test m
 
 - [Self-hosting](./docs/self-host.md)
 - [Self-host secrets](./docs/self-host-secrets.md)
+- [Remote access over Tailscale (German)](./docs/bobbot-fernzugriff-tailscale.md)
 - [Computer runtime and isolation](./docs/computer-runtime.md)
 - [Desktop releases](./docs/desktop-release.md)
 - [Mobile releases](./docs/mobile-release.md)
