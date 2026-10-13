@@ -167,3 +167,6 @@ inlined Pfade aus dem Checkout und ist über `docs/repomix-*.xml` in `.gitignore
 ```bash
 npx repomix --include "docs/**/*.md,bot-library/**/*.json" -o "$HOME/repomix-grokbot-context.xml"
 ```
+
+Fremde Rekonstruktionen der Grok-Bot-App haben wir geprüft und abgelehnt, siehe
+`docs/grokbot-rebuilds.md`.

@@ -13,7 +13,7 @@ export const ROUNDUP_DESCRIPTION = ALTERNATIVES_HUB.description;
 export const ROUNDUP_TLDR = [
   ALTERNATIVES_HUB.intro,
   "BobBot is the open source option you run yourself. Like Grok Bot, it is just chat once it is running: you set up a bot and manage it from that chat. You bring the model key. The license is Apache-2.0, and there is no seat fee.",
-  "Grok Bot, Meta Muse, OpenAI Dots, Instinct, and Hark Pro are hosted. You do not install their service. Grok Bot comes with paid Cursor plans and SuperGrok. Muse runs on a virtual machine Meta operates. Dots sit on eligible ChatGPT plans. Instinct is the assistant you text or call. Hark Pro has a free tier, with $20 and $100 monthly tiers for more usage.",
+  "Grok Bot, Meta Muse, OpenAI Dots, Instinct, and Hark Pro are hosted. You do not install their service. Grok Bot comes with paid Cursor plans and SuperGrok. Muse runs on a virtual machine Meta operates. Dots sit on eligible ChatGPT plans. Instinct is the assistant you text or call. Hark Pro is free, with $20 and $100 monthly tiers for more usage.",
   "OpenClaw and Hermes Agent are also open source and self-hosted. Their docs describe installers, config files, and a gateway. Hermes Desktop can reach a first chat without the command line. OpenClaw can chat while its Gateway runs in the terminal.",
 ] as const;
 
@@ -93,7 +93,7 @@ export const ROUNDUP_ROWS: readonly RoundupRow[] = [
     href: "/hark-alternative/",
     license: "Hosted. The terms restrict reverse engineering.",
     selfHost: "No install is described.",
-    model: "No. Hark trains its own models.",
+    model: "No. Hark says it is training its own models.",
     price: "Free. $20 a month is 2×. $100 a month is 10×.",
     setup: "Web, iOS, or Android app.",
     chat: "Yes. Projects are separate chats.",
@@ -135,13 +135,13 @@ const CARD_BODY: Record<string, readonly string[]> = {
     "OpenAI announced Dots on September 29, 2026. A dot is an always-on agent with its own cloud computer, and OpenAI says it uses GPT-6 Astra. The first dot is included with eligible Pro and Business Premium plans. Enterprise is in the rollout. Dots are not available under 18. A rules list says what the dot may do, must ask about, or must not do, and Custom Rules cannot turn off core safety checks. Changing a password or transferring money requires you to take over. BobBot does not include a dot. OpenAI is one model connection you can choose.",
   ],
   "instinct-alternative": [
-    "Instinct, on this page, is the personal assistant at instinct.com that you text or call. The homepage describes it using your phone and computer the way a person would, with examples such as a bill, gifts, or a trip. The privacy policy and terms were revised August 26, 2026. They do not name a public model. They say Instinct may train on what you submit unless you opt out, and that material flagged for safety review can still be used. Vault materials and Google Workspace data are excluded. Terms let it act in connected services, including a payment method. BobBot does not text, call, or buy things that way.",
+    "Instinct, on this page, is the personal assistant at instinct.com that you text or call. The homepage describes it using your phone and computer the way a person would, with examples such as a bill, gifts, groceries, or a weekend getaway. The privacy policy and terms were revised August 26, 2026. They do not name a public model. They say Instinct may train on what you submit unless you opt out, and that material flagged for safety review can still be used. Vault materials and Google Workspace data are excluded. Terms let it act in connected services, including a payment method. BobBot does not text, call, or buy things that way.",
   ],
   "hermes-alternative": [
     "Hermes Agent is Nous Research's MIT-licensed agent, and you can run it on your own machine. The desktop app shares config, keys, sessions, and memory with the command-line install. First-run onboarding can reach a first message without the CLI. The app starts its own local backend. Telegram, Discord, and Slack use a gateway process you start separately. The quickstart says a model needs at least 64,000 tokens of context. Like Grok Bot, BobBot's ongoing management stays in the chat.",
   ],
   "hark-alternative": [
-    "Hark Pro is the personal agent at hark.com, launched October 6, 2026. It is a hosted web, iOS, and Android app. Every feature in that article stays free. Twenty dollars a month is twice the usage, and one hundred dollars a month is ten times. The article describes a messaging-style app. Projects are dedicated chats with their own threads, and Home, Action Buttons, and Panels sit beside that. Hark introduced Handoff on August 5, 2026. It is a virtual computer with a browser, files, and a terminal. The October 6 article says it can run up to six browsers at once, and Hark operates that computer. Training opt-out has exceptions for feedback and safety review. BobBot uses a computer you run, and you bring the model.",
+    "Hark Pro is the personal agent at hark.com, launched October 6, 2026. It is a hosted web, iOS, and Android app. Every feature in that article stays free. Twenty dollars a month is twice the usage, and one hundred dollars a month is ten times. The article describes a messaging-style app. Projects are dedicated chats with their own threads, and Home, Action Buttons, and Panels sit beside that. Hark introduced Handoff on August 5, 2026. It is a virtual computer with a browser, files, and a terminal. The October 6 article says it can run up to six browsers at once, and Hark operates that computer. The privacy policy says Hark does not train on your inputs, outputs, memory, or connected account data, and that no opt-out is needed. BobBot uses a computer you run, and you bring the model.",
   ],
 };
 
@@ -159,7 +159,7 @@ const DEDICATED_CARDS: readonly RoundupCard[] = [
     href: GROK_ALTERNATIVE_PATH,
     heading: GROK_ALTERNATIVE_H1,
     paragraphs: [
-      "Grok Bot is xAI's hosted product for named bots that can use a computer, keep routines, and pause for approval. The docs describe a cloud computer on your account, shared by the bots on that account. They do not describe installing the service yourself or connecting your own model provider. Grok Build and the older Grok-1 weights are separate open source releases, not this service. Grok Bot is included with paid Cursor plans and SuperGrok, listed at $30 a month. The free plan on the pricing page does not list it. BobBot is this shape you host, with a model key you bring.",
+      "Grok Bot is xAI's hosted product for named bots that can use a computer, keep routines, and pause for approval. The docs describe a cloud computer on your account, shared by the bots on that account. They do not describe installing the service yourself or connecting your own model provider. Grok Build and the older Grok-1 weights are separate open source releases, not this service. Grok Bot is included with every paid individual Cursor plan and with the Cursor Teams plan, or by linking a SuperGrok subscription; the pricing page lists it in the $30/month tier. BobBot is this shape you host, with a model key you bring.",
     ],
   },
 ];
