@@ -22,7 +22,7 @@ Anlegen sichtbar sind. Der Bot muss sie trotzdem kennen, also stehen dieselben R
 `instructions`-Text – die Vorschau liest nur, was der Bot ohnehin befolgt. Ein Export eines
 importierten Bots wiederholt sie deshalb nicht.
 
-Die acht eigenen Presets führen das Feld; die 56 Profile aus `awesome-grokbot` nicht, weil ihr
+Die neun eigenen Presets führen das Feld; die 56 Profile aus `awesome-grokbot` nicht, weil ihr
 Text wortgetreu übernommen wird.
 
 ## Modell verbinden
@@ -40,7 +40,7 @@ Models** (oder im Onboarding) eine Verbindung anlegen:
 
 ## Eigene Presets
 
-Acht Presets sind hier entstanden; die anderen 56 sind wortgetreu übernommen (siehe unten).
+Neun Presets sind hier entstanden; die anderen 56 sind wortgetreu übernommen (siehe unten).
 
 | Datei | Bot | Anforderung ans Modell | Zweck |
 | --- | --- | --- | --- |
@@ -52,10 +52,11 @@ Acht Presets sind hier entstanden; die anderen 56 sind wortgetreu übernommen (s
 | `product-analytics.v1.json` | **ProductAnalytics** | starkes Modell mit Code-Ausführung | Produktanalyst: Feature-Adoption-Dashboards, Experiment-Tracking, Wettbewerbs-Signale und Weekly-Health-Digest (Cron 02:00, Digest Mo 08:00, Eskalation Mo–Fr stündlich). |
 | `security-auditor.v1.json` | **SecurityAuditor** | starkes Coding-Modell | Sicherheits-Scanner: SAST (Semgrep), Container-/K8s- und Dependency-Audits, Secret-Detection und Fix-Commits je Fund (Cron 02:00, Health-Check Mo–Fr 08:00). |
 | `support-desk.v1.json` | **SupportDesk** | starkes Modell mit Code-Ausführung | Support-Betrieb: Ticket-Triage, Bug-Reproduktion mit Playwright/Docker und Eskalations-Review hinter Human-Approval (Cron Mo–Fr 09:00, 02:00). |
+| `delivery-lead.v1.json` | **Delivery Lead** | starkes Reasoning-Modell | Aufträge statt Zurufe: Task-Vertrag mit Eigentümer, Abnahmekriterium und Beweis, Freigabegrenzen, keine erfundenen Läufe oder erledigten Aktionen. |
 
 ## Übernommene GrokBot-Profile
 
-**56** der 64 Presets stammen aus der CC0-Sammlung
+**56** der 65 Presets stammen aus der CC0-Sammlung
 [awesome-grokbot](https://github.com/mergisi/awesome-grokbot), vollständig: development (8),
 productivity (8), marketing (10), ops (17), sales (8), personal (5). Der Prompt-Text ist
 **wortgetreu** übernommen, weil die Sammlung ausdrücklich darum bittet, ein Profil unverändert zu
