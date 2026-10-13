@@ -50,6 +50,14 @@ name the candidate, the numbers, and why it died, so nobody rebuilds it.
 Price a candidate before proposing it — per-decision cost, plus the corpus run
 and the L2 run.
 
+Record the outcome either way as one line, in the same field order every time,
+so the numbers can be read without the prose around them:
+
+`date | candidate | metric (L1/L2) | baseline | verdict | reason | owner`
+
+The line goes in the pull request that proposed the helper, written when the
+number lands and not when someone asks later.
+
 ## Known traps
 
 - **Confidence is calibrated across a group, not per answer.** A hard-scored rule
