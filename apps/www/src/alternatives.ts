@@ -145,7 +145,7 @@ const HARK_SOURCES = [
     href: "https://hark.com/privacy-policy",
   },
   {
-    label: "Hark terms of service (posted June 30, 2026)",
+    label: "Hark terms of service (last updated October 1, 2026)",
     href: "https://hark.com/terms",
   },
   { label: "Hark security", href: "https://hark.com/security" },
@@ -341,7 +341,7 @@ export const ALTERNATIVES: readonly Alternative[] = [
     h1: "Open source Instinct AI alternative",
     otherName: "Instinct",
     intro: [
-      "Instinct is a personal assistant operated by Spear Street Technology, Inc. The homepage says there are no new interfaces: you text or call it, and it can use a phone and a computer the way a person does. Examples on that page include disputing a bill, sending gifts, ordering groceries, scheduling a doctor's appointment, and planning a trip.",
+      "Instinct is a personal assistant operated by Spear Street Technology, Inc. The homepage says there are no new interfaces: you text or call it, and it can use a phone and a computer the way a person does. Examples on that page include disputing a bill, sending gifts, ordering groceries, scheduling a doctor's appointment, and planning a weekend getaway.",
       "BobBot is open source software for persistent AI teammates. You choose the model and the computer, and you can run the stack yourself. This is a comparison of public descriptions, not a measured benchmark.",
     ],
     rows: [
@@ -506,7 +506,7 @@ export const ALTERNATIVES: readonly Alternative[] = [
         rakazo:
           "Composio or Pipedream Connect, or a Treg, remote MCP, or OpenAPI source you install. Connector credentials are encrypted on the server and are not returned by the API.",
         other:
-          "MCP servers are configured in `config.yaml`. The project site also describes web search, browser automation, vision, image generation, and text-to-speech, including a Nous Portal Tool Gateway that bundles several of those.",
+          "MCP servers are configured in `config.yaml`. The project README also describes web search, browser automation, vision, image generation, and text-to-speech, including a Nous Portal Tool Gateway that bundles several of those.",
       },
       {
         topic: "Where you talk to it",
@@ -565,7 +565,7 @@ export const ALTERNATIVES: readonly Alternative[] = [
     otherName: "Hark Pro",
     intro: [
       "Hark Pro is the personal agent at hark.com, launched October 6, 2026. It is a hosted app on the web, iOS, and Android. The launch article says every feature stays free, with $20 a month for twice the usage and $100 a month for ten times the usage.",
-      "Like Grok Bot, BobBot is just chat: you set up the bot and manage it from that chat. Hark Pro feels like a messaging app. The same article describes Home, Action Buttons, and Panels, Projects as dedicated chats with their own threads, and a cloud computer called Handoff that Hark operates.",
+      "Like Grok Bot, BobBot is just chat: you set up the bot and manage it from that chat. Hark Pro feels like a messaging app. The same article describes Home, Action Buttons, Panels as bespoke mini apps, Projects as dedicated chats with their own threads, and a cloud computer called Handoff that Hark operates.",
       "Hark introduced Handoff, its computer-use agent, on August 5, 2026. This comparison uses Hark's public pages. It is not a measured benchmark.",
     ],
     rows: [
@@ -601,7 +601,7 @@ export const ALTERNATIVES: readonly Alternative[] = [
         rakazo:
           "Bring your own model credentials. Multiple providers are supported, including a custom model server. Each bot can use a different model.",
         other:
-          "The launch article says Hark is training models. The security page says Hark prioritizes its own models, and that models from vetted third parties keep no data. The terms do not name a public model you can swap. They say Hark may train on what you submit unless you opt out, though feedback and material flagged for safety review can still be used.",
+          "The privacy policy says Hark does not use your inputs, outputs, memory, connected account data, or sandbox data to train models, and that no opt-out is needed. The security page says Hark prioritizes its own models and that models from vetted third parties keep no data. The terms do not name a public model you can swap. The launch article only says Hark itself is training smarter models.",
       },
       {
         topic: "Computer",
@@ -653,7 +653,7 @@ export const ALTERNATIVES: readonly Alternative[] = [
       {
         question: "How do you manage each one day to day?",
         answer:
-          "After a Docker or desktop install and a model connection, BobBot is just chat, like Grok Bot, and you manage the bot from that chat. Hark Pro feels like a messaging app. The launch article adds Home, Action Buttons, and Panels, and Projects as dedicated chats with their own threads.",
+          "After a Docker or desktop install and a model connection, BobBot is just chat, like Grok Bot, and you manage the bot from that chat. Hark Pro feels like a messaging app. The launch article adds Home, Action Buttons, Panels as bespoke mini apps, and Projects as dedicated chats with their own threads.",
       },
       {
         question: "Does BobBot order things or run Handoff the way Hark describes?",
@@ -663,7 +663,7 @@ export const ALTERNATIVES: readonly Alternative[] = [
       {
         question: "Where do the Hark Pro details come from?",
         answer:
-          "The Hark Pro column summarizes the homepage, the Introducing Hark Pro article published October 6, 2026, the Introducing Hark Handoff article published August 5, 2026, the privacy policy last updated October 1, 2026, the terms posted June 30, 2026, and the security page. This page is about Hark Pro at hark.com. Check those pages before you rely on a specific capability.",
+          "The Hark Pro column summarizes the homepage, the Introducing Hark Pro article published October 6, 2026, the Introducing Hark Handoff article published August 5, 2026, the privacy policy last updated October 1, 2026, the terms last updated October 1, 2026, and the security page. This page is about Hark Pro at hark.com. Check those pages before you rely on a specific capability.",
       },
     ],
     sources: HARK_SOURCES,
