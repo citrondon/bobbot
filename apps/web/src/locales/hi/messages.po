@@ -474,6 +474,10 @@ msgstr ""
 msgid "All providers"
 msgstr ""
 
+#: src/components/BotTemplateLibrary.tsx
+msgid "All sources"
+msgstr ""
+
 #: src/pages/ActivityList.tsx
 msgid "All statuses"
 msgstr ""
@@ -734,6 +738,7 @@ msgstr ""
 #: src/components/computer/FilesApp.tsx
 #: src/pages/PluginsOverlay.tsx
 #: src/pages/RoutineEditor.tsx
+#: src/pages/Templates.tsx
 msgid "Back"
 msgstr ""
 
@@ -822,6 +827,14 @@ msgstr "बॉट स्क्रीन"
 msgid "Bot screen preview"
 msgstr "बॉट स्क्रीन प्रीव्यू"
 
+#: src/pages/Shell.tsx
+msgid "Bot templates"
+msgstr ""
+
+#: src/pages/Templates.tsx
+msgid "Bot Templates"
+msgstr ""
+
 #: src/pages/MessagingSettingsOverlay.tsx
 msgid "Bot to link"
 msgstr ""
@@ -846,7 +859,9 @@ msgstr ""
 msgid "Browser"
 msgstr ""
 
+#: src/components/BotTemplateLibrary.tsx
 #: src/pages/KnowledgeSection.tsx
+#: src/pages/Templates.tsx
 msgid "Built-in"
 msgstr "अंतर्निहित"
 
@@ -977,6 +992,10 @@ msgstr ""
 #: src/pages/Auth.tsx
 msgid "Choose a new password"
 msgstr "नया पासवर्ड चुनें"
+
+#: src/pages/Templates.tsx
+msgid "Choose a starting point for your next bot"
+msgstr ""
 
 #: src/pages/ReactiveTriggerSection.tsx
 msgid "Choose an event"
@@ -1896,6 +1915,11 @@ msgstr "Cron एक्सप्रेशन"
 msgid "Current password"
 msgstr "वर्तमान पासवर्ड"
 
+#: src/components/BotTemplateLibrary.tsx
+#: src/pages/Templates.tsx
+msgid "Custom"
+msgstr ""
+
 #: src/pages/shell/bot-credentials.tsx
 msgid "Custom header"
 msgstr ""
@@ -2360,6 +2384,10 @@ msgstr ""
 
 #: src/pages/Artifacts.tsx
 msgid "Filter by date"
+msgstr ""
+
+#: src/components/BotTemplateLibrary.tsx
+msgid "Filter by source"
 msgstr ""
 
 #: src/pages/Artifacts.tsx
@@ -2900,6 +2928,11 @@ msgstr "पढ़ा हुआ चिह्नित करें"
 msgid "Mark as Unread"
 msgstr "अपठित चिह्नित करें"
 
+#: src/components/BotTemplateLibrary.tsx
+#: src/pages/Templates.tsx
+msgid "Marketplace"
+msgstr ""
+
 #: src/pages/ModelSettingsOverlay.tsx
 #: src/pages/Onboarding.tsx
 msgid "Max"
@@ -3297,6 +3330,10 @@ msgstr ""
 
 #: src/pages/TeamTemplateOverlay.tsx
 msgid "No team templates available."
+msgstr ""
+
+#: src/components/BotTemplateLibrary.tsx
+msgid "No templates match your filters"
 msgstr ""
 
 #: src/pages/PluginsOverlay.tsx
@@ -4156,6 +4193,14 @@ msgstr "प्रोवाइडर्स खोजें"
 msgid "Search runs"
 msgstr ""
 
+#: src/components/BotTemplateLibrary.tsx
+msgid "Search templates"
+msgstr ""
+
+#: src/components/BotTemplateLibrary.tsx
+msgid "Search templates…"
+msgstr ""
+
 #. placeholder {0}: filters.query.trim()
 #: src/pages/ActivityList.tsx
 msgid "Search: {0}"
@@ -4884,6 +4929,10 @@ msgstr ""
 
 #: src/components/teach/TeachRecordingChrome.tsx
 msgid "Use Protected input for passwords."
+msgstr ""
+
+#: src/components/BotTemplateLibrary.tsx
+msgid "Use template"
 msgstr ""
 
 #: src/pages/ModelSettingsOverlay.tsx

@@ -474,6 +474,10 @@ msgstr "Tous les bots"
 msgid "All providers"
 msgstr ""
 
+#: src/components/BotTemplateLibrary.tsx
+msgid "All sources"
+msgstr ""
+
 #: src/pages/ActivityList.tsx
 msgid "All statuses"
 msgstr ""
@@ -734,6 +738,7 @@ msgstr "Avatars"
 #: src/components/computer/FilesApp.tsx
 #: src/pages/PluginsOverlay.tsx
 #: src/pages/RoutineEditor.tsx
+#: src/pages/Templates.tsx
 msgid "Back"
 msgstr "Retour"
 
@@ -822,6 +827,14 @@ msgstr "Écran du bot"
 msgid "Bot screen preview"
 msgstr "Aperçu de l'écran du bot"
 
+#: src/pages/Shell.tsx
+msgid "Bot templates"
+msgstr ""
+
+#: src/pages/Templates.tsx
+msgid "Bot Templates"
+msgstr ""
+
 #: src/pages/MessagingSettingsOverlay.tsx
 msgid "Bot to link"
 msgstr "Bot à connecter"
@@ -846,7 +859,9 @@ msgstr "Libellé du cerveau"
 msgid "Browser"
 msgstr ""
 
+#: src/components/BotTemplateLibrary.tsx
 #: src/pages/KnowledgeSection.tsx
+#: src/pages/Templates.tsx
 msgid "Built-in"
 msgstr "Intégré"
 
@@ -977,6 +992,10 @@ msgstr "Choisissez un bot…"
 #: src/pages/Auth.tsx
 msgid "Choose a new password"
 msgstr "Choisissez un nouveau mot de passe"
+
+#: src/pages/Templates.tsx
+msgid "Choose a starting point for your next bot"
+msgstr ""
 
 #: src/pages/ReactiveTriggerSection.tsx
 msgid "Choose an event"
@@ -1896,6 +1915,11 @@ msgstr "Expression Cron"
 msgid "Current password"
 msgstr "Mot de passe actuel"
 
+#: src/components/BotTemplateLibrary.tsx
+#: src/pages/Templates.tsx
+msgid "Custom"
+msgstr ""
+
 #: src/pages/shell/bot-credentials.tsx
 msgid "Custom header"
 msgstr ""
@@ -2361,6 +2385,10 @@ msgstr ""
 #: src/pages/Artifacts.tsx
 msgid "Filter by date"
 msgstr "Filtrer par date"
+
+#: src/components/BotTemplateLibrary.tsx
+msgid "Filter by source"
+msgstr ""
 
 #: src/pages/Artifacts.tsx
 msgid "Filters"
@@ -2900,6 +2928,11 @@ msgstr "Marquer comme lu"
 msgid "Mark as Unread"
 msgstr "Marquer comme non lu"
 
+#: src/components/BotTemplateLibrary.tsx
+#: src/pages/Templates.tsx
+msgid "Marketplace"
+msgstr ""
+
 #: src/pages/ModelSettingsOverlay.tsx
 #: src/pages/Onboarding.tsx
 msgid "Max"
@@ -3297,6 +3330,10 @@ msgstr "Aucune conversation d'équipe pour le moment."
 
 #: src/pages/TeamTemplateOverlay.tsx
 msgid "No team templates available."
+msgstr ""
+
+#: src/components/BotTemplateLibrary.tsx
+msgid "No templates match your filters"
 msgstr ""
 
 #: src/pages/PluginsOverlay.tsx
@@ -4156,6 +4193,14 @@ msgstr "Rechercher des fournisseurs"
 msgid "Search runs"
 msgstr ""
 
+#: src/components/BotTemplateLibrary.tsx
+msgid "Search templates"
+msgstr ""
+
+#: src/components/BotTemplateLibrary.tsx
+msgid "Search templates…"
+msgstr ""
+
 #. placeholder {0}: filters.query.trim()
 #: src/pages/ActivityList.tsx
 msgid "Search: {0}"
@@ -4884,6 +4929,10 @@ msgstr "Utiliser les instructions par défaut"
 
 #: src/components/teach/TeachRecordingChrome.tsx
 msgid "Use Protected input for passwords."
+msgstr ""
+
+#: src/components/BotTemplateLibrary.tsx
+msgid "Use template"
 msgstr ""
 
 #: src/pages/ModelSettingsOverlay.tsx
