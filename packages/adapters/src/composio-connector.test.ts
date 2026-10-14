@@ -397,6 +397,7 @@ describe("composio tool mapping", () => {
         userId: "user-1",
         config: {
           manageConnections: false,
+          sessionPreset: "direct_tools",
           sandbox: { enable: false },
           toolkits: ["GITHUB"],
           connectedAccounts: { GITHUB: ["ca-personal", "ca-work"] },
@@ -450,6 +451,7 @@ describe("composio tool mapping", () => {
         userId: "user-1",
         config: {
           manageConnections: false,
+          sessionPreset: "direct_tools",
           sandbox: { enable: false },
           toolkits: ["GITHUB"],
           connectedAccounts: { GITHUB: ["ca_current"] },
@@ -489,6 +491,7 @@ describe("composio tool mapping", () => {
         userId: "user-1",
         config: {
           manageConnections: false,
+          sessionPreset: "direct_tools",
           sandbox: { enable: false },
           toolkits: ["GITHUB"],
         },
@@ -527,6 +530,7 @@ describe("composio tool mapping", () => {
         userId: "user-1",
         config: {
           manageConnections: false,
+          sessionPreset: "direct_tools",
           sandbox: { enable: false },
           toolkits: ["GMAIL"],
           connectedAccounts: { GMAIL: ["ca-work"] },
@@ -571,6 +575,7 @@ describe("composio tool mapping", () => {
       userId: "user-1",
       config: {
         manageConnections: false,
+        sessionPreset: "direct_tools",
         sandbox: { enable: false },
         toolkits: ["GITHUB", "HACKERNEWS"],
       },
@@ -611,7 +616,7 @@ describe("composio tool mapping", () => {
       })),
     ).toEqual([
       { userId: "__rakazo_catalog__", toolkits: undefined, sessionPreset: undefined },
-      { userId: "user-1", toolkits: ["GITHUB"], sessionPreset: undefined },
+      { userId: "user-1", toolkits: ["GITHUB"], sessionPreset: "direct_tools" },
     ]);
 
     const events: ConnectorEvent[] = [];
