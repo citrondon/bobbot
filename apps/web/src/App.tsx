@@ -31,6 +31,7 @@ import { IntegrationSetupPage } from "./pages/IntegrationSetup";
 import { LocalSettingsPage } from "./pages/LocalSettings";
 import { McpOAuthCallbackPage } from "./pages/McpOAuthCallback";
 import { ShellPage } from "./pages/Shell";
+import { TemplatesPage } from "./pages/Templates";
 
 const AuthPage = lazy(() =>
   import("./pages/Auth").then((module) => ({ default: module.AuthPage })),
@@ -169,6 +170,7 @@ function SessionApp() {
             <Route path="/app/artifacts" element={<ArtifactsPage />} />
             <Route path="/app/artifacts/:artifactId" element={<ArtifactsPage />} />
             <Route path="/app/:botId" element={<ShellPage />} />
+            <Route path="/templates" element={<TemplatesPage />} />
           </Route>
         </Routes>
       </Suspense>

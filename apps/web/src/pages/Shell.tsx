@@ -2900,6 +2900,19 @@ export function ShellPage() {
             >
               <Library size={15} strokeWidth={1.8} aria-hidden="true" />
             </button>
+            <button
+              type="button"
+              className="app-no-drag flex h-7 w-7 items-center justify-center rounded-full text-muted-foreground/70 hover:text-foreground/75"
+              aria-label={t`Bot templates`}
+              title={t`Bot templates`}
+              data-testid="open-bot-templates"
+              onClick={() => {
+                setMobileSidebarOpen(false);
+                navigate("/templates");
+              }}
+            >
+              <LayoutGrid size={15} strokeWidth={1.8} aria-hidden="true" />
+            </button>
             <Popover open={createMenuOpen} onOpenChange={setCreateMenuOpen}>
               <PopoverTrigger
                 className="app-no-drag text-[21px] text-muted-foreground/70 hover:text-foreground/75"
