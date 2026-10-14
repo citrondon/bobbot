@@ -1,10 +1,4 @@
-import type {
-  BotMessageIntent,
-  ComputerCommandKind,
-  MessageBlock,
-  ProductEventType,
-  TrustEffect,
-} from "@bobbot/contracts"
+import type { BotMessageIntent, MessageBlock, ProductEventType } from "@bobbot/contracts";
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––
 // 1. MessageBlock Mapping
@@ -18,43 +12,56 @@ export type CopilotKitMessageBlock =
   | { kind: "text"; text: string }
   | { kind: "card"; lines: { k: string; v: string }[] }
   | {
-      kind: "ask"
-      text: string
+      kind: "ask";
+      text: string;
       /** Der engine-derived action summary attached to this exact approval effect. */
       effect?: {
-        action: TrustEffect["action"]
-        target: string
-      }
-      detail?: string
-      input?: "text" | "secret"
-      purpose?: "otp" | "password" | "api_key"
+        action: TrustEffect["action"];
+        target: string;
+      };
+      detail?: string;
+      input?: "text" | "secret";
+      purpose?: "otp" | "password" | "api_key";
     }
   | {
-      kind: "choice"
-      question: string
-      options: { id: string; label: string }[]
+      kind: "choice";
+      question: string;
+      options: { id: string; label: string }[];
     }
   | { kind: "progress"; text: string; pendingToolNames?: string[] }
   | { kind: "steps"; steps: { label: string; count: number }; durationMs?: number }
-  | { kind: "subagent"; agentId: string; name: string; task: string; status: string; progress?: string }
+  | {
+      kind: "subagent";
+      agentId: string;
+      name: string;
+      task: string;
+      status: string;
+      progress?: string;
+    }
   | { kind: "image"; artifactId: string; mimeType: string; name: string }
   | { kind: "file"; artifactId: string; mimeType: string; name: string; size: number }
   | { kind: "handoff"; fromBotId: string; toBotId: string; text: string; hop?: number }
   | { kind: "bot_message_sent"; toBotId: string; toBotName: string; text: string; intent?: string }
-  | { kind: "bot_message_received"; fromBotId: string; fromBotName: string; text: string; intent?: string; returnToMessageId?: string; hop?: number }
+  | {
+      kind: "bot_message_received";
+      fromBotId: string;
+      fromBotName: string;
+      text: string;
+      intent?: string;
+      returnToMessageId?: string;
+      hop?: number;
+    };
 
 /**
  * Erzeugt ein CopilotKit MessageBlock aus einem BobBot MessageBlock.
  * Pure Funktion, keine I/O, deterministisch.
  */
-export function mapToCopilotKitBlock(
-  block: MessageBlock
-): CopilotKitMessageBlock {
+export function mapToCopilotKitBlock(block: MessageBlock): CopilotKitMessageBlock {
   switch (block.kind) {
     case "text":
-      return { kind: "text", text: block.text }
+      return { kind: "text", text: block.text };
     case "card":
-      return { kind: "card", lines: block.lines }
+      return { kind: "card", lines: block.lines };
     case "ask": {
       const base: any = {
         kind: "ask",
@@ -62,16 +69,16 @@ export function mapToCopilotKitBlock(
         detail: block.detail,
         input: block.input as "text" | "secret",
         purpose: block.purpose as "otp" | "password" | "api_key",
-      }
+      };
       if (block.approvalEffectId) {
         // Hol den TrustEffect aus dem Engine-Zustand
         // (In der Praxis würde hier der Context/State übergeben werden)
         base.effect = {
           action: "update" as TrustEffect["action"],
           target: "unknown",
-        }
+        };
       }
-      return base
+      return base;
     }
     case "choice":
       return {
@@ -81,13 +88,13 @@ export function mapToCopilotKitBlock(
           id: o.id,
           label: o.label,
         })),
-      }
+      };
     case "progress":
       return {
         kind: "progress",
         text: block.text,
         pendingToolNames: block.pendingToolNames,
-      }
+      };
     case "steps":
       return {
         kind: "steps",
@@ -96,7 +103,7 @@ export function mapToCopilotKitBlock(
           count: s.count,
         })),
         durationMs: block.durationMs,
-      }
+      };
     case "subagent":
       return {
         kind: "subagent",
@@ -105,14 +112,14 @@ export function mapToCopilotKitBlock(
         task: block.task,
         status: block.status,
         progress: block.progress ?? "",
-      }
+      };
     case "image":
       return {
         kind: "image",
         artifactId: block.artifactId,
         mimeType: block.mimeType,
         name: block.name,
-      }
+      };
     case "file":
       return {
         kind: "file",
@@ -120,7 +127,7 @@ export function mapToCopilotKitBlock(
         mimeType: block.mimeType,
         name: block.name,
         size: block.size,
-      }
+      };
     case "handoff":
       return {
         kind: "handoff",
@@ -128,7 +135,7 @@ export function mapToCopilotKitBlock(
         toBotId: block.toBotId,
         text: block.text,
         hop: block.hop,
-      }
+      };
     case "bot_message_sent":
       return {
         kind: "bot_message_sent",
@@ -136,7 +143,7 @@ export function mapToCopilotKitBlock(
         toBotName: block.toBotName,
         text: block.text,
         intent: block.intent,
-      }
+      };
     case "bot_message_received":
       return {
         kind: "bot_message_received",
@@ -146,10 +153,10 @@ export function mapToCopilotKitBlock(
         intent: block.intent,
         returnToMessageId: block.returnToMessageId,
         hop: block.hop,
-      }
+      };
     default:
       // Fallback: Text rendern
-      return { kind: "text", text: String(block.kind) }
+      return { kind: "text", text: String(block.kind) };
   }
 }
 
@@ -172,36 +179,34 @@ export type CopilotKitEventType =
   | "thread.computer"
   | "subagent.start"
   | "subagent.completed"
-  | "subagent.failed"
+  | "subagent.failed";
 
-export function mapToCopilotKitEventType(
-  type: ProductEventType
-): CopilotKitEventType {
+export function mapToCopilotKitEventType(type: ProductEventType): CopilotKitEventType {
   switch (type) {
     case "thread.message.created":
-      return "thread.message.created"
+      return "thread.message.created";
     case "thread.cleared":
-      return "thread.cleared"
+      return "thread.cleared";
     case "thread.message.updated":
-      return "thread.message.updated"
+      return "thread.message.updated";
     case "thread.progress":
-      return "thread.progress"
+      return "thread.progress";
     case "thread.ask":
-      return "thread.ask"
+      return "thread.ask";
     case "thread.choice":
-      return "thread.choice"
+      return "thread.choice";
     case "thread.meta":
-      return "thread.meta"
+      return "thread.meta";
     case "thread.computer":
-      return "thread.computer"
+      return "thread.computer";
     case "subagent.start":
-      return "subagent.start"
+      return "subagent.start";
     case "subagent.completed":
-      return "subagent.completed"
+      return "subagent.completed";
     case "subagent.failed":
-      return "subagent.failed"
+      return "subagent.failed";
     default:
-      return "thread.meta"
+      return "thread.meta";
   }
 }
 
@@ -214,19 +219,22 @@ export type ComputerCommandKind =
   | "write_file"
   | "attach_file"
   | "open_path"
-  | "launch_app"
+  | "launch_app";
 
 export function mapToCopilotKitCommandKind(
-  kind: ComputerCommandKind
+  kind: ComputerCommandKind,
 ): "shell" | "write_file" | "attach_file" | "open_path" | "launch_app" {
-  const map: Record<ComputerCommandKind, "shell" | "write_file" | "attach_file" | "open_path" | "launch_app"> = {
+  const map: Record<
+    ComputerCommandKind,
+    "shell" | "write_file" | "attach_file" | "open_path" | "launch_app"
+  > = {
     shell: "shell",
     write_file: "write_file",
     attach_file: "attach_file",
     open_path: "open_path",
     launch_app: "launch_app",
-  }
-  return map[kind]
+  };
+  return map[kind];
 }
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -234,31 +242,29 @@ export function mapToCopilotKitCommandKind(
 // –––––––––––––––––––––––––––––––––––––––––––––––––––
 
 export type TrustEffect = {
-  action: "read" | "write" | "delete" | "publish"
-  target: string
-  risk: "low" | "medium" | "high"
-}
+  action: "read" | "write" | "delete" | "publish";
+  target: string;
+  risk: "low" | "medium" | "high";
+};
 
 /**
  * Erstellt einen TrustEffect-Proxy für CopilotKit's Approval Cards.
  * Zeigt dem Nutzer an, welche Aktion ausgeführt wird und mit welchem Risiko.
  */
-export function createTrustEffectForCopilotKit(
-  effect: TrustEffect
-): {
-  label: string
-  destructive: boolean
+export function createTrustEffectForCopilotKit(effect: TrustEffect): {
+  label: string;
+  destructive: boolean;
   approval: {
-    id: string
-    handler: (outcome: "created" | "cancelled") => void
-  }
+    id: string;
+    handler: (outcome: "created" | "cancelled") => void;
+  };
 } {
   const destructiveMap: Record<TrustEffect["action"], boolean> = {
     read: false,
     write: true,
     delete: true,
     publish: true,
-  }
+  };
 
   return {
     label: `${effect.action.toUpperCase()} auf "${effect.target}"`,
@@ -270,4 +276,5 @@ export function createTrustEffectForCopilotKit(
         // geschieht in deinem BobBot Run Executor
       },
     },
-  }
+  };
+}
