@@ -25,25 +25,25 @@ export const COMPARE_ROWS = [
   {
     topic: "Self-hosting",
     rakazo: "Docker Compose images, or a source checkout, on a machine you control.",
-    grok: "A cloud computer on your account. An optional local computer can run approved commands. The docs do not describe deploying the service yourself.",
+    grok: "A cloud computer on your account. An optional local computer can run approved commands. The deployment guide covers pushing the desktop app to member devices, not running the service yourself.",
   },
   {
     topic: "Data and computers",
     rakazo:
       "You run the deployment. Team computers are shared; private computers are isolated. Connector credentials are encrypted on your server and are never returned by the API.",
-    grok: "Requires cloud data storage. Bots on one account share one cloud computer, including files and logins. Training opt-out follows the Cursor account settings.",
+    grok: "Requires cloud data storage, so Legacy Privacy Mode is not supported. Bots on one account share one cloud computer, including files and logins. Training opt-out follows the Cursor account settings.",
   },
   {
     topic: "Model",
     rakazo:
       "Sign in with Claude Pro/Max, ChatGPT Plus/Pro, or SuperGrok, or bring a key. Documented providers include OpenAI, Anthropic, Google, OpenRouter, Vercel AI Gateway, Cursor, custom servers, and a local model (Ollama, LM Studio). BobBot does not pay the model bill.",
-    grok: "Included with paid Cursor plans and SuperGrok subscriptions. The Grok Bot docs do not describe connecting your own model provider.",
+    grok: "Cursor manages model selection. The docs say there is no customer-facing model picker, and the team model allowlist is Enterprise only.",
   },
   {
     topic: "Price",
     rakazo:
       "No license fee to self-host. You pay your model provider and the computer you run. Hosted BobBot Cloud is not generally available.",
-    grok: "Included with paid individual Cursor plans, Cursor Teams, and SuperGrok subscriptions. SuperGrok is listed at $30/month and includes Grok Bot access. Plans include weekly usage; extra usage can be billed. The free plan on the pricing page does not list Grok Bot.",
+    grok: "Included with every paid individual Cursor plan and with the Cursor Teams plan. You can also link an individual SuperGrok, SuperGrok Plus, or SuperGrok Heavy subscription. The pricing page lists Grok Bot in the $30/month tier. Included usage resets weekly; extra usage can be billed at model and token cost.",
   },
   {
     topic: "Apps",
@@ -58,6 +58,9 @@ export const COMPARE_NOTE =
 export const GROK_SOURCES = [
   { label: "Grok Bot overview", href: "https://docs.x.ai/grok-bot/overview" },
   { label: "Grok Bot FAQ", href: "https://docs.x.ai/grok-bot/faq" },
+  { label: "Grok Bot security", href: "https://docs.x.ai/grok-bot/security" },
+  { label: "Grok Bot deployment", href: "https://docs.x.ai/grok-bot/deployment" },
+  { label: "Grok Bot plans", href: "https://cursor.com/help/grok-bot/plans" },
   { label: "xAI pricing", href: "https://x.ai/pricing" },
   { label: "Grok Build source", href: "https://github.com/xai-org/grok-build" },
   { label: "Grok-1 weights", href: "https://github.com/xai-org/grok-1" },
@@ -75,15 +78,15 @@ export const SELF_HOST_AFTER = [
   "On a server, run the installer with --prepare-only, set the public HTTPS origin, and create the owner account before anyone else can reach it. The self-hosting guide covers that setup. The desktop app can install the stack on this computer, or connect to an instance you already run.",
 ] as const;
 
-export const GROK_UPDATED = "October 7, 2026";
+export const GROK_UPDATED = "October 13, 2026";
 
 export const GROK_SECTIONS = [
   {
     heading: "What Grok Bot is",
     paragraphs: [
-      "Grok Bot is xAI's hosted product for persistent bots. The public docs describe named bots, a computer they can use, routines, and approvals. The computer in the default setup is a cloud computer on your account. Bots on that account share it, including files and logins. An optional local computer can run approved commands on the machine in front of you. That local computer is not the same thing as installing the Grok Bot service on a server you operate. The docs do not describe that install.",
-      "The model comes with the plan. The Grok Bot docs do not describe connecting OpenAI, Anthropic, a custom server, or a local model. Training opt-out follows the Cursor account settings. Desktop apps exist for macOS, Windows, and Linux, plus iOS and Android.",
-      "Price follows the plan, not a separate Grok Bot seat. The docs and pricing page used here say Grok Bot is included with paid individual Cursor plans, Cursor Teams, and SuperGrok subscriptions. SuperGrok is listed at $30 a month and includes Grok Bot access. Plans include weekly usage, and extra usage can be billed. The free plan on the pricing page does not list Grok Bot.",
+      "Grok Bot is xAI's hosted product for persistent bots. The public docs describe named bots, a computer they can use, routines, and approvals. The computer in the default setup is a cloud computer on your account. Bots on that account share it, including files and logins. An optional local computer can run approved commands on the machine in front of you. That local computer is not the same thing as installing the Grok Bot service on a server you operate. The deployment guide covers installing the desktop app on member devices, not running the service yourself.",
+      "The model comes with the plan. Cursor manages model selection, and the docs say there is no customer-facing model picker, so connecting OpenAI, Anthropic, a custom server, or a local model is not described. Training opt-out follows the Cursor account settings. Desktop apps exist for macOS, Windows, and Linux, plus iOS and Android.",
+      "Price follows the plan, not a separate Grok Bot seat. The Grok Bot FAQ says the product is included with every paid individual Cursor plan and with the Cursor Teams plan, and that you can link an individual SuperGrok, SuperGrok Plus, or SuperGrok Heavy subscription. The pricing page lists Grok Bot in the $30/month tier. Included usage resets weekly, and eligible accounts can add usage billed at model and token cost.",
       "Two other xAI releases are easy to mix up with the bot. Grok Build, the coding-agent CLI, is Apache-2.0. The older Grok-1 model weights were released under Apache-2.0. Neither of those is the Grok Bot service, and neither one is a self-hosted Grok Bot.",
     ],
   },
@@ -153,7 +156,7 @@ export const GROK_ALTERNATIVE_FAQ = [
   {
     question: "Can I self-host Grok Bot?",
     answer:
-      "The Grok Bot docs describe a cloud computer assigned to your account. They also describe an optional local computer, where a bot runs approved commands on the machine in front of you. They do not describe installing the Grok Bot service on a server you operate. BobBot can be self-hosted.",
+      "The Grok Bot docs describe a cloud computer assigned to your account. They also describe an optional local computer, where a bot runs approved commands on the machine in front of you. They do not describe installing the Grok Bot service on a server you operate; the deployment guide is about pushing the desktop app to member devices. BobBot can be self-hosted.",
   },
   {
     question: "How is BobBot different from Grok Bot?",

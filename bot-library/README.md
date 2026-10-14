@@ -53,6 +53,7 @@ Neun Presets sind hier entstanden; die anderen 56 sind wortgetreu übernommen (s
 | `product-analytics.v1.json` | **ProductAnalytics** | starkes Modell mit Code-Ausführung | Produktanalyst: Feature-Adoption-Dashboards, Experiment-Tracking, Wettbewerbs-Signale und Weekly-Health-Digest (Cron 02:00, Digest Mo 08:00, Eskalation Mo–Fr stündlich). |
 | `security-auditor.v1.json` | **SecurityAuditor** | starkes Coding-Modell | Sicherheits-Scanner: SAST (Semgrep), Container-/K8s- und Dependency-Audits, Secret-Detection und Fix-Commits je Fund (Cron 02:00, Health-Check Mo–Fr 08:00). |
 | `support-desk.v1.json` | **SupportDesk** | starkes Modell mit Code-Ausführung | Support-Betrieb: Ticket-Triage, Bug-Reproduktion mit Playwright/Docker und Eskalations-Review hinter Human-Approval (Cron Mo–Fr 09:00, 02:00). |
+| `delivery-lead.v1.json` | **Delivery Lead** | starkes Reasoning-Modell | Aufträge statt Zurufe: Task-Vertrag mit Eigentümer, Abnahmekriterium und Beweis, Freigabegrenzen, keine erfundenen Läufe oder erledigten Aktionen. |
 
 ## Übernommene GrokBot-Profile
 
