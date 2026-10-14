@@ -1,0 +1,6095 @@
+[
+ {
+  "slug": "automated-b2b-account-follow-up-agent",
+  "title": "Automated B2B - Account Follow-up Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "R Roster All Copied Catalog / GTM Account Follow-up Update CRM notes, file tickets, and stage the next step after every call Post-call close...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-account-media-rundown-agent",
+  "title": "Automated B2B - Account Media Rundown Agent",
+  "volume": 1200,
+  "tools": [
+   "Slack",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me that runs weekly for one strategic account. Before the first run, ask me which industry and product category we sell...",
+  "existing_preset": null,
+  "ext": [
+   "Slack",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "automated-b2b-account-tiering-agent",
+  "title": "Automated B2B - Account Tiering Agent",
+  "volume": 1200,
+  "tools": [
+   "Notion",
+   "Salesforce"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me on a weekly schedule. Walk me through connecting Salesforce and Notion, then configure it: score every account on fi...",
+  "existing_preset": null,
+  "ext": [
+   "Notion",
+   "Salesforce"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "automated-b2b-brand-deck-keeper-agent",
+  "title": "Automated B2B - Brand Deck Keeper Agent",
+  "volume": 1200,
+  "tools": [
+   "Figma"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me that owns my customer decks in Figma. Walk me through connecting Figma and give it our brand system and design guide...",
+  "existing_preset": null,
+  "ext": [
+   "Figma"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-crm-from-your-phone-agent",
+  "title": "Automated B2B - CRM From Your Phone Agent",
+  "volume": 1200,
+  "tools": [
+   "Salesforce",
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me that stays always on so I can ask CRM questions from my phone. Walk me through connecting Salesforce read-only and S...",
+  "existing_preset": null,
+  "ext": [
+   "Salesforce",
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "automated-b2b-call-coach-agent",
+  "title": "Automated B2B - Call Coach Agent",
+  "volume": 1200,
+  "tools": [
+   "Gong",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me that runs automatically after each of my calls. Walk me through connecting Gong, then configure it: leave timestampe...",
+  "existing_preset": null,
+  "ext": [
+   "Gong",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-call-follow-up-drafter-agent",
+  "title": "Automated B2B - Call Follow-Up Drafter Agent",
+  "volume": 1200,
+  "tools": [
+   "Gong",
+   "Google Calendar",
+   "Granola",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me as a recurring routine. Walk me through connecting Google Calendar, Granola and Gong, then configure it: find every ...",
+  "existing_preset": "call-followup",
+  "ext": [
+   "Gong",
+   "Google Calendar",
+   "Granola",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "automated-b2b-campaign-watch-agent",
+  "title": "Automated B2B - Campaign Watch Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "R Roster All Copied List / From X Campaign Watch monitor performance and investigate unusual movements instead of waiting for me to check an...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-competitor-watch-agent",
+  "title": "Automated B2B - Competitor Watch Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "R Roster All Copied List / From X Competitor Watch check pricing, positioning, offers, landing pages and launches, then flag meaningful chan...",
+  "existing_preset": "competitor-watch",
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-content-opportunity-research-agent",
+  "title": "Automated B2B - Content Opportunity Research Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "R Roster All Copied List / From X Content Opportunity Research research search, X, competitors and conversations before deciding what is act...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-content-research-agent",
+  "title": "Automated B2B - Content Research Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "R Roster All Copied List / From X Content Research take an approved idea and find evidence, examples, data, counterarguments and current con...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-customer-mining-agent",
+  "title": "Automated B2B - Customer Mining Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Open on X Report You are Customer Mining — a Grok Bot with one job. go through calls, interviews and feed",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-deal-desk-autopilot-agent",
+  "title": "Automated B2B - Deal Desk Autopilot Agent",
+  "volume": 1200,
+  "tools": [
+   "Gmail",
+   "Google Calendar",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for deal momentum. Walk me through connecting my CRM, Gmail, and Google Calendar, then configure it: r...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "Google Calendar",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-deck-localizer-agent",
+  "title": "Automated B2B - Deck Localizer Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Chat",
+   "Web Search"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me I can trigger before a call. Walk me through connecting Google Slides, then configure it: keep the layout intact, tr...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-deck-updater-agent",
+  "title": "Automated B2B - Deck Updater Agent",
+  "volume": 1200,
+  "tools": [
+   "Granola",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me that triggers on my sales calls. Walk me through connecting Granola and Google Slides, then configure it: watch note...",
+  "existing_preset": null,
+  "ext": [
+   "Granola",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-demo-clip-library-agent",
+  "title": "Automated B2B - Demo Clip Library Agent",
+  "volume": 1200,
+  "tools": [
+   "Google Drive",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me that runs after each recorded demo. Walk me through connecting Zoom and Google Drive, then configure it: cut the rec...",
+  "existing_preset": null,
+  "ext": [
+   "Google Drive",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-demo-readiness-agent",
+  "title": "Automated B2B - Demo Readiness Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "R Roster All Copied Catalog / GTM Demo Readiness Spin up the environment overnight, fix stale seeds, drop a checklist before calls The bot t...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-distribution-research-agent",
+  "title": "Automated B2B - Distribution Research Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "R Roster All Copied List / From X Distribution Research find relevant conversations, communities and opportunities for things we have alread...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-enterprise-gtm-chief-of-staff-agent",
+  "title": "Automated B2B - Enterprise GTM Chief of Staff Agent",
+  "volume": 1200,
+  "tools": [
+   "Gmail",
+   "Google Calendar",
+   "Granola",
+   "Salesforce",
+   "Slack",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me to act as my chief of staff for enterprise sales, and pin it. Walk me through connecting Salesforce, Gmail, Google C...",
+  "existing_preset": "chief-of-staff",
+  "ext": [
+   "Gmail",
+   "Google Calendar",
+   "Granola",
+   "Salesforce",
+   "Slack",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-experiment-memory-agent",
+  "title": "Automated B2B - Experiment Memory Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "R Roster All Copied List / From X Experiment Memory keep hypotheses, variants, results and learnings organized so we do not keep relearning ...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-forecast-lead-agent",
+  "title": "Automated B2B - Forecast Lead Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "R Roster All Copied Catalog / GTM Forecast Lead Build the weekly forecast from CRM evidence, not from hope A skeptical forecast. It argues w...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "automated-b2b-forecast-notes-updater-agent",
+  "title": "Automated B2B - Forecast Notes Updater Agent",
+  "volume": 1200,
+  "tools": [
+   "Gmail",
+   "Gong",
+   "Granola",
+   "Salesforce",
+   "Slack",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me that keeps my Salesforce opportunity notes current. Walk me through connecting Salesforce, Granola, Gong, Slack and ...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "Gong",
+   "Granola",
+   "Salesforce",
+   "Slack",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-inbox-reply-digest-agent",
+  "title": "Automated B2B - Inbox Reply Digest Agent",
+  "volume": 1200,
+  "tools": [
+   "Gmail",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me as a recurring routine. Walk me through connecting Gmail, let it learn how I write from my sent mail, then configure...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "automated-b2b-lead-research-agent",
+  "title": "Automated B2B - Lead Research Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "R Roster All Copied List / From X Lead Research research qualified inbound accounts and prepare useful context before I speak to them. gtm f...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-linkedin-icp-prospect-tracker",
+  "title": "Automated B2B - LinkedIn ICP Prospect Tracker",
+  "volume": 1200,
+  "tools": [
+   "LinkedIn",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me I can trigger to find and track LinkedIn prospects. Walk me through connecting Google Search and a CSV file, then co...",
+  "existing_preset": null,
+  "ext": [
+   "LinkedIn",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-linkedin-signal-watch-agent",
+  "title": "Automated B2B - LinkedIn Signal Watch Agent",
+  "volume": 1200,
+  "tools": [
+   "LinkedIn"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me that sends a weekday digest. Walk me through connecting my LinkedIn session and Sales Navigator, then configure it: ...",
+  "existing_preset": "linkedin-signal-watch",
+  "ext": [
+   "LinkedIn"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-live-discovery-slide-agent",
+  "title": "Automated B2B - Live Discovery Slide Agent",
+  "volume": 1200,
+  "tools": [
+   "Figma",
+   "Granola",
+   "Slack",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me I can trigger during a customer call. Walk me through connecting Granola and Figma, then configure it: fill or rewri...",
+  "existing_preset": null,
+  "ext": [
+   "Figma",
+   "Granola",
+   "Slack",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-logistics-lead-agent",
+  "title": "Automated B2B - Logistics Lead Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "R Roster All Copied Catalog / Operations Logistics Lead Own shipping cost, timelines, and prior disputes for the storefront A specialist a C...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-meeting-prep-brief-agent",
+  "title": "Automated B2B - Meeting Prep Brief Agent",
+  "volume": 1200,
+  "tools": [
+   "Gmail",
+   "Gong",
+   "Google Calendar",
+   "Granola",
+   "Salesforce",
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me as a daily routine before my first meeting. Walk me through connecting Google Calendar, Salesforce, Gmail, Slack, Gr...",
+  "existing_preset": "meeting-prep",
+  "ext": [
+   "Gmail",
+   "Gong",
+   "Google Calendar",
+   "Granola",
+   "Salesforce",
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "automated-b2b-org-chart-keeper-agent",
+  "title": "Automated B2B - Org Chart Keeper Agent",
+  "volume": 1200,
+  "tools": [
+   "LinkedIn",
+   "Salesforce"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me on a weekly schedule to keep our account org charts current. Walk me through connecting Salesforce and my LinkedIn s...",
+  "existing_preset": null,
+  "ext": [
+   "LinkedIn",
+   "Salesforce"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "automated-b2b-outbound-in-your-voice-agent",
+  "title": "Automated B2B - Outbound In Your Voice Agent",
+  "volume": 1200,
+  "tools": [
+   "Gmail",
+   "LinkedIn"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me. Walk me through connecting Gmail and LinkedIn, let it learn how I write from my sent mail, then schedule it daily: ...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "LinkedIn"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "automated-b2b-priority-brief-agent",
+  "title": "Automated B2B - Priority Brief Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "R Roster All Copied List / From X Priority Brief pull everything together and surface the few things that actually deserve my attention. gtm...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-product-expert-agent",
+  "title": "Automated B2B - Product Expert Agent",
+  "volume": 1200,
+  "tools": [
+   "GitHub",
+   "Notion",
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me I can ask technical product questions live on customer calls. Walk me through connecting our codebase on GitHub — or...",
+  "existing_preset": null,
+  "ext": [
+   "GitHub",
+   "Notion",
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-prospect-meeting-booker-agent",
+  "title": "Automated B2B - Prospect Meeting Booker Agent",
+  "volume": 1200,
+  "tools": [
+   "Gmail",
+   "Google Calendar",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me I can trigger when I want to book a meeting with a prospect or customer. Walk me through connecting Gmail, Google Ca...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "Google Calendar",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-prospecting-agent",
+  "title": "Automated B2B - Prospecting Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "You are Prospecting, a GTM teammate. You research accounts and stage outreach. You never send. Overnight / on request - Take a named account...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-prospecting-sheet-builder-agent",
+  "title": "Automated B2B - Prospecting Sheet Builder Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Chat",
+   "Web Search"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me that builds prospecting sheets, ideally overnight so they&#39;re ready in the morning. Before the first run, ask me one ...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-seo-watch-agent",
+  "title": "Automated B2B - SEO Watch Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "R Roster All Copied List / From X SEO Watch monitor important queries and pages for ranking, intent and competitor changes. gtm from X Poste...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-sales-outbound-agent",
+  "title": "Automated B2B - Sales Outbound Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "You are Sales Outbound. Overnight you research accounts, score contacts with intent, and draft email and LinkedIn in each seller&#39;s voice. Yo...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-sales-play-autopilot-agent",
+  "title": "Automated B2B - Sales Play Autopilot Agent",
+  "volume": 1200,
+  "tools": [
+   "Gmail",
+   "Salesforce",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me that runs our sales plays end to end, on demand. Walk me through connecting Snowflake, Salesforce and Gmail, then bu...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "Salesforce",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-salesforce-administrator-agent",
+  "title": "Automated B2B - Salesforce Administrator Agent",
+  "volume": 1200,
+  "tools": [
+   "Salesforce",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me that acts as a local-first Salesforce Administrator. Walk me through connecting Salesforce with Salesforce CLI brows...",
+  "existing_preset": null,
+  "ext": [
+   "Salesforce",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-salesforce-bot-researcher",
+  "title": "Automated B2B - Salesforce Bot Researcher",
+  "volume": 1200,
+  "tools": [
+   "Salesforce"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for Salesforce product research, in its own dedicated chat. Walk me through connecting to the Bot Dire...",
+  "existing_preset": null,
+  "ext": [
+   "Salesforce"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-salesforce-bot-scout",
+  "title": "Automated B2B - Salesforce Bot Scout",
+  "volume": 1200,
+  "tools": [
+   "Salesforce"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for Salesforce product research. Walk me through connecting the Bot Directory, then configure it: find...",
+  "existing_preset": null,
+  "ext": [
+   "Salesforce"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-salesforce-report-builder-agent",
+  "title": "Automated B2B - Salesforce Report Builder Agent",
+  "volume": 1200,
+  "tools": [
+   "Salesforce"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me I can ask for pipeline answers. Walk me through connecting Salesforce, then configure it: when I ask an opportunity ...",
+  "existing_preset": null,
+  "ext": [
+   "Salesforce"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-trust-center-deal-desk-agent",
+  "title": "Automated B2B - Trust Center Deal Desk Agent",
+  "volume": 1200,
+  "tools": [
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot that handles customer Trust Center requests. Walk me through connecting Comp AI and Slack, then ask when an NDA is required...",
+  "existing_preset": null,
+  "ext": [
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "automated-b2b-win-loss-memo-agent",
+  "title": "Automated B2B - Win/Loss Memo Agent",
+  "volume": 1200,
+  "tools": [
+   "Gong",
+   "Notion"
+  ],
+  "verified": true,
+  "cats": [
+   "sales"
+  ],
+  "prompt": "Set up a new bot for me on a weekly schedule. Walk me through connecting Gong and Notion, then configure it: turn the week&#39;s calls into a wi...",
+  "existing_preset": "win-loss",
+  "ext": [
+   "Gong",
+   "Notion"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "autonomous-devops-codebase-hardening-auditor",
+  "title": "Autonomous DevOps - Codebase Hardening Auditor",
+  "volume": 1200,
+  "tools": [
+   "GitHub",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "Set up a new bot for me that audits a codebase that shipped fast and now needs hardening. Walk me through connecting GitHub, then configure ...",
+  "existing_preset": null,
+  "ext": [
+   "GitHub",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-engineering-agent-manager",
+  "title": "Autonomous DevOps - Engineering Agent Manager",
+  "volume": 1200,
+  "tools": [
+   "GitHub",
+   "Linear",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "Set up a new bot for me that manages a team of development bots in an engineering group chat. Walk me through connecting Linear and GitHub, ...",
+  "existing_preset": null,
+  "ext": [
+   "GitHub",
+   "Linear",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-game-developer-agent",
+  "title": "Autonomous DevOps - Game Developer Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "You are Game Developer. You playtest the game I am building, write precise fix notes for Cursor, and keep the loop moving. On each pass - Pl...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-game-development-engineer-agent",
+  "title": "Autonomous DevOps - Game Development Engineer Agent",
+  "volume": 1200,
+  "tools": [
+   "GitHub",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for help making software for platform games and 3D games, in its own dedicated chat. Walk me through c...",
+  "existing_preset": null,
+  "ext": [
+   "GitHub",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-linear-development-orchestrator",
+  "title": "Autonomous DevOps - Linear Development Orchestrator",
+  "volume": 1200,
+  "tools": [
+   "GitHub",
+   "Linear",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for parallel development work. Walk me through connecting Linear, GitHub, and Cursor Background Agents...",
+  "existing_preset": null,
+  "ext": [
+   "GitHub",
+   "Linear",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-multi-repository-dev-orchestrator",
+  "title": "Autonomous DevOps - Multi-Repository Dev Orchestrator",
+  "volume": 1200,
+  "tools": [
+   "GitHub"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "Set up a new bot for me in its own dedicated chat that orchestrates development work across multiple repositories. Walk me through connectin...",
+  "existing_preset": null,
+  "ext": [
+   "GitHub"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-multi-factor-frame-agent",
+  "title": "Autonomous DevOps - Multi-factor Frame Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "R Roster All Copied List / From X Multi-factor Frame sentiment, technicals, catalysts, options overlay, portfolio impact. finance from X Pos...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-pr-conflict-flagger-agent",
+  "title": "Autonomous DevOps - PR Conflict Flagger Agent",
+  "volume": 1200,
+  "tools": [
+   "GitHub",
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "Set up a new bot for me on our busy repo. Walk me through connecting GitHub and Slack, then schedule it: scan open pull requests for pairs t...",
+  "existing_preset": null,
+  "ext": [
+   "GitHub",
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "autonomous-devops-qa-watcher-agent",
+  "title": "Autonomous DevOps - QA Watcher Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "You are QA Watcher. You repeatedly test the apps I am building. Method - Keep a living checklist of critical flows (auth, pay, create,",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-remote-cli-development-planner-agent",
+  "title": "Autonomous DevOps - Remote CLI Development Planner Agent",
+  "volume": 1200,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "Set up a new bot for me that plans software work and delegates implementation to command-line coding agents on a remote machine. Walk me thr...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-repo-fixer-agent",
+  "title": "Autonomous DevOps - Repo Fixer Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "R Roster All Copied Catalog / Engineering Repo Fixer Read the repo, open issues, and file PRs one at a time through Cursor The builder patte...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-security-questionnaire-agent",
+  "title": "Autonomous DevOps - Security Questionnaire Agent",
+  "volume": 1200,
+  "tools": [
+   "Google Drive",
+   "Notion"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "Set up a new bot for me I can trigger whenever a questionnaire lands. Walk me through connecting Google Drive and Notion, then configure it:...",
+  "existing_preset": "security-questionnaire",
+  "ext": [
+   "Google Drive",
+   "Notion"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-tiered-alerts-agent",
+  "title": "Autonomous DevOps - Tiered Alerts Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "R Roster All Copied List / From X Tiered Alerts CRITICAL / HIGH / MEDIUM with one-sentence impact, why it moves, estimated range, invalidati...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-api-documenter-agent",
+  "title": "Autonomous DevOps - api-documenter Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "You are an API documentation expert. Generate comprehensive API documentation including: 1. Endpoint descriptions 2. Request/response schema...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-code-reviewer-agent",
+  "title": "Autonomous DevOps - code-reviewer Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "You are an expert code reviewer. Analyze the provided code and provide: 1. Potential bugs and issues 2. Security vulnerabilities 3. Performa...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-database-helper-agent",
+  "title": "Autonomous DevOps - database-helper Agent",
+  "volume": 1200,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "You are a database expert. Help with: 1. Writing efficient SQL queries 2. Database schema design 3. Query optimization 4. Index recommendati...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-debug-assistant",
+  "title": "Autonomous DevOps - debug-assistant",
+  "volume": 1200,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "You are a debugging expert. When provided with an error message and code context, help identify: 1. The root cause of the error 2. Why it&#39;s ...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-performance-optimizer",
+  "title": "Autonomous DevOps - performance-optimizer",
+  "volume": 1200,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "You are a performance optimization expert. Analyze code and provide: 1. Performance bottlenecks 2. Optimization opportunities 3. Algorithm i...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-report-generator",
+  "title": "Autonomous DevOps - report-generator",
+  "volume": 1200,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "You are a report generation expert. Create comprehensive reports with: 1. Executive summary 2. Data visualizations descriptions 3. Key findi...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-reportflow-mcp-agent",
+  "title": "Autonomous DevOps - reportflow-mcp Agent",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "Connect and query MCP Server reportflow-mcp. reportflow-mcp - MCP | Smithery MCPs Skills Docs Pricing Publish Login 🎉 Smithery is now a par...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-security-auditor",
+  "title": "Autonomous DevOps - security-auditor",
+  "volume": 1200,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "You are a security expert. Analyze code for: 1. SQL injection vulnerabilities 2. XSS (Cross-Site Scripting) risks 3. Authentication/authoriz...",
+  "existing_preset": "security-auditor",
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "autonomous-devops-test-generator",
+  "title": "Autonomous DevOps - test-generator",
+  "volume": 1200,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "engineering"
+  ],
+  "prompt": "You are a test generation expert. Given code, generate comprehensive tests including: 1. Unit tests for individual functions 2. Edge cases a...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-agent-news",
+  "title": "MCP Tool Server - Agent News",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server Agent News. Agent News - MCP | Smithery MCPs Skills Docs Pricing Publish Login 🎉 Smithery is now a part of Arc...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-agentery",
+  "title": "MCP Tool Server - Agentery",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server Agentery. Agentery - MCP | Smithery MCPs Skills Docs Pricing Publish Login 🎉 Smithery is now a part of Arcade....",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-context7-agent",
+  "title": "MCP Tool Server - Context7 Agent",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server Context7. Context7 - MCP | Smithery MCPs Skills Docs Pricing Publish Login 🎉 Smithery is now a part of Arcade....",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-continue-to-your-workspace-agent",
+  "title": "MCP Tool Server - Continue to your workspace Agent",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server Continue to your workspace. Sign in Continue to your workspace Email Continue with email OR Continue with Googl...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-exa-search-agent",
+  "title": "MCP Tool Server - Exa Search Agent",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server Exa Search. Exa Search - MCP | Smithery MCPs Skills Docs Pricing Publish Login 🎉 Smithery is now a part of Arc...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-hugging-face-agent",
+  "title": "MCP Tool Server - Hugging Face Agent",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server Hugging Face. Hugging Face - MCP | Smithery MCPs Skills Docs Pricing Publish Login 🎉 Smithery is now a part of...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-ibge-brasil-mcp-agent",
+  "title": "MCP Tool Server - IBGE Brasil MCP Agent",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server IBGE Brasil MCP. IBGE Brasil MCP - MCP | Smithery MCPs Skills Docs Pricing Publish Login 🎉 Smithery is now a p...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-keenable-web-search-agent",
+  "title": "MCP Tool Server - Keenable Web Search Agent",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server Keenable Web Search. Keenable Web Search - MCP | Smithery MCPs Skills Docs Pricing Publish Login 🎉 Smithery is...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-local-model-suitability-mcp-agent",
+  "title": "MCP Tool Server - Local Model Suitability MCP Agent",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server Local Model Suitability MCP. Local Model Suitability MCP - MCP | Smithery MCPs Skills Docs Pricing Publish Logi...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-medical-terminologies-mcp-agent",
+  "title": "MCP Tool Server - Medical Terminologies MCP Agent",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server Medical Terminologies MCP. Medical Terminologies MCP - MCP | Smithery MCPs Skills Docs Pricing Publish Login 🎉...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-niche-agent",
+  "title": "MCP Tool Server - Niche Agent",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server Niche. Niche - MCP | Smithery MCPs Skills Docs Pricing Publish Login 🎉 Smithery is now a part of Arcade.dev! R...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-onesignal-agent",
+  "title": "MCP Tool Server - OneSignal Agent",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server OneSignal. OneSignal - MCP | Smithery MCPs Skills Docs Pricing Publish Login 🎉 Smithery is now a part of Arcad...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-openzeppelin-agent",
+  "title": "MCP Tool Server - OpenZeppelin Agent",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server OpenZeppelin. OpenZeppelin - MCP | Smithery MCPs Skills Docs Pricing Publish Login 🎉 Smithery is now a part of...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-parallel-web-search-agent",
+  "title": "MCP Tool Server - Parallel Web Search Agent",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server Parallel Web Search. Parallel Web Search - MCP | Smithery MCPs Skills Docs Pricing Publish Login 🎉 Smithery is...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-simosphere-ai-agent",
+  "title": "MCP Tool Server - SIMOSphere AI Agent",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server SIMOSphere AI. SIMOSphere AI - MCP | Smithery MCPs Skills Docs Pricing Publish Login 🎉 Smithery is now a part ...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-tavily-agent",
+  "title": "MCP Tool Server - Tavily Agent",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server Tavily. Tavily - MCP | Smithery MCPs Skills Docs Pricing Publish Login 🎉 Smithery is now a part of Arcade.dev!...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-the-local-intel-agent",
+  "title": "MCP Tool Server - The Local Intel Agent",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server The Local Intel. The Local Intel - MCP | Smithery MCPs Skills Docs Pricing Publish Login 🎉 Smithery is now a p...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-ucp-gateway-agent",
+  "title": "MCP Tool Server - UCP Gateway Agent",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server UCP Gateway. UCP Gateway - MCP | Smithery MCPs Skills Docs Pricing Publish Login 🎉 Smithery is now a part of A...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-url-safety-validator-mcp-agent",
+  "title": "MCP Tool Server - URL Safety Validator MCP Agent",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server URL Safety Validator MCP. URL Safety Validator MCP - MCP | Smithery MCPs Skills Docs Pricing Publish Login 🎉 S...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "mcp-tool-server-servers-agent",
+  "title": "MCP Tool Server - servers Agent",
+  "volume": 1200,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "mcp-tools"
+  ],
+  "prompt": "Connect and query MCP Server servers. MCPs | Smithery MCPs Skills Docs Pricing Publish Login 🎉 Smithery is now a part of Arcade.dev! Read m...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-aeo-content-autopilot-agent",
+  "title": "AI Growth Engine - AEO Content Autopilot Agent",
+  "volume": 850,
+  "tools": [
+   "YouTube"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me I can trigger whenever I publish new source material or run weekly. Walk me through connecting YouTube, ClickFlow, G...",
+  "existing_preset": null,
+  "ext": [
+   "YouTube"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "ai-growth-engine-ai-youtube-thumbnail-generator",
+  "title": "AI Growth Engine - AI Youtube Thumbnail Generator",
+  "volume": 850,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "AI Youtube Thumbnail Generator AI Free &amp; Unlimited ⏰ Last Chance: Lock in 40% OFF on all premium plans. Upgrade Now → AISuperHub AI Tools Pr...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-account-growth-coach-agent",
+  "title": "AI Growth Engine - Account Growth Coach Agent",
+  "volume": 850,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for account growth, in its own dedicated chat. Walk me through connecting X, then configure it: review...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-ad-pacing-digest-agent",
+  "title": "AI Growth Engine - Ad Pacing Digest Agent",
+  "volume": 850,
+  "tools": [
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me that runs daily at 8:00am. Walk me through connecting Apple Search Ads and Slack, then configure it: post spend agai...",
+  "existing_preset": null,
+  "ext": [
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "ai-growth-engine-ad-test-backlog-agent",
+  "title": "AI Growth Engine - Ad Test Backlog Agent",
+  "volume": 850,
+  "tools": [
+   "Notion",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me on a weekly schedule. Walk me through connecting our ad platform and Notion, then configure it: scan ad performance,...",
+  "existing_preset": null,
+  "ext": [
+   "Notion",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "ai-growth-engine-article-idea-briefing-agent",
+  "title": "AI Growth Engine - Article Idea Briefing Agent",
+  "volume": 850,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me that runs daily. Walk me through connecting X, then configure it: look at what&#39;s resonating on my timeline and in my...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "ai-growth-engine-article-and-newsletter-writer-agent",
+  "title": "AI Growth Engine - Article and Newsletter Writer Agent",
+  "volume": 850,
+  "tools": [
+   "Gmail"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me I can trigger to write an article or newsletter. Walk me through connecting Google Docs, Gmail, and Squarespace, the...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-competitor-pricing-watch-agent",
+  "title": "AI Growth Engine - Competitor Pricing Watch Agent",
+  "volume": 850,
+  "tools": [
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me that checks every 6 hours. Walk me through connecting Slack, then configure it: watch the competitor pricing pages I...",
+  "existing_preset": null,
+  "ext": [
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-competitor-website-watch-agent",
+  "title": "AI Growth Engine - Competitor Website Watch Agent",
+  "volume": 850,
+  "tools": [
+   "Slack",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot that tells me when competitors make meaningful changes to their websites. Walk me through connecting ScreenshotOne and Slac...",
+  "existing_preset": null,
+  "ext": [
+   "Slack",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-content-collector-agent",
+  "title": "AI Growth Engine - Content Collector Agent",
+  "volume": 850,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "R Roster All Copied Catalog / Content Content Collector Collect ideas the audience already cares about, with the posts that prove it An idea...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-content-idea-generator",
+  "title": "AI Growth Engine - Content Idea Generator",
+  "volume": 850,
+  "tools": [
+   "X",
+   "YouTube"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for video and content ideas. Walk me through connecting YouTube and Google Trends, then configure it: ...",
+  "existing_preset": null,
+  "ext": [
+   "X",
+   "YouTube"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-content-planner-manager-agent",
+  "title": "AI Growth Engine - Content Planner Manager Agent",
+  "volume": 850,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for weekday plumbing-content planning and review, in its own dedicated chat. Walk me through connectin...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-content-request-fulfillment-agent",
+  "title": "AI Growth Engine - Content Request Fulfillment Agent",
+  "volume": 850,
+  "tools": [
+   "Gmail",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for content requests from a specific person. Walk me through connecting Gmail, Claude, and Google Docs...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-conversion-tracking-setup-agent",
+  "title": "AI Growth Engine - Conversion Tracking Setup Agent",
+  "volume": 850,
+  "tools": [
+   "LinkedIn",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me that gets conversion tracking working on my website using Converly. Walk me through connecting Converly (a new accou...",
+  "existing_preset": null,
+  "ext": [
+   "LinkedIn",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-episode-launch-crew-agent",
+  "title": "AI Growth Engine - Episode Launch Crew Agent",
+  "volume": 850,
+  "tools": [
+   "Google Drive",
+   "Slack",
+   "YouTube"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot that launches approved podcast episodes. Walk me through connecting Castos, the Google Drive folder where final audio lands...",
+  "existing_preset": null,
+  "ext": [
+   "Google Drive",
+   "Slack",
+   "YouTube"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-evergreen-content-flywheel-agent",
+  "title": "AI Growth Engine - Evergreen Content Flywheel Agent",
+  "volume": 850,
+  "tools": [
+   "Notion",
+   "Slack",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a weekly bot that finds strong evergreen posts worth reusing. Walk me through connecting FeedHive, Notion and Slack, then ask which a...",
+  "existing_preset": null,
+  "ext": [
+   "Notion",
+   "Slack",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "ai-growth-engine-google-ads-optimizer",
+  "title": "AI Growth Engine - Google Ads Optimizer",
+  "volume": 850,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me in its own dedicated chat that continuously improves my Google Ads account. Walk me through connecting Cursor and Go...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-linkedin-profile-audit-agent",
+  "title": "AI Growth Engine - LinkedIn Profile Audit Agent",
+  "volume": 850,
+  "tools": [
+   "LinkedIn",
+   "Notion",
+   "Slack",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me I can trigger when my profile goes stale. Walk me through connecting my LinkedIn session, Notion and Slack, then con...",
+  "existing_preset": null,
+  "ext": [
+   "LinkedIn",
+   "Notion",
+   "Slack",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-living-faq-agent",
+  "title": "AI Growth Engine - Living FAQ Agent",
+  "volume": 850,
+  "tools": [
+   "Gong",
+   "Notion"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me that runs every morning. Walk me through connecting Gong and the Notion FAQ page, then configure it: add the new que...",
+  "existing_preset": null,
+  "ext": [
+   "Gong",
+   "Notion"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "ai-growth-engine-marketing-calendar-sync-agent",
+  "title": "AI Growth Engine - Marketing Calendar Sync Agent",
+  "volume": 850,
+  "tools": [
+   "Notion"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me on a daily schedule. Walk me through connecting the global webinars Notion database and my calendar, then configure ...",
+  "existing_preset": null,
+  "ext": [
+   "Notion"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "ai-growth-engine-marketing-context-collector-agent",
+  "title": "AI Growth Engine - Marketing Context Collector Agent",
+  "volume": 850,
+  "tools": [
+   "Gmail",
+   "Notion",
+   "Slack",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me in its own dedicated chat that builds a complete, current context brief for my marketing decisions. Walk me through ...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "Notion",
+   "Slack",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-marketing-email-unsubscriber-agent",
+  "title": "AI Growth Engine - Marketing Email Unsubscriber Agent",
+  "volume": 850,
+  "tools": [
+   "Gmail"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for an unsubscribe sweep, in its own dedicated chat. Walk me through connecting Gmail, then scan the m...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-opportunity-field-researcher-agent",
+  "title": "AI Growth Engine - Opportunity Field Researcher Agent",
+  "volume": 850,
+  "tools": [
+   "Grok Chat",
+   "Web Search"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot I can ask to investigate opportunities from Trends.vc. Use my web browser and let me sign in if needed. Ask about my skills...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-podcast-clip-publisher-agent",
+  "title": "AI Growth Engine - Podcast Clip Publisher Agent",
+  "volume": 850,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me I can trigger with a podcast episode or feed. Walk me through connecting my podcast source, transcription tool, and ...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-podcast-guest-briefer-agent",
+  "title": "AI Growth Engine - Podcast Guest Briefer Agent",
+  "volume": 850,
+  "tools": [
+   "Gmail",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me I can trigger to prepare podcast guest briefs. Walk me through connecting Gmail and Google Docs, then find the guest...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-reddit-comment-finder-agent",
+  "title": "AI Growth Engine - Reddit Comment Finder Agent",
+  "volume": 850,
+  "tools": [
+   "Reddit",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me I can trigger to find Reddit conversations where I can provide useful comments. Walk me through connecting Reddit, t...",
+  "existing_preset": "reddit-comment-finder",
+  "ext": [
+   "Reddit",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-release-to-social-campaign-agent",
+  "title": "AI Growth Engine - Release To Social Campaign Agent",
+  "volume": 850,
+  "tools": [
+   "GitHub",
+   "Postiz",
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot that turns product releases into social campaigns. Walk me through connecting GitHub, Postiz and Slack, then ask which rele...",
+  "existing_preset": null,
+  "ext": [
+   "GitHub",
+   "Postiz",
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-reply-drafter-agent",
+  "title": "AI Growth Engine - Reply Drafter Agent",
+  "volume": 850,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me that finds replies worth writing on X. Walk me through connecting X, then configure it: look for higher-signal posts...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-seo-improver-agent",
+  "title": "AI Growth Engine - SEO Improver Agent",
+  "volume": 850,
+  "tools": [
+   "GitHub",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me. Walk me through connecting GitHub, DataForSEO and Google Search Console, then schedule it every 2 weeks: find pages...",
+  "existing_preset": null,
+  "ext": [
+   "GitHub",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "ai-growth-engine-seo-team-agent",
+  "title": "AI Growth Engine - SEO Team Agent",
+  "volume": 850,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me in its own dedicated chat to run a local SEO team. Walk me through connecting Grok, then create five roles—Head of S...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-saas-marketing-reviewer-agent",
+  "title": "AI Growth Engine - SaaS Marketing Reviewer Agent",
+  "volume": 850,
+  "tools": [
+   "GitHub",
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me in its own dedicated chat that keeps my SaaS marketing work consistent. Walk me through connecting Slack, GitHub, an...",
+  "existing_preset": null,
+  "ext": [
+   "GitHub",
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-scripter-orc-agent",
+  "title": "AI Growth Engine - Scripter Orc Agent",
+  "volume": 850,
+  "tools": [
+   "Notion",
+   "YouTube"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me I can trigger when I need a YouTube video script, in its own dedicated chat. Walk me through connecting Notion, then...",
+  "existing_preset": null,
+  "ext": [
+   "Notion",
+   "YouTube"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-short-form-content-creator-agent",
+  "title": "AI Growth Engine - Short-Form Content Creator Agent",
+  "volume": 850,
+  "tools": [
+   "CapCut",
+   "YouTube"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me I can trigger to create short-form content. Walk me through connecting YouTube and CapCut, then configure it: review...",
+  "existing_preset": null,
+  "ext": [
+   "CapCut",
+   "YouTube"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-social-content-operator-agent",
+  "title": "AI Growth Engine - Social Content Operator Agent",
+  "volume": 850,
+  "tools": [
+   "Google Drive",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me, in its own dedicated chat, that operates my social publishing through Delulu Social. Before configuring it, check w...",
+  "existing_preset": null,
+  "ext": [
+   "Google Drive",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-social-media-diet-agent",
+  "title": "AI Growth Engine - Social Media Diet Agent",
+  "volume": 850,
+  "tools": [
+   "LinkedIn",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me so I can stop opening social apps. Walk me through signing in to Instagram, LinkedIn, and X myself in your persisten...",
+  "existing_preset": null,
+  "ext": [
+   "LinkedIn",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-tweet-topic-scraper-agent",
+  "title": "AI Growth Engine - Tweet Topic Scraper Agent",
+  "volume": 850,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me I can trigger with a topic. Walk me through connecting X, then configure it: scrape recent tweets on the topic into ...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-viral-tweet-scout",
+  "title": "AI Growth Engine - Viral Tweet Scout",
+  "volume": 850,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me that scouts X for me. Walk me through connecting X, then configure it: find the viral and genuinely funny tweets in ...",
+  "existing_preset": "viral-tweet-scout",
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-voice-matched-drafts-agent",
+  "title": "AI Growth Engine - Voice-Matched Drafts Agent",
+  "volume": 850,
+  "tools": [
+   "LinkedIn",
+   "Notion",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me that drafts on weekdays. Walk me through connecting X, LinkedIn and Notion, let it learn my voice from my past posts...",
+  "existing_preset": null,
+  "ext": [
+   "LinkedIn",
+   "Notion",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-web-design-assistant",
+  "title": "AI Growth Engine - Web Design Assistant",
+  "volume": 850,
+  "tools": [
+   "Figma",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for website design work, in its own dedicated chat. Walk me through connecting Figma and Squarespace, ...",
+  "existing_preset": null,
+  "ext": [
+   "Figma",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-x-account-crew-agent",
+  "title": "AI Growth Engine - X Account Crew Agent",
+  "volume": 850,
+  "tools": [
+   "GitHub",
+   "Reddit",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me that runs my X account as a team of five agents. Walk me through connecting X, then configure the crew: an Ideator t...",
+  "existing_preset": null,
+  "ext": [
+   "GitHub",
+   "Reddit",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-x-strategist-agent",
+  "title": "AI Growth Engine - X Strategist Agent",
+  "volume": 850,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me that thinks about the long game on X, separate from my reply and article bots. Walk me through connecting X, then co...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-youtube-outlier-finder-agent",
+  "title": "AI Growth Engine - YouTube Outlier Finder Agent",
+  "volume": 850,
+  "tools": [
+   "YouTube"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me that researches YouTube. Walk me through connecting YouTube, then configure it: in the niches I care about, find the...",
+  "existing_preset": null,
+  "ext": [
+   "YouTube"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-youtube-research-analyst-agent",
+  "title": "AI Growth Engine - YouTube Research Analyst Agent",
+  "volume": 850,
+  "tools": [
+   "YouTube"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me that researches a topic on YouTube. Walk me through connecting YouTube, then configure it to scan the top relevant v...",
+  "existing_preset": null,
+  "ext": [
+   "YouTube"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-youtube-scriptwriter-agent",
+  "title": "AI Growth Engine - YouTube Scriptwriter Agent",
+  "volume": 850,
+  "tools": [
+   "X",
+   "YouTube"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "Set up a new bot for me I can trigger to write YouTube scripts. Walk me through connecting YouTube and Google Docs, then configure it: turn ...",
+  "existing_preset": null,
+  "ext": [
+   "X",
+   "YouTube"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-content-writer-agent",
+  "title": "AI Growth Engine - content-writer Agent",
+  "volume": 850,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "You are a professional content writer. Create content that: 1. Is engaging and well-structured 2. Follows SEO best practices 3. Matches the ...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-design-helper-agent",
+  "title": "AI Growth Engine - design-helper Agent",
+  "volume": 850,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "You are a design consultant. Provide design guidance for: 1. Color schemes and palettes 2. Layout and composition 3. Typography choices 4. U...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-poem-writer-agent",
+  "title": "AI Growth Engine - poem-writer Agent",
+  "volume": 850,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "You are a poet. Create poems that: 1. Follow requested style (sonnet, haiku, free verse, etc.) 2. Use vivid imagery and metaphors 3. Have rh...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-social-media-writer-agent",
+  "title": "AI Growth Engine - social-media-writer Agent",
+  "volume": 850,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "You are a social media content creator. Generate: 1. Engaging posts for various platforms 2. Hashtag suggestions 3. Visual content ideas 4. ...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-story-generator",
+  "title": "AI Growth Engine - story-generator",
+  "volume": 850,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "You are a creative writing assistant. Generate engaging stories that: 1. Have compelling characters and plot 2. Include vivid descriptions 3...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "ai-growth-engine-translation-assistant",
+  "title": "AI Growth Engine - translation-assistant",
+  "volume": 850,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "marketing"
+  ],
+  "prompt": "You are a professional translator. Translate text while: 1. Preserving meaning and context 2. Maintaining tone and style 3. Adapting cultura...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "enterprise-cx-support-reply-drafter-agent",
+  "title": "Enterprise CX - Support Reply Drafter Agent",
+  "volume": 850,
+  "tools": [
+   "Gmail",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "customer-success"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for support auto-replies. Walk me through connecting Gmail, then review incoming support messages, ide...",
+  "existing_preset": "support-reply",
+  "ext": [
+   "Gmail",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-accountingbot",
+  "title": "Executive AI - AccountingBot",
+  "volume": 850,
+  "tools": [
+   "Notion"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for accounting work on a schedule, in its own dedicated chat. Walk me through connecting Notion for my...",
+  "existing_preset": null,
+  "ext": [
+   "Notion"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "executive-ai-applicant-screener",
+  "title": "Executive AI - Applicant Screener",
+  "volume": 850,
+  "tools": [
+   "Gmail"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me. Walk me through connecting the Airtable applications table and Gmail, then configure it to run when I trigger it: r...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-autonomous-bot-fleet-chief-of-staff-agent",
+  "title": "Executive AI - Autonomous Bot Fleet Chief of Staff Agent",
+  "volume": 850,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "You are my Chief of Staff. You do not do specialist work yourself when a focused teammate exists. You route, sequence, and close loops. Prim...",
+  "existing_preset": "chief-of-staff",
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-blip-chief-of-staff-agent",
+  "title": "Executive AI - Blip Chief of Staff Agent",
+  "volume": 850,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me called Blip that I can trigger for chief-of-staff support, in its own dedicated chat. Walk me through connecting Gro...",
+  "existing_preset": "chief-of-staff",
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-bookkeeping-auditor",
+  "title": "Executive AI - Bookkeeping Auditor",
+  "volume": 850,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for a bookkeeping audit. Walk me through connecting my bookkeeping system, bank and credit-card record...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-bot-conflict-resolver",
+  "title": "Executive AI - Bot Conflict Resolver",
+  "volume": 850,
+  "tools": [
+   "Grok Chat",
+   "Web Search"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me in its own dedicated chat that resolves disagreements between my Grok bots. Walk me through connecting the bots and ...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-bot-fleet-auditor",
+  "title": "Executive AI - Bot Fleet Auditor",
+  "volume": 850,
+  "tools": [
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me on a weekly schedule to audit my other bots. Walk me through connecting Slack, then configure it: go through every b...",
+  "existing_preset": null,
+  "ext": [
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "executive-ai-bot-team-chief-of-staff",
+  "title": "Executive AI - Bot Team Chief of Staff",
+  "volume": 850,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me I can use as a single front door for managing my bot team, in its own dedicated chat. Walk me through connecting my ...",
+  "existing_preset": "chief-of-staff",
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-chain-fact-checker-agent",
+  "title": "Executive AI - Chain Fact Checker Agent",
+  "volume": 850,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me in its own dedicated chat that verifies the work of my Grok bots for factual inconsistencies and hallucinations befo...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-chief-of-staff-briefing-agent",
+  "title": "Executive AI - Chief of Staff Briefing Agent",
+  "volume": 850,
+  "tools": [
+   "Gmail",
+   "Google Calendar",
+   "Slack",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me in its own dedicated chat that acts as my SaaS chief of staff. Walk me through connecting Gmail, Google Calendar, Sl...",
+  "existing_preset": "chief-of-staff",
+  "ext": [
+   "Gmail",
+   "Google Calendar",
+   "Slack",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-chief-of-staff-front-door-agent",
+  "title": "Executive AI - Chief of Staff Front Door Agent",
+  "volume": 850,
+  "tools": [
+   "Grok Chat",
+   "Web Search"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me in its own dedicated chat that acts as the front door to my agent team. Let me describe a goal or task in plain lang...",
+  "existing_preset": "chief-of-staff",
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-community-ops-crew-agent",
+  "title": "Executive AI - Community Ops Crew Agent",
+  "volume": 850,
+  "tools": [
+   "Notion",
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me to run community ops on a weekly schedule. Walk me through connecting Luma, Slack and the Notion member database, th...",
+  "existing_preset": null,
+  "ext": [
+   "Notion",
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "executive-ai-contractor-quote-negotiator-agent",
+  "title": "Executive AI - Contractor Quote Negotiator Agent",
+  "volume": 850,
+  "tools": [
+   "Gmail",
+   "Google Sheets",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me I can trigger when I receive contractor quotes. Walk me through connecting Gmail, the relevant contractor websites, ...",
+  "existing_preset": "negotiator",
+  "ext": [
+   "Gmail",
+   "Google Sheets",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-drive-wiki-rebuilder-agent",
+  "title": "Executive AI - Drive Wiki Rebuilder Agent",
+  "volume": 850,
+  "tools": [
+   "Google Drive",
+   "Notion"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me I can point at a messy Drive folder. Walk me through connecting Google Drive and Notion, then configure it: rebuild ...",
+  "existing_preset": null,
+  "ext": [
+   "Google Drive",
+   "Notion"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-expense-manager-agent",
+  "title": "Executive AI - Expense Manager Agent",
+  "volume": 850,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "R Roster All Copied Catalog / Finance Expense Manager Pull receipts from mail, categorize spend, flag anything that needs a decision A quiet...",
+  "existing_preset": "expense-manager",
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-feature-ask-finder-agent",
+  "title": "Executive AI - Feature Ask Finder Agent",
+  "volume": 850,
+  "tools": [
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me I can trigger with a feature name. Walk me through connecting Slack, then configure it: search every channel for who...",
+  "existing_preset": "feature-ask-finder",
+  "ext": [
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-final-output-grader-agent",
+  "title": "Executive AI - Final Output Grader Agent",
+  "volume": 850,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me in its own dedicated chat that grades the final solutions produced by my Grok bot chain. Walk me through connecting ...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-forge-agent",
+  "title": "Executive AI - Forge Agent",
+  "volume": 850,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me I can trigger to complete hands-on development tasks such as clicking a deployment or capturing a screenshot, in its...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-journey-friction-pr-agent",
+  "title": "Executive AI - Journey Friction PR Agent",
+  "volume": 850,
+  "tools": [
+   "GitHub",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me that monitors customer journeys on my website and turns confirmed friction points or errors into draft pull requests...",
+  "existing_preset": null,
+  "ext": [
+   "GitHub",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-ledger-agent",
+  "title": "Executive AI - Ledger Agent",
+  "volume": 850,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for recurring finance administration, in its own dedicated chat. Walk me through connecting my self-ho...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-mail-delivery-troubleshooter-agent",
+  "title": "Executive AI - Mail Delivery Troubleshooter Agent",
+  "volume": 850,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me that investigates failed email deliveries and prepares the next action for a technician or customer. Walk me through...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-migration-ramp-watcher-agent",
+  "title": "Executive AI - Migration Ramp Watcher Agent",
+  "volume": 850,
+  "tools": [
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me to babysit a database migration ramp. Walk me through connecting Datadog and Slack, then configure it: at each ramp ...",
+  "existing_preset": null,
+  "ext": [
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-multi-app-operations-chief-of-staff-agent",
+  "title": "Executive AI - Multi-App Operations Chief of Staff Agent",
+  "volume": 850,
+  "tools": [
+   "Linear",
+   "Notion",
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me to act as my chief of staff, always on. Walk me through connecting Slack, Notion and Linear, then configure it: ever...",
+  "existing_preset": "chief-of-staff",
+  "ext": [
+   "Linear",
+   "Notion",
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "executive-ai-new-hire-ramp-plan-agent",
+  "title": "Executive AI - New Hire Ramp Plan Agent",
+  "volume": 850,
+  "tools": [
+   "Google Calendar",
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me I can trigger when someone new joins. Walk me through connecting Google Calendar and Slack, then configure it: study...",
+  "existing_preset": "new-hire-ramp",
+  "ext": [
+   "Google Calendar",
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-personal-cfo-agent",
+  "title": "Executive AI - Personal CFO Agent",
+  "volume": 850,
+  "tools": [
+   "Google Calendar"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me that runs a morning portfolio briefing. Walk me through connecting Plaid for my holdings and balances, Yahoo Finance...",
+  "existing_preset": null,
+  "ext": [
+   "Google Calendar"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-pipeline-ops-agent",
+  "title": "Executive AI - Pipeline Ops Agent",
+  "volume": 850,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "R Roster All Copied Catalog / GTM Pipeline Ops Keep CRM hygiene clean, flag stalls and commit risk, land a Monday scoreboard Straight from t...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-recruiting-reviewer-agent",
+  "title": "Executive AI - Recruiting Reviewer Agent",
+  "volume": 850,
+  "tools": [
+   "Ashby",
+   "Google Drive"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me. Walk me through connecting Ashby and the resume folder in Google Drive, then configure an on-demand run: sort appli...",
+  "existing_preset": null,
+  "ext": [
+   "Ashby",
+   "Google Drive"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-saas-cfo-monitor-agent",
+  "title": "Executive AI - SaaS CFO Monitor Agent",
+  "volume": 850,
+  "tools": [
+   "Gmail",
+   "QuickBooks",
+   "Stripe",
+   "X",
+   "Xero"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me in its own dedicated chat that acts as a lightweight CFO for my SaaS business. Walk me through connecting Stripe, Xe...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "QuickBooks",
+   "Stripe",
+   "X",
+   "Xero"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-startup-finances-bot",
+  "title": "Executive AI - Startup Finances Bot",
+  "volume": 850,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me in its own dedicated chat that I can use to monitor and update my startup finances. Walk me through connecting Nuvio...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-supply-chain-threat-sentinel",
+  "title": "Executive AI - Supply Chain Threat Sentinel",
+  "volume": 850,
+  "tools": [
+   "GitHub",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me I can trigger on every pull request or dependency update. Walk me through connecting GitHub and GitHub Actions, then...",
+  "existing_preset": null,
+  "ext": [
+   "GitHub",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-vfd-troubleshooter-agent",
+  "title": "Executive AI - VFD Troubleshooter Agent",
+  "volume": 850,
+  "tools": [
+   "Grok Chat",
+   "Web Search"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "Set up a new bot for me I can trigger when an industrial drive or VFD shows a fault. Walk me through connecting Grok and letting me upload p...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "executive-ai-finance-summarizer-agent",
+  "title": "Executive AI - finance-summarizer Agent",
+  "volume": 850,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "executive-ops"
+  ],
+  "prompt": "You are a financial advisor assistant. Analyze transaction data and provide: 1. Spending breakdown by category 2. Budget vs actual spending ...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "deep-market-intel-ausecon-mcp-abs-rba-and-apra-data-agent",
+  "title": "Deep Market Intel - AusEcon MCP - ABS RBA and APRA Data Agent",
+  "volume": 450,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "market-research"
+  ],
+  "prompt": "Connect and query MCP Server AusEcon MCP - ABS RBA and APRA Data. AusEcon MCP - ABS RBA and APRA Data - MCP | Smithery MCPs Skills Docs Pric...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": true,
+  "scheduled": false
+ },
+ {
+  "slug": "deep-market-intel-dc-hub-data-center-interconnection-capacity-intelligence-agent",
+  "title": "Deep Market Intel - DC Hub — Data Center, Interconnection &amp; Capacity Intelligence Agent",
+  "volume": 450,
+  "tools": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "verified": true,
+  "cats": [
+   "market-research"
+  ],
+  "prompt": "Connect and query MCP Server DC Hub — Data Center, Interconnection &amp; Capacity Intelligence. DC Hub — Data Center, Interconnection &amp; Capacity...",
+  "existing_preset": null,
+  "ext": [
+   "Model Context Protocol (MCP)",
+   "Remote Server"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "deep-market-intel-film-scan-metadata-fixer-agent",
+  "title": "Deep Market Intel - Film Scan Metadata Fixer Agent",
+  "volume": 450,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "market-research"
+  ],
+  "prompt": "Set up a new bot for me I can trigger on a folder of film scans. Walk me through connecting my scanned-image folder and ExifTool, then confi...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "deep-market-intel-ingested-bot",
+  "title": "Deep Market Intel - Ingested bot",
+  "volume": 450,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "market-research"
+  ],
+  "prompt": "Open on X Report Here&#39;s the setup: Give Grok Bot a list of every X account you care about. Define exactly what counts as news. Model launche...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "deep-market-intel-market-intelligence-agent",
+  "title": "Deep Market Intel - Market Intelligence Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "market-research"
+  ],
+  "prompt": "Open on X Report You are Grok Bot — an elite, always-on real-time market intelligence, surveillance, and portfolio management agent. You nev...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "deep-market-intel-quantify-uncertainty-agent",
+  "title": "Deep Market Intel - Quantify Uncertainty Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "market-research"
+  ],
+  "prompt": "R Roster All Copied List / From X Quantify Uncertainty confidence, impact ranges, base / bull / bear. finance from X Posted by @ mrfundman ....",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "deep-market-intel-research-watch-agent",
+  "title": "Deep Market Intel - Research Watch Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "market-research"
+  ],
+  "prompt": "R Roster All Copied Catalog / Research Research Watch Watch a short company list and alert only when something material changes Focused rese...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "deep-market-intel-swarm-research-agent",
+  "title": "Deep Market Intel - Swarm Research Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "market-research"
+  ],
+  "prompt": "R Roster All Copied Catalog / Research Swarm Research Fan out scouts, then force a brutal edit: throw away most of what you collected The Go...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "deep-market-intel-technology-study-guide-agent",
+  "title": "Deep Market Intel - Technology Study Guide Agent",
+  "volume": 450,
+  "tools": [
+   "Google Drive",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "market-research"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for studying technology. Walk me through connecting web search and Google Drive, then configure it: tu...",
+  "existing_preset": null,
+  "ext": [
+   "Google Drive",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "deep-market-intel-chart-suggestions-agent",
+  "title": "Deep Market Intel - chart-suggestions Agent",
+  "volume": 450,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "market-research"
+  ],
+  "prompt": "You are a data visualization expert. Suggest: 1. Appropriate chart types for data 2. Color schemes and styling 3. Best practices for clarity...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "deep-market-intel-data-analyst-agent",
+  "title": "Deep Market Intel - data-analyst Agent",
+  "volume": 450,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "market-research"
+  ],
+  "prompt": "You are a data analyst. Analyze provided data and: 1. Identify trends and patterns 2. Calculate key metrics and statistics 3. Suggest visual...",
+  "existing_preset": "data-analyst",
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "deep-market-intel-predictive-analyst-agent",
+  "title": "Deep Market Intel - predictive-analyst Agent",
+  "volume": 450,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "market-research"
+  ],
+  "prompt": "You are a predictive analytics expert. Analyze data and provide: 1. Trend forecasts 2. Predictive models 3. Confidence intervals 4. Scenario...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "enterprise-cx-account-expert-agent",
+  "title": "Enterprise CX - Account Expert Agent",
+  "volume": 450,
+  "tools": [
+   "Gmail",
+   "Gong",
+   "Granola",
+   "Slack",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "customer-success"
+  ],
+  "prompt": "Set up a new bot for me dedicated to one strategic account, in its own chat. Walk me through connecting Slack, Gmail, Gong and Granola, then...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "Gong",
+   "Granola",
+   "Slack",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "enterprise-cx-churn-early-warning-agent",
+  "title": "Enterprise CX - Churn Early Warning Agent",
+  "volume": 450,
+  "tools": [
+   "Salesforce",
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "customer-success"
+  ],
+  "prompt": "Set up a new bot for me on a daily schedule to forecast account health. Walk me through connecting Salesforce, PostHog and Slack, then confi...",
+  "existing_preset": null,
+  "ext": [
+   "Salesforce",
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "enterprise-cx-docs-self-serve-assistant",
+  "title": "Enterprise CX - Docs Self-Serve Assistant",
+  "volume": 450,
+  "tools": [
+   "Grok Chat",
+   "Web Search"
+  ],
+  "verified": true,
+  "cats": [
+   "customer-success"
+  ],
+  "prompt": "Set up a new bot for me that answers customer questions from our current documentation and reduces avoidable support tickets. Walk me throug...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "enterprise-cx-enablement-pack-builder-agent",
+  "title": "Enterprise CX - Enablement Pack Builder Agent",
+  "volume": 450,
+  "tools": [
+   "Gmail",
+   "Google Drive"
+  ],
+  "verified": true,
+  "cats": [
+   "customer-success"
+  ],
+  "prompt": "Set up a new bot for me I can trigger when a customer asks for enablement material. Walk me through connecting Gmail, Zoom and Google Drive,...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "Google Drive"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "enterprise-cx-qbr-pack-builder-agent",
+  "title": "Enterprise CX - QBR Pack Builder Agent",
+  "volume": 450,
+  "tools": [
+   "Salesforce",
+   "X",
+   "Zendesk"
+  ],
+  "verified": true,
+  "cats": [
+   "customer-success"
+  ],
+  "prompt": "Set up a new bot for me on a monthly schedule. Walk me through connecting Salesforce, Zendesk and Google Slides, then configure it: pull usa...",
+  "existing_preset": "qbr-pack-builder",
+  "ext": [
+   "Salesforce",
+   "X",
+   "Zendesk"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "enterprise-cx-support-autopilot-agent",
+  "title": "Enterprise CX - Support Autopilot Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Chat",
+   "Web Search"
+  ],
+  "verified": true,
+  "cats": [
+   "customer-success"
+  ],
+  "prompt": "Set up a new bot for me in its own dedicated chat that helps run customer support. Walk me through connecting my helpdesk software and suppo...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "enterprise-cx-support-desk-agent",
+  "title": "Enterprise CX - Support Desk Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "customer-success"
+  ],
+  "prompt": "You are Support Desk. You watch customer threads for refunds, missed deadlines, and escalation risk. Watch for - Refund / charge",
+  "existing_preset": "support-desk",
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "enterprise-cx-support-queue-pass-agent",
+  "title": "Enterprise CX - Support Queue Pass Agent",
+  "volume": 450,
+  "tools": [
+   "Slack",
+   "Zendesk"
+  ],
+  "verified": true,
+  "cats": [
+   "customer-success"
+  ],
+  "prompt": "Set up a new bot for me on an hourly schedule. Walk me through connecting Zendesk and Slack, then configure it: do a pass on the support que...",
+  "existing_preset": null,
+  "ext": [
+   "Slack",
+   "Zendesk"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "enterprise-cx-support-resolution-agent",
+  "title": "Enterprise CX - Support Resolution Agent",
+  "volume": 450,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "customer-success"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for customer support from my phone or laptop, in its own dedicated chat. Walk me through connecting Cl...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "enterprise-cx-support-ticket-fixer-agent",
+  "title": "Enterprise CX - Support Ticket Fixer Agent",
+  "volume": 450,
+  "tools": [
+   "GitHub",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "customer-success"
+  ],
+  "prompt": "Set up a new bot for me that runs when a support ticket arrives, in its own dedicated chat. Walk me through connecting Ferndesk, GitHub, Axi...",
+  "existing_preset": null,
+  "ext": [
+   "GitHub",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "enterprise-cx-ticket-drop-watcher-agent",
+  "title": "Enterprise CX - Ticket Drop Watcher Agent",
+  "volume": 450,
+  "tools": [
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "customer-success"
+  ],
+  "prompt": "Set up a new bot for me that watches for a ticket drop. Walk me through connecting Slack, then configure it: watch the AMC listing I give it...",
+  "existing_preset": null,
+  "ext": [
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "enterprise-cx-tickets-to-changelog-agent",
+  "title": "Enterprise CX - Tickets To Changelog Agent",
+  "volume": 450,
+  "tools": [
+   "Notion",
+   "X",
+   "Zendesk"
+  ],
+  "verified": true,
+  "cats": [
+   "customer-success"
+  ],
+  "prompt": "Set up a new bot for me on a weekly schedule. Walk me through connecting Zendesk and Notion, then configure it: read the week&#39;s support tick...",
+  "existing_preset": null,
+  "ext": [
+   "Notion",
+   "X",
+   "Zendesk"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "enterprise-cx-what-did-we-promise-agent",
+  "title": "Enterprise CX - What Did We Promise Agent",
+  "volume": 450,
+  "tools": [
+   "Google Drive",
+   "Salesforce",
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "customer-success"
+  ],
+  "prompt": "Set up a new bot for me I can ask about any account. Walk me through connecting Slack, Salesforce and the contracts folder in Google Drive, ...",
+  "existing_preset": "what-did-we-promise",
+  "ext": [
+   "Google Drive",
+   "Salesforce",
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-appointment-slot-watcher",
+  "title": "Personal AI Assistant - Appointment Slot Watcher",
+  "volume": 450,
+  "tools": [
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me that watches appointment calendars. Walk me through connecting Slack, then configure it: check the passport, visa or...",
+  "existing_preset": null,
+  "ext": [
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-biblical-accuracy-study-bot",
+  "title": "Personal AI Assistant - Biblical Accuracy Study Bot",
+  "volume": 450,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for Bible study. Walk me through connecting a Bible text or study resource and web search, then config...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-campsite-watcher",
+  "title": "Personal AI Assistant - Campsite Watcher",
+  "volume": 450,
+  "tools": [
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me that watches for campsite openings. Walk me through connecting Slack, then configure it: check recreation.gov and Re...",
+  "existing_preset": null,
+  "ext": [
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-charge-disputer",
+  "title": "Personal AI Assistant - Charge Disputer",
+  "volume": 450,
+  "tools": [
+   "Gmail"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me I can trigger when a charge is wrong. Walk me through connecting Gmail, then configure it: pull the receipt and the ...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-class-action-matcher",
+  "title": "Personal AI Assistant - Class Action Matcher",
+  "volume": 450,
+  "tools": [
+   "Gmail",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for a class-action claim search. Walk me through connecting Gmail and providing my statements and orde...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-contract-diff",
+  "title": "Personal AI Assistant - Contract Diff",
+  "volume": 450,
+  "tools": [
+   "Google Drive"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me I can hand two PDFs. Walk me through connecting Google Drive, then configure it: compare the old and new lease, poli...",
+  "existing_preset": null,
+  "ext": [
+   "Google Drive"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-email-purger",
+  "title": "Personal AI Assistant - Email Purger",
+  "volume": 450,
+  "tools": [
+   "Gmail",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for an email cleanout, in its own dedicated chat. Walk me through connecting Gmail, then configure it:...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-find-the-signal",
+  "title": "Personal AI Assistant - Find the Signal",
+  "volume": 450,
+  "tools": [
+   "Granola",
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Find the signal I&#39;m missing because it&#39;s buried across separate meetings and channels. Look across my recent conversations for a pattern tha...",
+  "existing_preset": null,
+  "ext": [
+   "Granola",
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-flight-check-in",
+  "title": "Personal AI Assistant - Flight Check-In",
+  "volume": 450,
+  "tools": [
+   "Gmail",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me that watches my inbox for flight confirmations. Walk me through connecting Gmail, then configure it: track each flig...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-fridge-to-dinner-plan",
+  "title": "Personal AI Assistant - Fridge To Dinner Plan",
+  "volume": 450,
+  "tools": [
+   "Grok Chat",
+   "Web Search"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me I can trigger with a photo of my fridge. Walk me through connecting Amazon, then configure it: figure out what I alr...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-gift-card-and-return-tracker",
+  "title": "Personal AI Assistant - Gift Card and Return Tracker",
+  "volume": 450,
+  "tools": [
+   "Gmail",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for a purchase-benefits audit, in its own dedicated chat. Walk me through connecting Gmail, then scan ...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-grocery-autopilot",
+  "title": "Personal AI Assistant - Grocery Autopilot",
+  "volume": 450,
+  "tools": [
+   "Google Calendar"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me that runs my grocery ordering, in its own dedicated chat. Walk me through signing into Amazon and Costco in your bro...",
+  "existing_preset": null,
+  "ext": [
+   "Google Calendar"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-home-services-autopilot",
+  "title": "Personal AI Assistant - Home Services Autopilot",
+  "volume": 450,
+  "tools": [
+   "Gmail",
+   "Google Calendar",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me I can trigger when something at home needs fixing, in its own dedicated chat. Walk me through connecting Photos, Hir...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "Google Calendar",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-household-coordinator",
+  "title": "Personal AI Assistant - Household Coordinator",
+  "volume": 450,
+  "tools": [
+   "Google Calendar",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me I can trigger each morning for household coordination. Walk me through connecting Google Calendar and Apple Messages...",
+  "existing_preset": null,
+  "ext": [
+   "Google Calendar",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-hypergrok-trading-desk",
+  "title": "Personal AI Assistant - HyperGrok Trading Desk",
+  "volume": 450,
+  "tools": [
+   "GitHub",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me called HyperGrok Trading Desk. Follow https://github.com/galleonlabs/hypergrok-trading-desk/blob/main/SETUP.md from ...",
+  "existing_preset": null,
+  "ext": [
+   "GitHub",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-inbox-marie-kondo",
+  "title": "Personal AI Assistant - Inbox Marie Kondo",
+  "volume": 450,
+  "tools": [
+   "Gmail",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me to be my digital Marie Kondo. Walk me through connecting Gmail, then configure it: clean up my inbox — archive the c...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-itinerary-sanity-checker",
+  "title": "Personal AI Assistant - Itinerary Sanity Checker",
+  "volume": 450,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me I can trigger by pasting or uploading a messy multi-city itinerary. Walk me through connecting Google Flights and Go...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-kindle-to-anki",
+  "title": "Personal AI Assistant - Kindle To Anki",
+  "volume": 450,
+  "tools": [
+   "Grok Chat",
+   "Web Search"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me that runs every morning. Walk me through connecting my Kindle highlights and Anki, then configure it: turn yesterday...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "personal-ai-assistant-lore-roast-advisor",
+  "title": "Personal AI Assistant - Lore Roast Advisor",
+  "volume": 450,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for a roast, helpful advice, or a lore question, in its own dedicated chat. Walk me through connecting...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-mail-cleanup-assistant",
+  "title": "Personal AI Assistant - Mail Cleanup Assistant",
+  "volume": 450,
+  "tools": [
+   "Gmail"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for a mail cleanout. Walk me through connecting all of my Gmail and Outlook accounts, then configure i...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-pizza-ordering-assistant",
+  "title": "Personal AI Assistant - Pizza Ordering Assistant",
+  "volume": 450,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me I can trigger when I want to order pizza. Walk me through connecting Pizza Hut and Papa John&#39;s, then configure it: a...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-pool-slot-grabber",
+  "title": "Personal AI Assistant - Pool Slot Grabber",
+  "volume": 450,
+  "tools": [
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me for the gym pool slots that are always booked. Walk me through connecting Slack, then configure it: watch the bookin...",
+  "existing_preset": null,
+  "ext": [
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-recipe-grocery-autopilot",
+  "title": "Personal AI Assistant - Recipe Grocery Autopilot",
+  "volume": 450,
+  "tools": [
+   "Grok Chat",
+   "Web Search"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me I can trigger by sending a recipe photo. Walk me through connecting my photo library and Whole Foods delivery, then ...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-relationship-coach",
+  "title": "Personal AI Assistant - Relationship Coach",
+  "volume": 450,
+  "tools": [
+   "Grok Chat",
+   "Web Search"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me called Relationship Coach, in its own private chat. Walk me through hooking it into the Bee API so it can read what ...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-school-form-filler",
+  "title": "Personal AI Assistant - School Form Filler",
+  "volume": 450,
+  "tools": [
+   "Gmail",
+   "Google Drive"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me for school and camp paperwork. Walk me through connecting Google Drive and Gmail, then configure it: when a new form...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "Google Drive"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-starlink-flight-finder",
+  "title": "Personal AI Assistant - Starlink Flight Finder",
+  "volume": 450,
+  "tools": [
+   "Google Calendar"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me I can trigger when I need to plan a trip. Walk me through connecting Google Flights, airline booking websites, and G...",
+  "existing_preset": null,
+  "ext": [
+   "Google Calendar"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-subscription-cancellation-advisor",
+  "title": "Personal AI Assistant - Subscription Cancellation Advisor",
+  "volume": 450,
+  "tools": [
+   "Gmail",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for a subscription audit, in its own dedicated chat. Walk me through connecting Gmail, then scan recei...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-subscription-pruner",
+  "title": "Personal AI Assistant - Subscription Pruner",
+  "volume": 450,
+  "tools": [
+   "Gmail"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for a cleanout. Walk me through connecting Gmail, then configure it: scrape my receipts into a list of...",
+  "existing_preset": "subscription-pruner",
+  "ext": [
+   "Gmail"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-system-health",
+  "title": "Personal AI Assistant - System Health",
+  "volume": 450,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "You are System Health. You do not do product work. You watch the Grok Bot desk itself. Watch for - Dead or expired connectors - A computer t...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-trip-concierge",
+  "title": "Personal AI Assistant - Trip Concierge",
+  "volume": 450,
+  "tools": [
+   "Gmail",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me as my personal travel concierge. Walk me through connecting Gmail so it can read my booking confirmations, then conf...",
+  "existing_preset": "trip-concierge",
+  "ext": [
+   "Gmail",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-trip-deck-builder",
+  "title": "Personal AI Assistant - Trip Deck Builder",
+  "volume": 450,
+  "tools": [
+   "Gmail"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me I can trigger with a destination and dates. Walk me through connecting Gmail and Google Slides, then configure it: f...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-wedding-planner",
+  "title": "Personal AI Assistant - Wedding Planner",
+  "volume": 450,
+  "tools": [
+   "Gmail",
+   "Notion"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me to run the logistics of a multi-day wedding. Walk me through connecting Gmail and Notion, then configure it: track e...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "Notion"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-health-tracker",
+  "title": "Personal AI Assistant - health-tracker",
+  "volume": 450,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "You are a health tracking assistant. Analyze activity data and: 1. Track daily/weekly activity patterns 2. Calculate calories burned and ste...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "personal-ai-assistant-icloud-bridge",
+  "title": "Personal AI Assistant - iCloud Bridge",
+  "volume": 450,
+  "tools": [
+   "Grok Chat",
+   "Web Search"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "Set up a new bot for me that acts as my iCloud bridge. Walk me through signing into iCloud in your browser and keeping that session alive, t...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "personal-ai-assistant-life-hack-generator",
+  "title": "Personal AI Assistant - life-hack-generator",
+  "volume": 450,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "personal-assistants"
+  ],
+  "prompt": "You are a life optimization expert. Generate personalized life hacks that: 1. Address specific user needs (health, finance, productivity) 2....",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-ai-art-prompt-generator",
+  "title": "Smart Workflow - AI Art Prompt Generator",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "AI Art Prompt Generator Free | Create Prompts for Midjourney &amp; DALL-E Free Tools Toggle Sidebar AI YouTube Thumbnail Generator AI Coloring B...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-ai-coloring-book-page-generator",
+  "title": "Smart Workflow - AI Coloring Book Page Generator",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "AISuperHub: Free AI Tools, Prompts &amp; Resources ⏰ Last Chance: Lock in 40% OFF on all premium plans. Upgrade Now → AISuperHub AI Tools Prompt...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-ai-image-creation-editing-tools-agent",
+  "title": "Smart Workflow - AI Image Creation &amp; Editing Tools Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "AI Image Creation &amp; Editing Tools | AI SuperHub ⏰ Last Chance: Lock in 40% OFF on all premium plans. Upgrade Now → AISuperHub AI Tools Promp...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-ai-image-upscaler-4k-agent",
+  "title": "Smart Workflow - AI Image Upscaler 4K Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "AISuperHub: Free AI Tools, Prompts &amp; Resources ⏰ Last Chance: Lock in 40% OFF on all premium plans. Upgrade Now → AISuperHub AI Tools Prompt...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-ai-infographic-maker-agent",
+  "title": "Smart Workflow - AI Infographic Maker Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "AISuperHub: Free AI Tools, Prompts &amp; Resources ⏰ Last Chance: Lock in 40% OFF on all premium plans. Upgrade Now → AISuperHub AI Tools Prompt...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-ai-logo-icon-generator",
+  "title": "Smart Workflow - AI Logo &amp; Icon Generator",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "AISuperHub: Free AI Tools, Prompts &amp; Resources ⏰ Last Chance: Lock in 40% OFF on all premium plans. Upgrade Now → AISuperHub AI Tools Prompt...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-ai-pet-photo-enhancer-agent",
+  "title": "Smart Workflow - AI Pet Photo Enhancer Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Free AI Pet Photo Enhancer | Create Professional Pet Portraits Free Tools Toggle Sidebar AI YouTube Thumbnail Generator AI Coloring Book Mak...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-ai-photo-cartoonizer-convert-image-to-cartoons-free-agent",
+  "title": "Smart Workflow - AI Photo Cartoonizer: Convert Image to Cartoons Free Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "AI Photo Cartoonizer: Convert Image to Cartoons Free Free Tools Toggle Sidebar AI YouTube Thumbnail Generator AI Coloring Book Maker AI Stic...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-ai-profile-photo-optimizer",
+  "title": "Smart Workflow - AI Profile Photo Optimizer",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Free AI Profile Photo Optimizer | Create the Perfect Headshot Online Free Tools Toggle Sidebar AI YouTube Thumbnail Generator AI Coloring Bo...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-ai-room-planner-designer-agent",
+  "title": "Smart Workflow - AI Room Planner &amp; Designer Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "AISuperHub: Free AI Tools, Prompts &amp; Resources ⏰ Last Chance: Lock in 40% OFF on all premium plans. Upgrade Now → AISuperHub AI Tools Prompt...",
+  "existing_preset": "designer",
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-ai-seamless-pattern-maker-agent",
+  "title": "Smart Workflow - AI Seamless Pattern Maker Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "AISuperHub: Free AI Tools, Prompts &amp; Resources ⏰ Last Chance: Lock in 40% OFF on all premium plans. Upgrade Now → AISuperHub AI Tools Prompt...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-ai-sticker-generator",
+  "title": "Smart Workflow - AI Sticker Generator",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "AI Sticker Generator AI Free &amp; Unlimited ⏰ Last Chance: Lock in 40% OFF on all premium plans. Upgrade Now → AISuperHub AI Tools Prompt Hub B...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-ai-text-remover-agent",
+  "title": "Smart Workflow - AI Text Remover Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "AISuperHub: Free AI Tools, Prompts &amp; Resources ⏰ Last Chance: Lock in 40% OFF on all premium plans. Upgrade Now → AISuperHub AI Tools Prompt...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-adobe-firefly-prompt-generator",
+  "title": "Smart Workflow - Adobe Firefly Prompt Generator",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Adobe Firefly Prompt Generator FREE | Prompts for Adobe Firefly AI Free Tools Toggle Sidebar AI YouTube Thumbnail Generator AI Coloring Book...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-agent-team-advisor",
+  "title": "Smart Workflow - Agent Team Advisor",
+  "volume": 450,
+  "tools": [
+   "Grok Chat",
+   "Web Search"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me I can trigger when my priorities change. Review my current goal, active projects, available specialist agents, and t...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-agent-work-logger",
+  "title": "Smart Workflow - Agent Work Logger",
+  "volume": 450,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me that automatically records my agents&#39; work in ClickUp so tasks and decisions do not get lost. Walk me through connec...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-automation-scout",
+  "title": "Smart Workflow - Automation Scout",
+  "volume": 450,
+  "tools": [
+   "GitHub",
+   "Linear",
+   "Notion",
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me that finds its own job. Walk me through connecting Slack, Notion, GitHub and Linear, then let it inspect my history ...",
+  "existing_preset": null,
+  "ext": [
+   "GitHub",
+   "Linear",
+   "Notion",
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-background-eraser-pro-agent",
+  "title": "Smart Workflow - Background Eraser Pro Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "AISuperHub: Free AI Tools, Prompts &amp; Resources ⏰ Last Chance: Lock in 40% OFF on all premium plans. Upgrade Now → AISuperHub AI Tools Prompt...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-best-ai-prompts-for-chatgpt-gemini-claude-more-agent",
+  "title": "Smart Workflow - Best AI Prompts for ChatGPT, Gemini, Claude &amp; More Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Best AI Prompts for ChatGPT, Gemini, Claude &amp; More ⏰ Last Chance: Lock in 40% OFF on all premium plans. Upgrade Now → AISuperHub AI Tools Pr...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-black-and-white-to-color-photo-colorizer-ai-agent",
+  "title": "Smart Workflow - Black and White to Color Photo Colorizer AI Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Black and White to Color Photo Colorizer AI Free Tools Toggle Sidebar AI YouTube Thumbnail Generator AI Coloring Book Maker AI Sticker Gener...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-bot-advisor",
+  "title": "Smart Workflow - Bot Advisor",
+  "volume": 450,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me whose only job is to create and manage my other bots. Configure it: when I describe something I want automated, it i...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-bot-directory-api-fetcher",
+  "title": "Smart Workflow - Bot Directory API Fetcher",
+  "volume": 450,
+  "tools": [
+   "Grok Chat",
+   "Web Search"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for a daily fetch. Walk me through connecting the BotDirectory API, then configure it to fetch the dir...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "smart-workflow-bot-directory-scout",
+  "title": "Smart Workflow - Bot Directory Scout",
+  "volume": 450,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me that runs daily. Walk me through connecting the Bot Directory API using its documentation, then configure it to fetc...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "smart-workflow-business-context-interviewer-agent",
+  "title": "Smart Workflow - Business Context Interviewer Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Chat",
+   "Web Search"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for a deep business interview. Walk me through configuring it to ask structured questions about my bus...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-calendar-desk-agent",
+  "title": "Smart Workflow - Calendar Desk Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "You are Calendar Desk. You protect the week. Rules - No meetings before the focus block I set. - Add travel / camera buffers around external...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-call-follow-up-nudge-agent",
+  "title": "Smart Workflow - Call Follow-Up Nudge Agent",
+  "volume": 450,
+  "tools": [
+   "Google Calendar",
+   "Slack",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me that triggers after my calls. Walk me through connecting Google Calendar and Slack, then configure it: thirty minute...",
+  "existing_preset": "call-followup",
+  "ext": [
+   "Google Calendar",
+   "Slack",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-claude-prompt-generator",
+  "title": "Smart Workflow - Claude Prompt Generator",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Claude Prompt Generator Free &amp; Advanced Prompts Free Tools Toggle Sidebar AI YouTube Thumbnail Generator AI Coloring Book Maker AI Sticker G...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-daily-briefing-agent",
+  "title": "Smart Workflow - Daily Briefing Agent",
+  "volume": 450,
+  "tools": [
+   "Google Calendar",
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me. Walk me through connecting my Google Calendar and Slack, then schedule it to run every weekday at 7:00am and send m...",
+  "existing_preset": "daily-brief",
+  "ext": [
+   "Google Calendar",
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "smart-workflow-daily-focus-adviser-agent",
+  "title": "Smart Workflow - Daily Focus Adviser Agent",
+  "volume": 450,
+  "tools": [
+   "Google Calendar",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me I can trigger each morning for a daily focus plan. Walk me through connecting Google Calendar, then configure it: re...",
+  "existing_preset": null,
+  "ext": [
+   "Google Calendar",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "smart-workflow-deepseek-prompt-generator-optimizer",
+  "title": "Smart Workflow - DeepSeek Prompt Generator / Optimizer",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "DeepSeek Prompt Generator / Optimizer Free &amp; Advanced Free Tools Toggle Sidebar AI YouTube Thumbnail Generator AI Coloring Book Maker AI Sti...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-email-briefing-assistant",
+  "title": "Smart Workflow - Email Briefing Assistant",
+  "volume": 450,
+  "tools": [
+   "Gmail",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me I can trigger each morning for an email briefing. Walk me through connecting Gmail, then configure it: review my inb...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-firstmate-agent",
+  "title": "Smart Workflow - Firstmate Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Chat",
+   "Web Search"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me called Firstmate in its own dedicated chat, the only agent I talk to. Walk me through configuring it in Grok and con...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-focus-time-defender-agent",
+  "title": "Smart Workflow - Focus Time Defender Agent",
+  "volume": 450,
+  "tools": [
+   "Google Calendar"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me on a weekly schedule. Walk me through connecting Google Calendar, then configure it: find me at least 90 minutes of ...",
+  "existing_preset": null,
+  "ext": [
+   "Google Calendar"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "smart-workflow-free-paid-ai-tools-directory-trending-and-most-popular-ones-agent",
+  "title": "Smart Workflow - Free &amp; Paid AI Tools Directory, trending and most popular ones. Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "AI Tools Directory | Find the Best AI Tools ⏰ Last Chance: Lock in 40% OFF on all premium plans. Upgrade Now → AISuperHub AI Tools Prompt Hu...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-free-blog-post-topic-generator-with-low-competition-and-high-volume",
+  "title": "Smart Workflow - Free Blog Post Topic Generator with low competition and high volume",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Free Blog Post Topic Generator | Low Competition &amp; High Volume Ideas Free Tools Toggle Sidebar AI YouTube Thumbnail Generator AI Coloring Bo...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-github-issue-drafter-agent",
+  "title": "Smart Workflow - GitHub Issue Drafter Agent",
+  "volume": 450,
+  "tools": [
+   "GitHub",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me that turns a rough bug report or feature idea into a clean GitHub issue. Walk me through connecting GitHub, then con...",
+  "existing_preset": "issue-drafter",
+  "ext": [
+   "GitHub",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-graphic-design-prompt-generator",
+  "title": "Smart Workflow - Graphic Design Prompt Generator",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Graphic Design Prompt Generator | Free AI Design Ideas Free Tools Toggle Sidebar AI YouTube Thumbnail Generator AI Coloring Book Maker AI St...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-grok-prompt-generator",
+  "title": "Smart Workflow - Grok Prompt Generator",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Grok Prompt Generator | Free Advanced Prompts for Grok AI Free Tools Toggle Sidebar AI YouTube Thumbnail Generator AI Coloring Book Maker AI...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-guide-agent",
+  "title": "Smart Workflow - Guide Agent",
+  "volume": 450,
+  "tools": [
+   "Gmail",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me I can trigger to prepare external email drafts, in its own dedicated chat. Walk me through connecting Gmail, then co...",
+  "existing_preset": "bobbot-guide",
+  "ext": [
+   "Gmail",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-important-email-triage-agent",
+  "title": "Smart Workflow - Important Email Triage Agent",
+  "volume": 450,
+  "tools": [
+   "Gmail"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me. Walk me through connecting Gmail, then schedule it to check every 30 minutes: label anything genuinely waiting on m...",
+  "existing_preset": "triage",
+  "ext": [
+   "Gmail"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "smart-workflow-inbox-brief-agent",
+  "title": "Smart Workflow - Inbox Brief Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "R Roster All Copied Catalog / Personal Inbox Brief Morning pass on Gmail: what needs a reply, what can wait, what is noise A 7am inbox summa...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-json-prompt-generator-for-veo-3",
+  "title": "Smart Workflow - JSON Prompt Generator for Veo 3",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "JSON Prompt Generator for Veo 3 | Create Cinematic AI Video Free Tools Toggle Sidebar AI YouTube Thumbnail Generator AI Coloring Book Maker ...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-job-scout",
+  "title": "Smart Workflow - Job Scout",
+  "volume": 450,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "You are Job Scout. You watch a list of AI / infra companies for roles that match my constraints. Default constraints (ask me to edit) - Remo...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-life-admin-agent",
+  "title": "Smart Workflow - Life Admin Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "R Roster All Copied Catalog / Personal Life Admin Track renewals, deliveries, returns, and warranties so nothing quietly expires The persona...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-metar-weather-watch-agent",
+  "title": "Smart Workflow - METAR Weather Watch Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Chat",
+   "Web Search"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me that watches the weather at my airports. Walk me through pointing it at Aviation Weather Center METARs for the field...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-meeting-prep-agent",
+  "title": "Smart Workflow - Meeting Prep Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "R Roster All Copied Catalog / Operations Meeting Prep Before each meeting: who, last time, and three questions to ask A brief that lands bef...",
+  "existing_preset": "meeting-prep",
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-meta-ai-prompt-generator-for-llama",
+  "title": "Smart Workflow - Meta AI Prompt Generator for Llama",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Meta AI Prompt Generator | Free Prompts for Llama AI Free Tools Toggle Sidebar AI YouTube Thumbnail Generator AI Coloring Book Maker AI Stic...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-midjourney-prompt-generator",
+  "title": "Smart Workflow - Midjourney Prompt Generator",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Free Midjourney Prompt Generator | Create Prompts with Parameters Free Tools Toggle Sidebar AI YouTube Thumbnail Generator AI Coloring Book ...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-morning-podcast-agent",
+  "title": "Smart Workflow - Morning Podcast Agent",
+  "volume": 450,
+  "tools": [
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me that runs before I wake up. Walk me through connecting Slack, then configure it: turn yesterday&#39;s important threads ...",
+  "existing_preset": null,
+  "ext": [
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-notam-briefer-agent",
+  "title": "Smart Workflow - NOTAM Briefer Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Chat",
+   "Web Search"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me that keeps me current on NOTAMs. Walk me through pointing it at FAA NOTAM Search for the airports and area I cover, ...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-nano-banana-image-generator",
+  "title": "Smart Workflow - Nano Banana Image Generator",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "AISuperHub: Free AI Tools, Prompts &amp; Resources ⏰ Last Chance: Lock in 40% OFF on all premium plans. Upgrade Now → AISuperHub AI Tools Prompt...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-nexus-coordinator-agent",
+  "title": "Smart Workflow - Nexus Coordinator Agent",
+  "volume": 450,
+  "tools": [
+   "Gmail",
+   "Google Calendar",
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me that coordinates recurring work and handoffs in its own dedicated chat. Walk me through connecting Gmail, Google Cal...",
+  "existing_preset": null,
+  "ext": [
+   "Gmail",
+   "Google Calendar",
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-notion-memory-keeper-agent",
+  "title": "Smart Workflow - Notion Memory Keeper Agent",
+  "volume": 450,
+  "tools": [
+   "Notion",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me I can trigger to maintain a dedicated Notion page. Walk me through connecting Notion, then configure it: capture the...",
+  "existing_preset": null,
+  "ext": [
+   "Notion",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-old-photo-restoration-ai-tool-free-agent",
+  "title": "Smart Workflow - Old Photo Restoration AI Tool Free Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Old Photo Restoration AI Tool Free | Repair &amp; Enhance Pictures Online Free Tools Toggle Sidebar AI YouTube Thumbnail Generator AI Coloring B...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-one-on-one-prep-agent",
+  "title": "Smart Workflow - One-On-One Prep Agent",
+  "volume": 450,
+  "tools": [
+   "Google Calendar",
+   "Granola",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me that preps my weekly manager sync. Walk me through connecting Granola and Google Calendar, then configure it: before...",
+  "existing_preset": null,
+  "ext": [
+   "Google Calendar",
+   "Granola",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "smart-workflow-open-source-ai-computer-science-guide-agent",
+  "title": "Smart Workflow - Open Source AI &amp; Computer Science Guide Agent",
+  "volume": 450,
+  "tools": [
+   "GitHub",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me I can trigger for discussions, explanations, and project guidance about open-source AI and computer science, in its ...",
+  "existing_preset": null,
+  "ext": [
+   "GitHub",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-podcast-summarizer-agent",
+  "title": "Smart Workflow - Podcast Summarizer Agent",
+  "volume": 450,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me I can trigger with a podcast episode or feed, in its own dedicated chat. Walk me through connecting my podcast sourc...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-remove-objects-from-photo-ai-tool-free-agent",
+  "title": "Smart Workflow - Remove Objects from Photo AI Tool Free Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Remove Objects from Photo AI Tool Free | Inpainting &amp; Object Remover Free Tools Toggle Sidebar AI YouTube Thumbnail Generator AI Coloring Bo...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-slack-noise-filter-agent",
+  "title": "Smart Workflow - Slack Noise Filter Agent",
+  "volume": 450,
+  "tools": [
+   "Slack",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me that watches my Slack. Walk me through connecting it, then configure it: filter the noise so I only get pinged for t...",
+  "existing_preset": "slack-noise-filter",
+  "ext": [
+   "Slack",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-slack-stand-in-agent",
+  "title": "Smart Workflow - Slack Stand-In Agent",
+  "volume": 450,
+  "tools": [
+   "Slack"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me that covers a Slack channel as my assistant. Walk me through connecting Slack, then let it learn my voice and my usu...",
+  "existing_preset": null,
+  "ext": [
+   "Slack"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-slides-desk-agent",
+  "title": "Smart Workflow - Slides Desk Agent",
+  "volume": 450,
+  "tools": [
+   "Grok Native Routine",
+   "Web Search",
+   "X Feed"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "R Roster All Copied Catalog / GTM Slides Desk Turn a brief or call note into a short deck in the house format A GTM specialist for the last ...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-sora-2-prompt-generator-free-video-prompts",
+  "title": "Smart Workflow - Sora 2 Prompt Generator Free video prompts",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Sora 2 Prompt Generator Free video prompts Free Tools Toggle Sidebar AI YouTube Thumbnail Generator AI Coloring Book Maker AI Sticker Genera...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-swarm-daily-summarizer-agent",
+  "title": "Smart Workflow - Swarm Daily Summarizer Agent",
+  "volume": 450,
+  "tools": [
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me in its own dedicated chat that gives me a daily digest of what my Grok bot swarm accomplished. Walk me through conne...",
+  "existing_preset": null,
+  "ext": [
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "smart-workflow-task-follow-up-monitor-agent",
+  "title": "Smart Workflow - Task Follow-Up Monitor Agent",
+  "volume": 450,
+  "tools": [
+   "Google Calendar",
+   "Slack",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me I can trigger when I give you a task that needs background work. Walk me through connecting Google Calendar, Slack, ...",
+  "existing_preset": null,
+  "ext": [
+   "Google Calendar",
+   "Slack",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-veo-3-prompt-generator",
+  "title": "Smart Workflow - Veo 3 Prompt Generator",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Veo 3 Prompt Generator | Free Cinematic Video Prompts Free Tools Toggle Sidebar AI YouTube Thumbnail Generator AI Coloring Book Maker AI Sti...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-vibe-coding-idea-generator",
+  "title": "Smart Workflow - Vibe Coding Idea Generator",
+  "volume": 450,
+  "tools": [
+   "Grok Prompt",
+   "Web UI"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Vibe Coding Idea Generator | Free SaaS &amp; App Ideas Free Tools Toggle Sidebar AI YouTube Thumbnail Generator AI Coloring Book Maker AI Sticke...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-writing-buddy-agent",
+  "title": "Smart Workflow - Writing Buddy Agent",
+  "volume": 450,
+  "tools": [
+   "Notion",
+   "X"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "Set up a new bot for me I can trigger whenever I need help writing, rewriting, editing, brainstorming, or improving content, in its own dedi...",
+  "existing_preset": null,
+  "ext": [
+   "Notion",
+   "X"
+  ],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-calendar-assistant",
+  "title": "Smart Workflow - calendar-assistant",
+  "volume": 450,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "You are a calendar management assistant. Help with: 1. Scheduling meetings based on availability 2. Finding optimal time slots 3. Detecting ...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-daily-planner-agent",
+  "title": "Smart Workflow - daily-planner Agent",
+  "volume": 450,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "You are a daily planning assistant. Create a personalized daily schedule that: 1. Incorporates existing calendar events 2. Allocates time fo...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": true
+ },
+ {
+  "slug": "smart-workflow-email-summarizer-agent",
+  "title": "Smart Workflow - email-summarizer Agent",
+  "volume": 450,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "You are an email summarization expert. Analyze the provided email(s) and create: 1. A concise summary (2-3 sentences) 2. Key action items (i...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-email-writer-agent",
+  "title": "Smart Workflow - email-writer Agent",
+  "volume": 450,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "You are an email writing assistant. Create professional emails that: 1. Are clear and concise 2. Match the appropriate tone (formal/casual) ...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-joke-teller-agent",
+  "title": "Smart Workflow - joke-teller Agent",
+  "volume": 450,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "You are a friendly joke teller. Provide: 1. Clean, appropriate jokes 2. Various joke types (puns, one-liners, stories) 3. Context-appropriat...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-meeting-summarizer-agent",
+  "title": "Smart Workflow - meeting-summarizer Agent",
+  "volume": 450,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "You are a meeting summarization expert. Analyze meeting notes/transcripts and provide: 1. Key discussion points 2. Decisions made 3. Action ...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-meme-generator",
+  "title": "Smart Workflow - meme-generator",
+  "volume": 450,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "You are a meme and humor expert. Create: 1. Meme ideas and captions 2. Funny scenarios and jokes 3. Light-hearted content 4. Pop culture ref...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-note-organizer-agent",
+  "title": "Smart Workflow - note-organizer Agent",
+  "volume": 450,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "You are a note organization expert. Transform unstructured notes into: 1. Hierarchical structure 2. Key points and sub-points 3. Action item...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-presentation-builder-agent",
+  "title": "Smart Workflow - presentation-builder Agent",
+  "volume": 450,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "You are a presentation expert. Create presentations that: 1. Have clear structure and flow 2. Include engaging content 3. Are tailored to th...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ },
+ {
+  "slug": "smart-workflow-task-manager-agent",
+  "title": "Smart Workflow - task-manager Agent",
+  "volume": 450,
+  "tools": [
+   "Grok 3/4 CLI",
+   "Slash Commands"
+  ],
+  "verified": true,
+  "cats": [
+   "productivity"
+  ],
+  "prompt": "You are a productivity task manager. Given a list of tasks, help: 1. Prioritize tasks by urgency and importance 2. Estimate time needed for ...",
+  "existing_preset": null,
+  "ext": [],
+  "is_mcp": false,
+  "scheduled": false
+ }
+]
