@@ -13,6 +13,8 @@
     "build": "turbo build",
     "check": "turbo check && pnpm check:scripts",
     "check:scripts": "tsc --noEmit -p scripts/tsconfig.json",
+    "archil:persist-check": "node scripts/archil-persist-check.mjs",
+    "cli-bridge": "node scripts/cli-reuse-bridge.mjs",
     "lint": "biome check .",
     "format": "biome check --write .",
     "db:generate": "pnpm --filter @bobbot/db generate",
@@ -37,6 +39,9 @@
     "workspace:pull": "node scripts/sync-workspace.mjs pull",
     "workspace:push": "node scripts/sync-workspace.mjs push",
     "workspace:watch": "node scripts/sync-workspace.mjs watch"
+  },
+  "dependencies": {
+    "disk": "1.8.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.13",

@@ -1,6 +1,7 @@
 export * from "./agent-connections.js";
 export * from "./agent-environment.js";
 export * from "./ai-consent.js";
+export * from "./archil-disk.js";
 export * from "./artifacts.js";
 export * from "./auto-review.js";
 export * from "./auto-review-factory.js";
