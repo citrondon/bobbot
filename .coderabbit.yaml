@@ -1,7 +1,99 @@
 # yaml-language-server: $schema=https://storage.googleapis.com/coderabbit_public_assets/schema.v2.json
+# CodeRabbit-Konfiguration fuer BobBot (citrondon/bobbot).
+# Regeln: deutsch, sachlich, ohne Emojis. Details: docs.coderabbit.ai/reference/configuration
+language: de
+tone_instructions: >-
+  Antworte knapp und sachlich auf Deutsch, ohne Emojis und ohne Floskeln.
+  Jeder Fund nennt Datei, Ursache und konkreten Fix. Wiederhole nicht den Diff.
+
 reviews:
+  profile: chill
+  request_changes_workflow: false
+  high_level_summary: true
+  poem: false
+  review_status: true
+  collapse_walkthrough: true
+  sequence_diagrams: false
+  estimate_code_review_effort: true
+  slop_detection:
+    enabled: true
+
+  auto_review:
+    enabled: true
+    drafts: false
+    base_branches:
+      - main
+
+  # Kein Review-Rauschen aus Build-Artefakten, Locks und Datendateien.
+  path_filters:
+    - "!**/node_modules/**"
+    - "!**/dist/**"
+    - "!**/build/**"
+    - "!**/coverage/**"
+    - "!pnpm-lock.yaml"
+    - "!**/*.jsonlz4"
+    # Bot-Presets sind Export-Daten (kein Code). Der Vitest-Test
+    # apps/api/src/bot-library-presets.test.ts prueft ihr Schema.
+    - "!bot-library/*.v1.json"
+    # Generiert aus bot-library/*.v1.json via scripts/gen-imported-templates.mjs.
+    - "!packages/core/src/imported-bot-templates.ts"
+
+  path_instructions:
+    - path: "apps/web/**"
+      instructions: |
+        React + Vite, TypeScript strict.
+        - Jeder neue benutzersichtbare Text laeuft ueber lingui (`t`-Makro oder `<Trans>`).
+          Fehlt die msgid oder die deutsche Uebersetzung in
+          `apps/web/src/locales/de/messages.po`, ist das ein Fund.
+        - Keine Secrets im Client: keine `VITE_*`-Variable mit Schluessel, Token oder Passwort.
+        - `dangerouslySetInnerHTML` nur mit geprueftem Inhalt.
+    - path: "apps/api/**"
+      instructions: |
+        Hono + tRPC.
+        - Eingaben validieren (Zod/Contracts), bevor sie Datenbank oder Modell erreichen.
+        - Nie Secrets, Tokens oder komplette Request-Bodies loggen.
+        - Fehler strukturiert zurueckgeben, kein Stacktrace an den Client.
+    - path: "packages/**"
+      instructions: |
+        Geteilte Pakete, Scope `@bobbot/*`.
+        - Exporte typisieren; kein `any`, kein `as unknown as`.
+        - Oeffentliche API nur ueber `src/index.ts` erweitern.
+    - path: "infra/**"
+      instructions: |
+        Compose + Sandbox-Images.
+        - Container als non-root, `no-new-privileges`, keine Secrets im Image.
+    - path: ".github/workflows/**"
+      instructions: |
+        GitHub Actions: Actions auf Commit-SHA pinnen, minimale `permissions`,
+        keine Secrets in Logs.
+    - path: "**/*.test.ts"
+      instructions: |
+        Vitest. Randfaelle und Fehlerpfade abdecken; keine Snapshots grosser Objekte.
+
   tools:
-    # Biome owns this repo's CSS (see biome.json and `pnpm lint`); Stylelint is not
-    # installed or configured here, so its findings are about rules we do not run.
+    # Biome besitzt Lint und Format dieses Repos (`pnpm lint`, biome.json).
+    biome:
+      enabled: true
+    # Stylelint ist nicht installiert; seine Regeln laufen hier nicht.
     stylelint:
       enabled: false
+    # Sicherheits- und Infra-Checks, die zum Stack passen.
+    gitleaks:
+      enabled: true
+    actionlint:
+      enabled: true
+    hadolint:
+      enabled: true
+
+chat:
+  auto_reply: true
+
+knowledge_base:
+  # AGENTS.md und CONTRIBUTING.md liegen im Repo und gelten als Review-Massstab.
+  code_guidelines:
+    enabled: true
+    filePatterns:
+      - "AGENTS.md"
+      - "CONTRIBUTING.md"
+  web_search:
+    enabled: true
