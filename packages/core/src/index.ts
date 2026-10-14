@@ -68,3 +68,7 @@ export * from "./trust-effects.js";
 export * from "./trust-runner.js";
 export * from "./user-error.js";
 export * from "./voice-chat-groups.js";
+export * from "./bot-templates.js";
+export * from "./sandbox-templates.js";
+export * from "./bot-library-import.js";
+export * from "./imported-bot-templates.js";
