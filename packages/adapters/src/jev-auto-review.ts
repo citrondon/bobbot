@@ -10,12 +10,11 @@ import { z } from "zod";
 import {
   autoReviewMinConfidence,
   autoReviewTimeoutMs,
-  DEFAULT_JEV_MODEL,
+  jevModel,
+  jevUrl,
   sanitizeAutoReviewReason,
 } from "./auto-review.js";
 import { readBodyCapped } from "./web-ssrf.js";
-
-const JEV_URL = "https://api.typesafe.ai/v1/systemone";
 const MAX_JSON_BYTES = 64_000;
 const MAX_TASK_CHARS = 400;
 const MAX_BOT_CHARS = 240;
@@ -40,6 +39,8 @@ export interface JevAutoReviewOptions {
   timeoutMs?: number;
   model?: string;
   minConfidence?: number;
+  /** Overrides `BOBBOT_JEV_URL`. Defaults to TypeSafe's endpoint. */
+  url?: string;
 }
 
 function truncate(value: string, max: number): string {
@@ -73,14 +74,16 @@ export class JevAutoReviewProvider implements AutoReviewProvider {
   private readonly timeoutMs: number;
   private readonly model: string;
   private readonly minConfidence: number;
+  private readonly url: string;
 
   constructor(options: JevAutoReviewOptions) {
     this.apiKey = options.apiKey.trim();
     if (!this.apiKey) throw new Error("TYPESAFE_API_KEY is required");
     this.fetchImpl = options.fetch ?? fetch;
     this.timeoutMs = options.timeoutMs ?? autoReviewTimeoutMs();
-    this.model = options.model?.trim() || DEFAULT_JEV_MODEL;
+    this.model = options.model?.trim() || jevModel();
     this.minConfidence = options.minConfidence ?? autoReviewMinConfidence();
+    this.url = options.url?.trim().replace(/\/+$/, "") || jevUrl();
   }
 
   describe(): AdapterDescriptor<AutoReviewCapabilities> {
@@ -97,7 +100,7 @@ export class JevAutoReviewProvider implements AutoReviewProvider {
     const boundedSignal = AbortSignal.any([context.signal, AbortSignal.timeout(this.timeoutMs)]);
     let response: Response;
     try {
-      response = await this.fetchImpl(JEV_URL, {
+      response = await this.fetchImpl(this.url, {
         method: "POST",
         redirect: "error",
         signal: boundedSignal,

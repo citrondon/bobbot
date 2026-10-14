@@ -1,5 +1,6 @@
 import type { AdapterContext, AutoReviewRequest } from "@bobbot/adapter-kit";
 import { describe, expect, it } from "vitest";
+import { jevModel, jevUrl, typesafeApiKey } from "./auto-review.js";
 import { JevAutoReviewProvider } from "./jev-auto-review.js";
 
 const context: AdapterContext = {
@@ -170,5 +171,53 @@ describe("JevAutoReviewProvider", () => {
     const body = JSON.parse(String(seen[0]?.body)) as { state: { args: Record<string, unknown> } };
     expect(body.state.args.password).toBe("[redacted]");
     expect(JSON.stringify(body)).not.toMatch(/sk-|secret-value/i);
+  });
+});
+
+describe("Jev endpoint selection", () => {
+  it("defaults to TypeSafe when no URL is configured", () => {
+    expect(jevUrl({})).toBe("https://api.typesafe.ai/v1/systemone");
+    expect(jevModel({})).toBe("jev-latest");
+    expect(typesafeApiKey({ TYPESAFE_API_KEY: "ts-key" })).toBe("ts-key");
+    // An OpenRouter key alone must not unlock Jev on the TypeSafe endpoint.
+    expect(typesafeApiKey({ OPENROUTER_API_KEY: "or-key" })).toBeUndefined();
+  });
+
+  it("routes through OpenRouter when BOBBOT_JEV_URL points there", () => {
+    const env = {
+      BOBBOT_JEV_URL: "https://openrouter.ai/api/alpha/decisions/",
+      OPENROUTER_API_KEY: "or-key",
+    };
+    expect(jevUrl(env)).toBe("https://openrouter.ai/api/alpha/decisions");
+    expect(jevModel(env)).toBe("typesafe/jev-1.13");
+    expect(typesafeApiKey(env)).toBe("or-key");
+  });
+
+  it("lets an explicit model override the endpoint default", () => {
+    expect(jevModel({ BOBBOT_JEV_URL: "https://openrouter.ai/api/alpha/decisions", BOBBOT_AUTO_REVIEW_MODEL: "typesafe/jev-router" }))
+      .toBe("typesafe/jev-router");
+  });
+
+  it("sends the configured URL and model", async () => {
+    const seen: Array<{ url: string; body: string }> = [];
+    const fetchMock: typeof fetch = async (url, init) => {
+      seen.push({ url: String(url), body: String(init?.body ?? "") });
+      return jsonResponse({
+        model: "typesafe/jev-1.13-20260917",
+        answers: { decision: { type: "choice", choice: "pass", confidence: 0.9 } },
+      });
+    };
+    const provider = new JevAutoReviewProvider({
+      apiKey: "or-key",
+      fetch: fetchMock,
+      url: "https://openrouter.ai/api/alpha/decisions",
+      model: "typesafe/jev-1.13",
+    });
+    await expect(provider.review(request, context)).resolves.toEqual({
+      decision: "pass",
+      model: "jev/typesafe/jev-1.13-20260917",
+    });
+    expect(seen[0]?.url).toBe("https://openrouter.ai/api/alpha/decisions");
+    expect(JSON.parse(seen[0]?.body ?? "{}").model).toBe("typesafe/jev-1.13");
   });
 });
