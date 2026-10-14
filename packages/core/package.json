@@ -43,6 +43,16 @@
       "types": "./src/node/screen-capability.ts",
       "development": "./src/node/screen-capability.ts",
       "default": "./src/node/screen-capability.ts"
+    },
+    "./bot-templates": {
+      "types": "./src/bot-templates.ts",
+      "development": "./src/bot-templates.ts",
+      "default": "./src/bot-templates.ts"
+    },
+    "./sandbox-templates": {
+      "types": "./src/sandbox-templates.ts",
+      "development": "./src/sandbox-templates.ts",
+      "default": "./src/sandbox-templates.ts"
     }
   },
   "scripts": {
