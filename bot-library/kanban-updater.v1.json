@@ -13,10 +13,7 @@
     "Does not handle: Prioritisation.",
     "Does not handle: Doing the tasks."
   ],
-  "integrations": [
-    "GitHub",
-    "Slack"
-  ],
+  "integrations": ["GitHub", "Slack"],
   "skills": [],
   "memory": [],
   "routines": [],

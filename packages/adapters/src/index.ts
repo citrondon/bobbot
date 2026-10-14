@@ -7,6 +7,7 @@ export * from "./auto-review.js";
 export * from "./auto-review-factory.js";
 export * from "./background-job-handlers.js";
 export * from "./billing-emulator.js";
+export * from "./bot-autoscale.js";
 export * from "./bot-avatar.js";
 export * from "./bot-messages.js";
 export {
@@ -80,7 +81,6 @@ export * from "./job-reconciler.js";
 export * from "./keyless-http-web.js";
 export * from "./mcp-connector.js";
 export * from "./mcp-emulator.js";
-
 export * from "./mcp-oauth.js";
 export * from "./mcp-server-tool.js";
 export * from "./mcp-transport.js";
@@ -139,4 +139,3 @@ export * from "./web-limits.js";
 export * from "./web-provider-factory.js";
 export * from "./web-ssrf.js";
 export * from "./web-tools.js";
-export * from "./bot-autoscale.js";

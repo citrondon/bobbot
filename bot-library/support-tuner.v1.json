@@ -12,9 +12,7 @@
     "Does not handle: Editing the KB without approval — the one gate David keeps even at \"run\".",
     "Does not handle: Answering tickets."
   ],
-  "integrations": [
-    "GitHub"
-  ],
+  "integrations": ["GitHub"],
   "skills": [],
   "memory": [],
   "routines": [],

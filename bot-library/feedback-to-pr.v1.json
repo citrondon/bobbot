@@ -14,9 +14,7 @@
     "Does not handle: Unconfirmed feedback (see triage / validator).",
     "Does not handle: Merging in production without the verification skill passing."
   ],
-  "integrations": [
-    "GitHub"
-  ],
+  "integrations": ["GitHub"],
   "skills": [],
   "memory": [],
   "routines": [],

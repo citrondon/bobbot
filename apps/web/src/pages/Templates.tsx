@@ -1,6 +1,6 @@
-import { Trans, useLingui } from "@lingui/react/macro";
 import { getAllBotTemplates } from "@bobbot/core/bot-templates";
 import { Button } from "@bobbot/ui-web";
+import { Trans, useLingui } from "@lingui/react/macro";
 import { ArrowLeft, Crown, Filter, Search, ShoppingBag, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { BotTemplateLibrary } from "../components/BotTemplateLibrary";

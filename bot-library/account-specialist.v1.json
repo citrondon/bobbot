@@ -13,10 +13,7 @@
     "Does not handle: Other accounts.",
     "Does not handle: Sending anything — drafts go through the chief."
   ],
-  "integrations": [
-    "Slack",
-    "Notion"
-  ],
+  "integrations": ["Slack", "Notion"],
   "skills": [],
   "memory": [],
   "routines": [],

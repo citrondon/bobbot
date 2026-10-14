@@ -1,10 +1,10 @@
-import { Trans, useLingui } from "@lingui/react/macro";
 import {
   type BotTemplate,
   getAllBotTemplates,
   getBotTemplatesBySource,
 } from "@bobbot/core/bot-templates";
 import { Button, Card, CardContent, CardHeader, CardTitle } from "@bobbot/ui-web";
+import { Trans, useLingui } from "@lingui/react/macro";
 import { Crown, ExternalLink, Filter, Search, ShoppingBag, Zap } from "lucide-react";
 import { useMemo, useState } from "react";
 

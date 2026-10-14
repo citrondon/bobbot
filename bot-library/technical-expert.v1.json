@@ -14,9 +14,7 @@
     "Does not handle: Sharing implementation detail externally — steered to never release IP.",
     "Does not handle: Product roadmap answers."
   ],
-  "integrations": [
-    "Slack"
-  ],
+  "integrations": ["Slack"],
   "skills": [],
   "memory": [],
   "routines": [],

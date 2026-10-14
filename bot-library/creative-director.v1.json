@@ -14,9 +14,7 @@
     "Does not handle: Shipping assets into the product — the engineer does that.",
     "Does not handle: Brand strategy."
   ],
-  "integrations": [
-    "Notion"
-  ],
+  "integrations": ["Notion"],
   "skills": [],
   "memory": [],
   "routines": [],

@@ -12,9 +12,7 @@
     "Does not handle: Doing the work.",
     "Does not handle: Final calls — it proposes an order."
   ],
-  "integrations": [
-    "Notion"
-  ],
+  "integrations": ["Notion"],
   "skills": [],
   "memory": [],
   "routines": [],

@@ -13,9 +13,7 @@
     "Does not handle: Removing genuine why-comments (licence headers, non-obvious invariants).",
     "Does not handle: Fixing the workarounds it finds — it flags them."
   ],
-  "integrations": [
-    "GitHub"
-  ],
+  "integrations": ["GitHub"],
   "skills": [],
   "memory": [],
   "routines": [],

@@ -15,8 +15,10 @@ const clean = templates.map(({ _dropped, ...t }) => t);
 
 const banner = [
   "// AUTOGENERIERT von scripts/gen-imported-templates.mjs — nicht von Hand editieren.",
-  "// Quelle: bot-library/*.v1.json (via build/bot-library-compiled.json, " + clean.length + " Templates).",
-  '// Regenerieren: node scripts/gen-imported-templates.mjs',
+  "// Quelle: bot-library/*.v1.json (via build/bot-library-compiled.json, " +
+    clean.length +
+    " Templates).",
+  "// Regenerieren: node scripts/gen-imported-templates.mjs",
   'import type { BotTemplate } from "./bot-templates.js";',
   "",
   "export const IMPORTED_BOT_TEMPLATES: BotTemplate[] = " + JSON.stringify(clean, null, 2) + ";",

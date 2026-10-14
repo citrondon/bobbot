@@ -9,25 +9,28 @@ let s = readFileSync(S, "utf8");
 if (s.includes('data-testid="open-bot-templates"')) {
   console.log("Shell.tsx: Knopf schon da.");
 } else {
-  const anchor = "              <Library size={15} strokeWidth={1.8} aria-hidden=\"true\" />\n            </button>";
+  const anchor =
+    '              <Library size={15} strokeWidth={1.8} aria-hidden="true" />\n            </button>';
   const count = s.split(anchor).length - 1;
   if (count !== 1) {
     console.error("ABBRUCH: Anker " + count + "x gefunden (erwartet 1). Keine Aenderung.");
     process.exit(1);
   }
-  const button = anchor + "\n" +
+  const button =
+    anchor +
+    "\n" +
     "            <button\n" +
-    "              type=\"button\"\n" +
-    "              className=\"app-no-drag flex h-7 w-7 items-center justify-center rounded-full text-muted-foreground/70 hover:text-foreground/75\"\n" +
+    '              type="button"\n' +
+    '              className="app-no-drag flex h-7 w-7 items-center justify-center rounded-full text-muted-foreground/70 hover:text-foreground/75"\n' +
     "              aria-label={t`Bot templates`}\n" +
     "              title={t`Bot templates`}\n" +
-    "              data-testid=\"open-bot-templates\"\n" +
+    '              data-testid="open-bot-templates"\n' +
     "              onClick={() => {\n" +
     "                setMobileSidebarOpen(false);\n" +
-    "                navigate(\"/templates\");\n" +
+    '                navigate("/templates");\n' +
     "              }}\n" +
     "            >\n" +
-    "              <Grid size={15} strokeWidth={1.8} aria-hidden=\"true\" />\n" +
+    '              <Grid size={15} strokeWidth={1.8} aria-hidden="true" />\n' +
     "            </button>";
   s = s.replace(anchor, button);
   writeFileSync(S, s);

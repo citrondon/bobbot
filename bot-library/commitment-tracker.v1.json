@@ -12,9 +12,7 @@
     "Does not handle: Chasing external people itself — it drafts a nudge for you.",
     "Does not handle: Deciding a promise is no longer needed."
   ],
-  "integrations": [
-    "Slack"
-  ],
+  "integrations": ["Slack"],
   "skills": [],
   "memory": [],
   "routines": [],

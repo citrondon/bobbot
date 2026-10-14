@@ -14,9 +14,7 @@
     "Does not handle: Merging anything risky — it's the low-risk cleanup lane.",
     "Does not handle: Running during the day when people are shipping."
   ],
-  "integrations": [
-    "GitHub"
-  ],
+  "integrations": ["GitHub"],
   "skills": [],
   "memory": [],
   "routines": [],

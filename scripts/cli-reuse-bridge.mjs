@@ -1,5 +1,5 @@
-import http from "node:http";
 import { spawn } from "node:child_process";
+import http from "node:http";
 
 const PORT = parseInt(process.env.CLI_BRIDGE_PORT || "3128", 10);
 const HOST = "127.0.0.1";
@@ -173,7 +173,7 @@ function handleChatCompletions(req, res, body) {
               finish_reason: "stop",
             },
           ],
-        })
+        }),
       );
     });
 
@@ -184,7 +184,7 @@ function handleChatCompletions(req, res, body) {
           error: {
             message: `CLI tool ${execCmd} error: ${err.message}`,
           },
-        })
+        }),
       );
     });
   }

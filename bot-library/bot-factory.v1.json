@@ -14,9 +14,7 @@
     "Does not handle: Deleting bots without being asked.",
     "Does not handle: Sprawl — it should push back when a routine or an existing bot would do."
   ],
-  "integrations": [
-    "Slack"
-  ],
+  "integrations": ["Slack"],
   "skills": [],
   "memory": [],
   "routines": [],

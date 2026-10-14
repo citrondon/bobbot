@@ -62,8 +62,16 @@ export interface ImportResult extends BotTemplateLike {
 }
 
 const PALETTE = [
-  "#4f46e5", "#0ea5e9", "#10b981", "#f59e0b", "#ef4444",
-  "#8b5cf6", "#ec4899", "#14b8a6", "#f97316", "#84cc16",
+  "#4f46e5",
+  "#0ea5e9",
+  "#10b981",
+  "#f59e0b",
+  "#ef4444",
+  "#8b5cf6",
+  "#ec4899",
+  "#14b8a6",
+  "#f97316",
+  "#84cc16",
 ] as const;
 
 /** Dateiname "account-specialist.v1.json" -> id "account-specialist". */
@@ -87,10 +95,7 @@ export function tagsForId(id: string): string[] {
   return [...new Set(["imported", "bot-library", ...parts])];
 }
 
-export function convertLaptopExport(
-  raw: LaptopBotExport,
-  filename: string,
-): ImportResult {
+export function convertLaptopExport(raw: LaptopBotExport, filename: string): ImportResult {
   const id = idFromFilename(filename);
   const bot = raw.bot ?? ({} as LaptopBotExport["bot"]);
   return {

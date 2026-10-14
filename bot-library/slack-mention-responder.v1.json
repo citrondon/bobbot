@@ -13,10 +13,7 @@
     "Does not handle: Replying externally.",
     "Does not handle: Actions outside its mapped list — it asks."
   ],
-  "integrations": [
-    "Slack",
-    "Notion"
-  ],
+  "integrations": ["Slack", "Notion"],
   "skills": [],
   "memory": [],
   "routines": [],

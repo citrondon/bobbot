@@ -14,9 +14,7 @@
     "Does not handle: Triage of user feedback — that's the triage bot.",
     "Does not handle: Verification beyond CI — the playtester does that."
   ],
-  "integrations": [
-    "GitHub"
-  ],
+  "integrations": ["GitHub"],
   "skills": [],
   "memory": [],
   "routines": [],

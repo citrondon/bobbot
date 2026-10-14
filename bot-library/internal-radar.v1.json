@@ -12,9 +12,7 @@
     "Does not handle: Replying in those channels.",
     "Does not handle: External news (that's the digest / signal scanner)."
   ],
-  "integrations": [
-    "Slack"
-  ],
+  "integrations": ["Slack"],
   "skills": [],
   "memory": [],
   "routines": [],

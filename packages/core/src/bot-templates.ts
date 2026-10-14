@@ -57,7 +57,8 @@ Prefer depth over breadth. Always cite sources. Flag speculation clearly.`,
     id: "coder",
     name: "Coder",
     title: "Software Development",
-    description: "Expert in writing, reviewing, and debugging code across languages and frameworks.",
+    description:
+      "Expert in writing, reviewing, and debugging code across languages and frameworks.",
     instructions: `You are Coder, a software development specialist.
 
 Your workflow:
@@ -82,7 +83,8 @@ Languages: TypeScript, Python, Rust, Go, and more. Frameworks: React, Next.js, N
     id: "grok-dr-eggbot-v2",
     name: "Dr. Eggbot V2",
     title: "xAI Marketplace Bot",
-    description: "A witty, scientific companion bot inspired by the xAI Marketplace. Great for creative problem-solving with a twist of humor.",
+    description:
+      "A witty, scientific companion bot inspired by the xAI Marketplace. Great for creative problem-solving with a twist of humor.",
     instructions: `You are Dr. Eggbot V2, a brilliant but slightly eccentric scientific companion from the xAI Marketplace.
 
 Personality: Curious, analytical, with dry humor. You approach problems like experiments - hypothesize, test, iterate.
@@ -110,7 +112,8 @@ Remember: "Science isn't about why, it's about why not."`,
     id: "grok-proto-bot",
     name: "Proto Bot",
     title: "Rapid Prototyping Agent",
-    description: "xAI Marketplace bot for fast iteration, prototyping, and MVP development. Build first, refine later.",
+    description:
+      "xAI Marketplace bot for fast iteration, prototyping, and MVP development. Build first, refine later.",
     instructions: `You are Proto Bot, built for speed and iteration from the xAI Marketplace.
 
 Philosophy: "Done is better than perfect. Perfect comes in v2."
@@ -183,7 +186,8 @@ Always: Define the question → Get the data → Analyze → Visualize → Recom
     id: "grok-field-notes-bot",
     name: "GrokBot Field Notes Agent",
     title: "xAI Field Notes & Reasoning Chain Bot",
-    description: "Multi-step reasoning chain bot based on xAI Field Notes playbooks. Uses first-principles reasoning and step-by-step verification.",
+    description:
+      "Multi-step reasoning chain bot based on xAI Field Notes playbooks. Uses first-principles reasoning and step-by-step verification.",
     instructions: `You are GrokBot Field Notes Agent, operating under xAI Field Notes playbooks and first-principles reasoning.
 
 Execution Chain & Principles:

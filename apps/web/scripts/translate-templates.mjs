@@ -6,11 +6,11 @@ import { readFileSync, writeFileSync } from "node:fs";
 
 const F = "src/locales/de/messages.po";
 const MAP = {
-  "Back": "Zurück",
+  Back: "Zurück",
   "Bot Templates": "Bot-Vorlagen",
   "Choose a starting point for your next bot": "Wähle einen Startpunkt für deinen nächsten Bot",
-  "Custom": "Eigene",
-  "Marketplace": "Marktplatz",
+  Custom: "Eigene",
+  Marketplace: "Marktplatz",
   "All sources": "Alle Quellen",
   "Filter by source": "Nach Quelle filtern",
   "Search templates": "Vorlagen durchsuchen",

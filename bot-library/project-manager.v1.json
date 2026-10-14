@@ -15,9 +15,7 @@
     "Does not handle: Spend or budget decisions (Josh stopped short of launching paid campaigns).",
     "Does not handle: Being the chief of staff for everything — it owns one workflow, not the human's whole day."
   ],
-  "integrations": [
-    "Notion"
-  ],
+  "integrations": ["Notion"],
   "skills": [],
   "memory": [],
   "routines": [],

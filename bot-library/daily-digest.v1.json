@@ -12,9 +12,7 @@
     "Does not handle: Internal channels (internal radar).",
     "Does not handle: Replying to anything."
   ],
-  "integrations": [
-    "Slack"
-  ],
+  "integrations": ["Slack"],
   "skills": [],
   "memory": [],
   "routines": [],

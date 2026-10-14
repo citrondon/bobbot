@@ -15,9 +15,7 @@
     "Does not handle: Standards. It reads the playbook; it doesn't set it.",
     "Does not handle: Merging without proof."
   ],
-  "integrations": [
-    "GitHub"
-  ],
+  "integrations": ["GitHub"],
   "skills": [],
   "memory": [],
   "routines": [],

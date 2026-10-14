@@ -12,9 +12,7 @@
     "Does not handle: Replying to the customer.",
     "Does not handle: Resolving."
   ],
-  "integrations": [
-    "Slack"
-  ],
+  "integrations": ["Slack"],
   "skills": [],
   "memory": [],
   "routines": [],

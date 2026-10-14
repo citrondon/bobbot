@@ -13,9 +13,7 @@
     "Does not handle: Answering questions — that's the source-of-truth bot.",
     "Does not handle: Dumping everything. \"We don't want to dump all the information in there.\""
   ],
-  "integrations": [
-    "Notion"
-  ],
+  "integrations": ["Notion"],
   "skills": [],
   "memory": [],
   "routines": [],

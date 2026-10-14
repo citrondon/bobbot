@@ -13,11 +13,7 @@
     "Does not handle: Answering tickets.",
     "Does not handle: Changing the KB content."
   ],
-  "integrations": [
-    "GitHub",
-    "Slack",
-    "Notion"
-  ],
+  "integrations": ["GitHub", "Slack", "Notion"],
   "skills": [],
   "memory": [],
   "routines": [],

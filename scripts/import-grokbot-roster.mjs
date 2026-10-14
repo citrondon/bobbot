@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -15,7 +15,10 @@ function parseMarkdownRole(content, filename) {
   const titleLine = lines.find((l) => l.startsWith("# "));
   let rawName = titleLine ? titleLine.replace(/^#\s+/, "").trim() : slug;
   // Clean up title, e.g. "CI / Alert Auto-Fix (on-call bot)" -> "CI & Alert Auto-Fix"
-  rawName = rawName.replace(/\s*\([^)]*\)/g, "").replace(/\//g, "&").trim();
+  rawName = rawName
+    .replace(/\s*\([^)]*\)/g, "")
+    .replace(/\//g, "&")
+    .trim();
   const name = rawName || slug;
 
   // Category: **Category:** ...
@@ -40,7 +43,10 @@ function parseMarkdownRole(content, filename) {
 
   for (const line of lines) {
     if (line.startsWith("## ")) {
-      currentSection = line.replace(/^##\s+/, "").trim().toLowerCase();
+      currentSection = line
+        .replace(/^##\s+/, "")
+        .trim()
+        .toLowerCase();
       sections[currentSection] = [];
     } else {
       sections[currentSection].push(line);
@@ -92,8 +98,10 @@ function parseMarkdownRole(content, filename) {
   }
 
   // Instructions
-  const ownsText = owns.length > 0 ? owns.map((o) => `- ${o}`).join("\n") : `- Core tasks for ${name}`;
-  const doesNotOwnText = doesNotOwn.length > 0 ? doesNotOwn.map((d) => `- ${d}`).join("\n") : "- Out of scope tasks";
+  const ownsText =
+    owns.length > 0 ? owns.map((o) => `- ${o}`).join("\n") : `- Core tasks for ${name}`;
+  const doesNotOwnText =
+    doesNotOwn.length > 0 ? doesNotOwn.map((d) => `- ${d}`).join("\n") : "- Out of scope tasks";
 
   const instructions = `# ${name}
 
@@ -116,7 +124,11 @@ When the user first messages you without a task, introduce your specialty in one
   // Integrations
   const integrations = [];
   const fullText = content.toLowerCase();
-  if (fullText.includes("github") || fullText.includes("pr ") || fullText.includes("pull request")) {
+  if (
+    fullText.includes("github") ||
+    fullText.includes("pr ") ||
+    fullText.includes("pull request")
+  ) {
     integrations.push("GitHub");
   }
   if (fullText.includes("slack")) {
@@ -191,14 +203,15 @@ async function run() {
   }
 
   console.log(`Created ${createdCount} new presets, skipped ${skippedCount} existing.`);
-  console.log("Categories breakdown:", Object.fromEntries(
-    Object.entries(importedByCategory).map(([k, v]) => [k, v.length])
-  ));
+  console.log(
+    "Categories breakdown:",
+    Object.fromEntries(Object.entries(importedByCategory).map(([k, v]) => [k, v.length])),
+  );
 
   // Write mapping to a file for updating UI
   writeFileSync(
     path.join(__dirname, "imported-categories.json"),
-    JSON.stringify(importedByCategory, null, 2)
+    JSON.stringify(importedByCategory, null, 2),
   );
 }
 

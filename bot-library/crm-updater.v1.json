@@ -13,9 +13,7 @@
     "Does not handle: Changing stages itself.",
     "Does not handle: Forecast decisions."
   ],
-  "integrations": [
-    "Slack"
-  ],
+  "integrations": ["Slack"],
   "skills": [],
   "memory": [],
   "routines": [],

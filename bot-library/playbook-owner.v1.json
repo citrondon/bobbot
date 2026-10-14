@@ -14,10 +14,7 @@
     "Does not handle: Deciding standards — the human decides, via the chief.",
     "Does not handle: Letting other bots edit the playbook."
   ],
-  "integrations": [
-    "GitHub",
-    "Notion"
-  ],
+  "integrations": ["GitHub", "Notion"],
   "skills": [],
   "memory": [],
   "routines": [],

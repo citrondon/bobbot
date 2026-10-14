@@ -14,9 +14,7 @@
     "Does not handle: Deleting or archiving without a rule.",
     "Does not handle: Calendar decisions (unless it's also the chief)."
   ],
-  "integrations": [
-    "Slack"
-  ],
+  "integrations": ["Slack"],
   "skills": [],
   "memory": [],
   "routines": [],

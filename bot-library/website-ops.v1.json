@@ -12,9 +12,7 @@
     "Does not handle: Copy.",
     "Does not handle: App code — marketing site only."
   ],
-  "integrations": [
-    "GitHub"
-  ],
+  "integrations": ["GitHub"],
   "skills": [],
   "memory": [],
   "routines": [],

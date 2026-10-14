@@ -12,8 +12,16 @@ import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 const PALETTE = [
-  "#4f46e5", "#0ea5e9", "#10b981", "#f59e0b", "#ef4444",
-  "#8b5cf6", "#ec4899", "#14b8a6", "#f97316", "#84cc16",
+  "#4f46e5",
+  "#0ea5e9",
+  "#10b981",
+  "#f59e0b",
+  "#ef4444",
+  "#8b5cf6",
+  "#ec4899",
+  "#14b8a6",
+  "#f97316",
+  "#84cc16",
 ];
 
 function idFromFilename(filename) {
@@ -73,5 +81,11 @@ results.sort((a, b) => a.id.localeCompare(b.id));
 
 mkdirSync(path.dirname(out), { recursive: true });
 writeFileSync(out, JSON.stringify(results, null, 2));
-console.log("Konvertiert: " + results.length + " / " + files.length + (errors ? " (" + errors + " Fehler)" : ""));
+console.log(
+  "Konvertiert: " +
+    results.length +
+    " / " +
+    files.length +
+    (errors ? " (" + errors + " Fehler)" : ""),
+);
 console.log("Ausgabe: " + out);
