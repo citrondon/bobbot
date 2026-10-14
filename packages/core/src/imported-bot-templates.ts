@@ -1,5 +1,5 @@
 // AUTOGENERIERT von scripts/gen-imported-templates.mjs — nicht von Hand editieren.
-// Quelle: bot-library/compiled-templates.json (132 Templates).
+// Quelle: bot-library/*.v1.json (via build/bot-library-compiled.json, 132 Templates).
 // Regenerieren: node scripts/gen-imported-templates.mjs
 import type { BotTemplate } from "./bot-templates.js";
 

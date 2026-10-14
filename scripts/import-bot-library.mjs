@@ -8,7 +8,7 @@
 //
 // Die Reihenfolge im Output ist stabil (alphabetisch nach id), damit Diffs klein bleiben.
 
-import { readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 const PALETTE = [
@@ -55,9 +55,9 @@ function convert(raw, filename) {
 }
 
 const dir = process.argv[2] ?? "bot-library";
-const out = process.argv[3] ?? path.join(dir, "compiled-templates.json");
+const out = process.argv[3] ?? "build/bot-library-compiled.json";
 
-const files = readdirSync(dir).filter((f) => f.endsWith(".json") && f !== "compiled-templates.json");
+const files = readdirSync(dir).filter((f) => f.endsWith(".json"));
 const results = [];
 let errors = 0;
 for (const f of files) {
@@ -71,6 +71,7 @@ for (const f of files) {
 }
 results.sort((a, b) => a.id.localeCompare(b.id));
 
+mkdirSync(path.dirname(out), { recursive: true });
 writeFileSync(out, JSON.stringify(results, null, 2));
 console.log("Konvertiert: " + results.length + " / " + files.length + (errors ? " (" + errors + " Fehler)" : ""));
 console.log("Ausgabe: " + out);

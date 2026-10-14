@@ -6,7 +6,7 @@
 // Aufruf: node scripts/gen-imported-templates.mjs
 import { readFileSync, writeFileSync } from "node:fs";
 
-const IN = "bot-library/compiled-templates.json";
+const IN = "build/bot-library-compiled.json";
 const OUT = "packages/core/src/imported-bot-templates.ts";
 
 const templates = JSON.parse(readFileSync(IN, "utf8"));
@@ -15,7 +15,7 @@ const clean = templates.map(({ _dropped, ...t }) => t);
 
 const banner = [
   "// AUTOGENERIERT von scripts/gen-imported-templates.mjs — nicht von Hand editieren.",
-  "// Quelle: bot-library/compiled-templates.json (" + clean.length + " Templates).",
+  "// Quelle: bot-library/*.v1.json (via build/bot-library-compiled.json, " + clean.length + " Templates).",
   '// Regenerieren: node scripts/gen-imported-templates.mjs',
   'import type { BotTemplate } from "./bot-templates.js";',
   "",
