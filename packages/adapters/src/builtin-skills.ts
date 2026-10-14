@@ -84,6 +84,21 @@ const SKILLS: Array<{ name: string; description: string; body: string }> = [
 6. When a routine runs this, keep the chat message to the deltas and leave the full detail in the file.`,
   },
   {
+    name: "agent-reach",
+    description: "Research across platforms: use for any search, topic, question or link.",
+    body: `Research anything on the public web and go to the source platform, not the snippet. Use this whenever the user asks to research, search, look up, or compare something, or shares a URL.
+
+1. Search first: \`web_search\` with up to 10 results. For a research brief run two or three varied queries (different angles, languages, or date windows) before concluding. Follow every promising hit with \`web_fetch\` on the real page — a snippet is not a fact.
+2. When the user names a platform or shares its URL, route read-only through the same two tools:
+   - Reddit, Twitter/X, Facebook, Instagram, LinkedIn, V2EX: \`web_fetch\` the page (Reddit also works via its .json endpoints) for readable text; \`web_search\` with site: filters for discovery.
+   - YouTube, Bilibili, podcasts: \`web_search\` for episode, transcript or summary pages and \`web_fetch\` them. Audio transcription is not available in this sandbox.
+   - GitHub: \`web_search\` for repos, docs and issues; \`web_fetch\` READMEs and issue pages.
+   - Xiaohongshu, Xueqiu and Boss直聘 are login-gated: public tools only see snippets. Never invent content behind the wall; say plainly what is not reachable.
+3. If a page needs JavaScript or a login to render, switch to the browser tools on the bot's computer (\`browser_navigate\`, \`browser_snapshot\`, \`browser_act\`) and use \`request_takeover\` when the user must log in or solve a CAPTCHA. Never ask for protected values in chat.
+4. Prefer the official first-party page over aggregators and reposts. Track where every fact came from.
+5. Answer briefly: the finding, the URLs, and what was not reachable. For a long task save the full notes with \`write_file\` under research/<topic>/<YYYY-MM-DD>.md and leave a short summary in the chat.`,
+  },
+  {
     name: "Newsletter Desk",
     description: "Draft a weekly newsletter from saved links and notes.",
     body: `Build a weekly issue from links and notes that already exist, not from invented filler.
