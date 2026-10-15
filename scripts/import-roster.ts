@@ -27,12 +27,14 @@ type RosterEntry = { slug: string; name: string; model: string; toolkits: readon
 
 /** The roster this deployment runs — models and connector scopes as configured in production.
  *
- * Nine of the twelve carry no connector toolkit on purpose: they work with the builtin tools
+ * Eleven of the twelve carry no connector toolkit on purpose: they work with the builtin tools
  * (web_fetch, web_search, files, memory) and would otherwise drag every connected service's
- * tool list into their prompt. Measured: ~55 000 → ~11 000 input tokens per call. */
+ * tool list into their prompt. Measured on ExecutiveChief: 24 144 input + 24 808 cache-read
+ * tokens per call became 11 370 + 0, and a run went from 47–605 s to 17 s. Only Social Queue
+ * needs the connector toolkits, because its routines publish to LinkedIn and Instagram. */
 const ROSTER: readonly RosterEntry[] = [
-  { slug: "executive-chief", name: "ExecutiveChief", model: "kimi-k3", toolkits: SOCIAL },
-  { slug: "grok-coder", name: "GrokCoder", model: "kimi-k3", toolkits: SOCIAL },
+  { slug: "executive-chief", name: "ExecutiveChief", model: "kimi-k3", toolkits: NONE },
+  { slug: "grok-coder", name: "GrokCoder", model: "kimi-k3", toolkits: NONE },
   { slug: "social-queue", name: "Social Queue", model: "kimi-k3", toolkits: SOCIAL },
   { slug: "content-remix", name: "Content Remix", model: "kimi-k3", toolkits: NONE },
   { slug: "domain-engineer", name: "Domain Engineer", model: "kimi-k3", toolkits: NONE },

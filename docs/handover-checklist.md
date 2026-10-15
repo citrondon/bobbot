@@ -79,8 +79,8 @@ erst Schritt 3 erledigen.
 
 | Bot | Preset | Modell | Connector-Toolkits |
 |---|---|---|---|
-| ExecutiveChief | `executive-chief.v1.json` | `kimi-k3` | linkedin, instagram |
-| GrokCoder | `grok-coder.v1.json` | `kimi-k3` | linkedin, instagram |
+| ExecutiveChief | `executive-chief.v1.json` | `kimi-k3` | keine |
+| GrokCoder | `grok-coder.v1.json` | `kimi-k3` | keine |
 | Social Queue | `social-queue.v1.json` | `kimi-k3` | linkedin, instagram |
 | Content Remix | `content-remix.v1.json` | `kimi-k3` | keine |
 | Domain Engineer | `domain-engineer.v1.json` | `kimi-k3` | keine |
@@ -97,7 +97,12 @@ den Builtin-Werkzeugen (`web_fetch`, `web_search`, Dateien, Memory) und tragen s
 Werkzeuglisten aller verbundenen Dienste im Prompt. Gemessen: ~55 000 → ~11 000
 Input-Tokens pro Aufruf. Builtin-Werkzeuge sind vom Scope nicht betroffen.
 
-Nur die drei Social-Bots brauchen die Connector-Toolkits, weil sie wirklich veröffentlichen.
+Nur **Social Queue** braucht die Connector-Toolkits, weil seine Routinen wirklich
+veröffentlichen. ExecutiveChief und GrokCoder trugen die LinkedIn- und Instagram-Werkzeuge
+eine Zeit lang mit, ohne sie je zu benutzen: 24 144 Input + 24 808 Cache-Read-Tokens pro
+Aufruf wurden zu 11 370 + 0, und ein Lauf auf dem Chief-Thread fiel von 47–605 s auf 17 s.
+Aufgefallen ist es an den Cache-Read-Tokens in `usage/month` — genau dafür lohnt der Blick
+dort.
 
 ## 5. Routinen prüfen
 
