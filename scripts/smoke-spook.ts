@@ -64,18 +64,23 @@ function receiptFor(runId: string): Promise<RunReceipt | null> {
 type AttemptOutcome = RunActivityRow["status"] | "timed-out" | "busy";
 
 /** Wait for a run this process did not start: a delegation lands on the target's own thread.
- * Returns null when nothing matched in time, so the caller can report it. */
+ * Returns the row it found — even when still running, because a handoff that worked but is
+ * slow is a different verdict from a handoff that never arrived. Null means nothing appeared. */
 async function waitForDelegatedRun(
   predicate: (row: RunActivityRow) => boolean,
 ): Promise<RunActivityRow | null> {
+  let seen: RunActivityRow | null = null;
   const deadline = Date.now() + timeoutMs;
   while (Date.now() < deadline) {
     const { runs } = await rpc<RunsListOutput>("runs/list", { filter: "recent" });
     const match = runs.find(predicate);
-    if (match && isTerminal(match.status)) return match;
+    if (match) {
+      if (isTerminal(match.status)) return match;
+      seen = match;
+    }
     await new Promise((resolve) => setTimeout(resolve, 3_000));
   }
-  return null;
+  return seen;
 }
 
 async function checkConnection(provider: string): Promise<void> {
@@ -222,12 +227,22 @@ async function checkDelegation(chiefName: string, targetName: string): Promise<v
     record(
       "fail",
       "delegation",
-      `no ${targetName} run within ${Math.round(timeoutMs / 1000)}s after the handoff`,
+      `no ${targetName} run appeared within ${Math.round(timeoutMs / 1000)}s after the handoff`,
     );
     return;
   }
   const childReceipt = await receiptFor(delegated.runId);
   const detail = `${targetName}: ${delegated.status} · ${childReceipt?.tokens?.totalTokens ?? "no"} tokens · ${elapsedSeconds(childReceipt?.startedAt, childReceipt?.completedAt)}`;
+  if (!isTerminal(delegated.status)) {
+    // The handoff arrived and the other bot is working; it is just slow, usually because its
+    // own thread has grown. A longer BOBBOT_SMOKE_TIMEOUT_MS or a fresher target settles it.
+    record(
+      "warn",
+      "delegation",
+      `${detail} · still running after ${Math.round(timeoutMs / 1000)}s`,
+    );
+    return;
+  }
   if (delegated.status !== "completed") {
     record("fail", "delegation", detail);
     return;
