@@ -2,6 +2,13 @@
 
 Continue from a fresh checkout. Everything below is on `main` and pushed.
 
+**Status note (16.10.2026).** The model-provider work — the OpenAI-compatible
+transport fix for hostname endpoints, connector toolkit scoping, and the import
+scoping — sits on branch `citrondon/feat/social-automation` (PR #12) and reaches
+`main` only when that PR is merged. Pull `main` **after** the merge, or check out
+the branch; without it every bot on a public OpenAI-compatible endpoint fails with
+*"Connection error … undici dispatcher"*. Provider setup: `docs/spook-setup.md`.
+
 ## 1. Get running on the new machine
 
 ```bash
@@ -58,6 +65,24 @@ Alternative (no WSL): build the desktop app on Windows (`pnpm --filter @bobbot/d
 pick **This computer**, which runs the published images via Docker Compose itself
 (`docs/desktop-release.md`); or connect it to a server with **Existing instance**. Use this to
 *use* BobBot on Windows; for *source development* prefer WSL.
+
+## 1c. Model provider (SpooK api)
+
+The deployment runs its models through **SpooK api** (`api.spookapi.xyz`) as an
+OpenAI-compatible custom endpoint. Three things must line up — all in
+`docs/spook-setup.md`:
+
+1. `.env` needs `BOBBOT_OPENAI_COMPAT_ALLOW_PUBLIC=1`; without it every public
+   hostname is refused with *"Public model endpoints are blocked"*.
+2. `PI_DEFAULT_PROVIDER` / `PI_DEFAULT_MODEL` decide the deployment fallback
+   (history compaction, vision, the non-Jev Auto Review path). Point them at the
+   provider you actually use, otherwise those paths reach for a gateway you may
+   not have credit on.
+3. A custom connection carries exactly **one** model id. For more than one model,
+   connect the endpoint more than once.
+
+`docs/spook-setup.md` lists the live catalog, the verification commands, and the
+120 s / Cloudflare-524 latency behaviour.
 
 ## 2. What shipped
 
