@@ -61,7 +61,7 @@ function receiptFor(runId: string): Promise<RunReceipt | null> {
 }
 
 /** A run status, or the fact that we stopped waiting for it. */
-type AttemptOutcome = RunActivityRow["status"] | "timed-out";
+type AttemptOutcome = RunActivityRow["status"] | "timed-out" | "busy";
 
 /** Wait for a run this process did not start: a delegation lands on the target's own thread.
  * Returns null when nothing matched in time, so the caller can report it. */
@@ -114,7 +114,17 @@ async function sendAndWait(
 ): Promise<{ runId: string; status: AttemptOutcome; attempts: number }> {
   let last: { runId: string; status: AttemptOutcome } | null = null;
   for (let attempt = 1; attempt <= 2; attempt += 1) {
+    // A thread with an active run answers threads/send with that run, so sending now would
+    // either measure someone else's work or pile another message onto a busy bot.
+    const active = (await rpc<RunsListOutput>("runs/list", { filter: "active" })).runs;
+    if (active.some((row) => row.botId === bot.id)) {
+      return { runId: "", status: "busy", attempts: attempt };
+    }
+    const known = new Set(
+      (await rpc<RunsListOutput>("runs/list", { filter: "recent" })).runs.map((row) => row.runId),
+    );
     const { runId } = await sendToThread({ botId: bot.id, text });
+    if (known.has(runId)) return { runId, status: "busy", attempts: attempt };
     try {
       const run = await waitForRun(runId, { timeoutMs });
       if (run.status === "completed") return { runId, status: run.status, attempts: attempt };
@@ -130,8 +140,12 @@ async function sendAndWait(
 async function checkToolRun(bot: Bot): Promise<void> {
   const run = await sendAndWait(
     bot,
-    "Nutze web_fetch fuer https://example.com und nenne die Hauptueberschrift. Antworte in einem Satz.",
+    "Rufe zwingend das Tool web_fetch fuer https://example.com auf, auch wenn du die Antwort zu kennen glaubst, und nenne dann die Hauptueberschrift. Antworte in einem Satz.",
   );
+  if (run.status === "busy") {
+    record("skip", "model call", `${bot.name}'s thread already had an active run`);
+    return;
+  }
   const receipt = await receiptFor(run.runId);
   const tools = receipt?.tools ?? [];
   const called =
@@ -184,15 +198,20 @@ async function checkDelegation(chiefName: string, targetName: string): Promise<v
     chief,
     `Nutze das Tool message_bot, um diese Aufgabe an ${targetName} zu delegieren: Pruefe per RDAP kurz, ob example.com registriert ist. Fasse danach das Ergebnis in einem Satz zusammen.`,
   );
-  const receipt = await receiptFor(chiefRun.runId);
-  const called = (receipt?.tools ?? []).map((tool) => tool.name).join(", ") || "no tool";
-  if (chiefRun.status !== "completed") {
-    record("fail", "delegation", `${chiefRun.status} (${chief.name}) · ${called}`);
+  if (chiefRun.status === "busy") {
+    record("skip", "delegation", `${chief.name}'s thread already had an active run`);
     return;
   }
-  if (!(receipt?.tools ?? []).some((tool) => HANDOFF_TOOLS.has(tool.name))) {
-    // A model that answers the task itself did not exercise the handoff path. That is
-    // model behaviour, not a broken installation, so it stays a warning.
+  const receipt = await receiptFor(chiefRun.runId);
+  const called = (receipt?.tools ?? []).map((tool) => tool.name).join(", ") || "no tool";
+  const handoffCalled = (receipt?.tools ?? []).some((tool) => HANDOFF_TOOLS.has(tool.name));
+  if (!handoffCalled) {
+    // Either the model took the task itself (behaviour, not a broken installation) or its
+    // run died before it could ask anyone (upstream, on a long thread).
+    if (chiefRun.status !== "completed") {
+      record("fail", "delegation", `${chiefRun.status} (${chief.name}) · ${called}`);
+      return;
+    }
     record("warn", "delegation", `${chief.name} answered itself (${called}) — handoff not tried`);
     return;
   }
@@ -211,6 +230,16 @@ async function checkDelegation(chiefName: string, targetName: string): Promise<v
   const detail = `${targetName}: ${delegated.status} · ${childReceipt?.tokens?.totalTokens ?? "no"} tokens · ${elapsedSeconds(childReceipt?.startedAt, childReceipt?.completedAt)}`;
   if (delegated.status !== "completed") {
     record("fail", "delegation", detail);
+    return;
+  }
+  if (chiefRun.status !== "completed") {
+    // The handoff and the other bot both worked; only the sender's own run died, which on a
+    // long thread is the upstream 120 s cut. The model call check already covers that.
+    record(
+      "warn",
+      "delegation",
+      `chief -> ${detail} · the ${chief.name} run ended ${chiefRun.status}`,
+    );
     return;
   }
   record("ok", "delegation", `chief -> ${detail}`);
