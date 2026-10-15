@@ -64,9 +64,18 @@ Details, Katalog und Fallen: `docs/spook-setup.md`. Merke: eine Custom-Verbindun
 
 ## 4. Bots importieren (Roster)
 
-Alle zwölf Bots dieser Installation haben ein Preset im Repo (`bot-library/`). In der
-Bot-Bibliothek das Preset wählen und importieren — **Modell danach in den
-Bot-Einstellungen setzen**, das Preset bringt keins mit.
+Alle zwölf Bots dieser Installation haben ein Preset im Repo (`bot-library/`). Entweder in
+der Bot-Bibliothek einzeln importieren — **Modell danach in den Bot-Einstellungen setzen**,
+das Preset bringt keins mit — oder das Roster in einem Durchgang setzen:
+
+```bash
+BOBBOT_API_TOKEN=<session-token> pnpm roster:import --dry-run   # zeigt nur, was es täte
+BOBBOT_API_TOKEN=<session-token> pnpm roster:import             # importiert und konfiguriert
+```
+
+Das Skript ist idempotent: einen vorhandenen Bot lässt es stehen, Modell und Scope schreibt
+es nur, wenn sie abweichen. Es prüft den Modellsatz gegen die verbundene Verbindung — also
+erst Schritt 3 erledigen.
 
 | Bot | Preset | Modell | Connector-Toolkits |
 |---|---|---|---|
