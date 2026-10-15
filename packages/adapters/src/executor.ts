@@ -3442,16 +3442,17 @@ export function createRunExecutor(deps: ExecutorDeps) {
             );
           }
         }
-        // A bot may narrow the connected toolkits it uses. Filtering here means a toolkit
-        // outside the list is invisible to this run — not merely missing from the tool
-        // list, but absent from the approval context and the connector kind mapping too.
-        const connectedComposio = filterConnectionsByAllowedToolkits(
-          mergeConnectedPlugins(composioRows, liveSlugs),
+        // A bot may narrow the connected toolkits it uses. Both lists that reach the connector
+        // layer are narrowed: `connectedConnections` is what the Composio session actually
+        // discovers tools from, while the provider list is only its fallback. Filtering one
+        // and not the other would leave the toolkit reachable through the other.
+        const connectedComposio = mergeConnectedPlugins(composioRows, liveSlugs);
+        const connectedPlugins = filterConnectionsByAllowedToolkits(
+          selectRunConnections(
+            storedConnections,
+            connectedComposio.map((connection) => connection.provider),
+          ),
           bot.allowedToolkits,
-        );
-        const connectedPlugins = selectRunConnections(
-          storedConnections,
-          connectedComposio.map((connection) => connection.provider),
         );
         const context = {
           operationId: runId,
@@ -3469,7 +3470,9 @@ export function createRunExecutor(deps: ExecutorDeps) {
             displayName: row.displayName,
             providerRef: row.providerRef ?? undefined,
           })),
-          connectedProviders: connectedComposio.map((row) => row.provider),
+          connectedProviders: filterConnectionsByAllowedToolkits(connectedComposio, bot.allowedToolkits).map(
+            (row) => row.provider,
+          ),
         };
         const memoryScope = configuredMemory
           ? effectiveMemoryScope(bot.memoryScope, configuredMemory.defaultScope)
@@ -8574,15 +8577,20 @@ export function selectRunConnections<
  * connected account's provider, so an unknown slug keeps nothing rather than failing the run
  * — a bot can be pointed at a toolkit before anybody connects it.
  */
-export function filterConnectionsByAllowedToolkits<T extends { provider: string }>(
-  rows: T[],
-  allowedToolkits: readonly string[] | undefined,
-): T[] {
+export function filterConnectionsByAllowedToolkits<
+  T extends { provider: string; connectorId?: string },
+>(rows: T[], allowedToolkits: readonly string[] | undefined): T[] {
   const allowed = new Set(
     (allowedToolkits ?? []).map((slug) => slug.trim().toLowerCase()).filter(Boolean),
   );
   if (allowed.size === 0) return rows;
-  return rows.filter((row) => allowed.has(row.provider.trim().toLowerCase()));
+  return rows.filter((row) => {
+    // A row without a connectorId comes from the Composio-only merge, so it is Composio by
+    // construction. Anything else keeps its place: the allowlist is about toolkit slugs, and
+    // an installed connector is not a toolkit.
+    if (row.connectorId !== undefined && row.connectorId !== "composio") return true;
+    return allowed.has(row.provider.trim().toLowerCase());
+  });
 }
 
 export async function loadCurrentTurnImages(

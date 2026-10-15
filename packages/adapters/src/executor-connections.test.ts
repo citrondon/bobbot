@@ -27,6 +27,26 @@ describe("per-bot toolkit allowlist", () => {
   it("keeps nothing for a toolkit nobody connected, instead of failing the run", () => {
     expect(filterConnectionsByAllowedToolkits(rows, ["notion"])).toEqual([]);
   });
+
+  // The executor narrows the rows the connector discovers from, not just a provider list.
+  // Applying the filter to the wrong list left every connected toolkit reachable.
+  it("drops unlisted toolkits from the rows tool discovery reads, and keeps other connectors", () => {
+    const runRows = [
+      { id: "gmail", connectorId: "composio", provider: "gmail", status: "connected" },
+      { id: "linkedin", connectorId: "composio", provider: "linkedin", status: "connected" },
+      {
+        id: "internal",
+        connectorId: "installed",
+        provider: "internal-api",
+        status: "connected",
+      },
+    ];
+    const narrowed = filterConnectionsByAllowedToolkits(
+      selectRunConnections(runRows, ["gmail", "linkedin"]),
+      ["linkedin"],
+    );
+    expect(narrowed.map((row) => row.id)).toEqual(["linkedin", "internal"]);
+  });
 });
 
 describe("run connection selection", () => {
