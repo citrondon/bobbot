@@ -434,9 +434,15 @@ model Bot {
   /// because a new ceiling has its own warning line.
   budgetWarnedAt    DateTime?
   disabledBuiltinTools String[] @default([])
-  /// Connector toolkit slugs this bot may use. Empty means every connected toolkit stays
-  /// visible, so existing bots are unchanged. Unknown slugs are kept and simply match
-  /// nothing, so a bot can be configured before the account is connected.
+  /// Whether `allowedToolkits` is a decision or only "nothing configured yet". False is the
+  /// unscoped state: every connected toolkit stays visible, which is what a bot created before
+  /// scoping existed means. Prisma cannot express a nullable list, so the pair carries the
+  /// three states: false = every toolkit, true with an empty list = none, true with a list =
+  /// exactly those.
+  toolkitsScoped    Boolean  @default(false)
+  /// Connector toolkit slugs this bot may use, meaningful only while `toolkitsScoped`. Unknown
+  /// slugs are kept and simply match nothing, so a bot can be configured before the account is
+  /// connected.
   allowedToolkits   String[] @default([])
   webhookSecretId   String?
   teamChatAmbientEnabled Boolean @default(false)

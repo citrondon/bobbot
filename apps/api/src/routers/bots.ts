@@ -23,7 +23,7 @@ import {
 import type { Actor, Bot, Me } from "@bobbot/contracts";
 // Import from contracts
 import { OPENAI_COMPATIBLE_PROVIDER_ID } from "@bobbot/contracts";
-import { ACTIVE_RUN_STATUSES } from "@bobbot/core";
+import { ACTIVE_RUN_STATUSES, toolkitScopeColumns } from "@bobbot/core";
 import type { createRepos, Prisma } from "@bobbot/db";
 // Import from db
 import { findModelCredential, IsolationError, restoreBotUnderComputerQuota } from "@bobbot/db";
@@ -31,7 +31,7 @@ import { getLogger } from "@bobbot/logging";
 import { ORPCError } from "@orpc/server";
 import type { AgentSkillsService } from "../agent-skills.js";
 import type { PreparedBotImport } from "../bot-import.js";
-import { prepareBotImport } from "../bot-import.js";
+import { prepareBotImport, presetToolkits } from "../bot-import.js";
 import { listBotPresets, readBotPreset } from "../bot-library.js";
 
 // Import from local files
@@ -355,7 +355,7 @@ export function createBotsRouter(ctx: BotsRouterContext) {
             ? { disabledBuiltinTools: input.disabledBuiltinTools }
             : {}),
           ...(input.allowedToolkits !== undefined
-            ? { allowedToolkits: input.allowedToolkits }
+            ? toolkitScopeColumns(input.allowedToolkits)
             : {}),
         },
       });
@@ -521,6 +521,14 @@ export function createBotsRouter(ctx: BotsRouterContext) {
     import: authed.bots.import.handler(async ({ context, input }) => {
       const warnings: string[] = [];
       const prepared = prepareBotImport(input, warnings);
+      // A preset names the services its bot needs ("LinkedIn"); an allowlist holds connected
+      // provider slugs ("linkedin"). Without this an imported bot would start unscoped, which is
+      // the opposite of what the preset declared.
+      const connections = await deps.prisma.connection.findMany({
+        where: { spaceId: context.actor.spaceId, userId: context.actor.userId },
+        select: { provider: true, displayName: true },
+      });
+      const allowedToolkits = presetToolkits(input.manifest.integrations, connections);
       const homeContext = {
         operationId: "bots.import",
         traceId: "bots.import",
@@ -535,6 +543,7 @@ export function createBotsRouter(ctx: BotsRouterContext) {
           {
             ...prepared.profile,
             notifyOnFinish: true,
+            allowedToolkits,
             // Files belong to a new private home, never an existing team's workspace.
             computerMode: prepared.files.length > 0 ? "dedicated" : "team",
             initialMessage: {

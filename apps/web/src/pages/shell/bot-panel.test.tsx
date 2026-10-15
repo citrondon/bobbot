@@ -7,6 +7,8 @@ import type { Root } from "react-dom/client";
 import { createRoot } from "react-dom/client";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
+const connectionsList = vi.hoisted(() => vi.fn().mockResolvedValue([]));
+
 vi.mock("../../lib/rpc", () => ({
   rpc: {
     voice: { voices: vi.fn().mockResolvedValue([]) },
@@ -15,7 +17,7 @@ vi.mock("../../lib/rpc", () => ({
       list: vi.fn().mockResolvedValue([]),
     },
     me: vi.fn().mockResolvedValue(null),
-    connections: { list: vi.fn().mockResolvedValue([]) },
+    connections: { list: connectionsList },
   },
 }));
 vi.mock("@lingui/react/macro", () => {
@@ -36,13 +38,21 @@ vi.mock("@bobbot/ui-web", () => ({
   NativeSelect: (props: ComponentProps<"select">) => <select {...props} />,
   NativeSelectOption: (props: ComponentProps<"option">) => <option {...props} />,
   Switch: ({
-    onCheckedChange: _onCheckedChange,
-    checked: _checked,
+    onCheckedChange,
+    checked,
     ...props
   }: ComponentProps<"button"> & {
     checked?: boolean;
     onCheckedChange?: (checked: boolean) => void;
-  }) => <button type="button" {...props} />,
+  }) => (
+    <button
+      type="button"
+      role="switch"
+      aria-checked={checked}
+      onClick={() => onCheckedChange?.(!checked)}
+      {...props}
+    />
+  ),
   Toggle: ({
     onPressedChange: _onPressedChange,
     pressed,
@@ -70,7 +80,7 @@ import { BotSettings } from "./bot-panel";
 
 const longInstructions = "I".repeat(4_000);
 
-function bot(description = "Billing"): Bot {
+function bot(description = "Billing", allowedToolkits: Bot["allowedToolkits"] = null): Bot {
   return {
     id: "bot-1",
     spaceId: "space-1",
@@ -101,7 +111,7 @@ function bot(description = "Billing"): Bot {
     teamChatRules: "",
     monthlyTokenBudget: null,
     disabledBuiltinTools: [],
-    allowedToolkits: [],
+    allowedToolkits,
     webhookConfigured: false,
     spawnKey: null,
   };
@@ -113,11 +123,11 @@ const onSave = vi.fn(
   async (_patch: Parameters<ComponentProps<typeof BotSettings>["onSave"]>[0]) => undefined,
 );
 
-async function render(description = "Billing") {
+async function render(description = "Billing", allowedToolkits: Bot["allowedToolkits"] = null) {
   await act(async () => {
     root.render(
       <BotSettings
-        bot={bot(description)}
+        bot={bot(description, allowedToolkits)}
         memoryProviderConfigured={false}
         onSkillsChange={() => undefined}
         onSave={onSave}
@@ -269,5 +279,71 @@ describe("BotSettings description saves", () => {
       description: "Invoices",
       instructions: "Invoices",
     });
+  });
+});
+
+describe("BotSettings connector toolkit scope", () => {
+  beforeEach(() => {
+    connectionsList.mockResolvedValue([{ provider: "gmail", status: "connected" }]);
+  });
+
+  /** The switch that decides whether the bot is scoped at all. */
+  function scopeSwitch(): HTMLButtonElement {
+    const label = [...container.querySelectorAll("label")].find((node) =>
+      node.textContent?.includes("Only selected connector toolkits"),
+    );
+    const found = label?.querySelector("button");
+    if (!(found instanceof HTMLButtonElement)) throw new Error("Missing toolkit scope switch");
+    return found;
+  }
+
+  function toolkitSwitch(slug: string): HTMLButtonElement | null {
+    const label = [...container.querySelectorAll("label")].find((node) =>
+      node.textContent?.includes(slug),
+    );
+    const found = label?.querySelector("button");
+    return found instanceof HTMLButtonElement ? found : null;
+  }
+
+  async function click(button: HTMLButtonElement) {
+    await act(async () => {
+      button.click();
+      await Promise.resolve();
+      await Promise.resolve();
+      await Promise.resolve();
+    });
+  }
+
+  it("is off, with no toolkit rows, while the bot is unscoped", async () => {
+    await render("Billing", null);
+    expect(scopeSwitch().getAttribute("aria-checked")).toBe("false");
+    expect(toolkitSwitch("gmail")).toBeNull();
+  });
+
+  it("is on with nothing ticked when the bot is scoped to no connector", async () => {
+    // The state that did not exist before: scoped, but every toolkit off.
+    await render("Billing", []);
+    expect(scopeSwitch().getAttribute("aria-checked")).toBe("true");
+    expect(toolkitSwitch("gmail")?.getAttribute("aria-checked")).toBe("false");
+  });
+
+  it("shows the declared toolkit as ticked", async () => {
+    await render("Billing", ["gmail"]);
+    expect(scopeSwitch().getAttribute("aria-checked")).toBe("true");
+    expect(toolkitSwitch("gmail")?.getAttribute("aria-checked")).toBe("true");
+  });
+
+  it("saves an unscoped bot when the scope is switched off", async () => {
+    await render("Billing", ["gmail"]);
+    await click(scopeSwitch());
+    expect(onSave.mock.calls.at(-1)?.[0]).toMatchObject({ allowedToolkits: null });
+  });
+
+  it("saves an empty list, not an unscoped bot, when the last toolkit is switched off", async () => {
+    await render("Billing", ["gmail"]);
+    const gmail = toolkitSwitch("gmail");
+    if (!gmail) throw new Error("Missing gmail switch");
+    await click(gmail);
+    expect(onSave.mock.calls.at(-1)?.[0]).toMatchObject({ allowedToolkits: [] });
   });
 });

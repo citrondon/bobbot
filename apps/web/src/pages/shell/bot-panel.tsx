@@ -227,7 +227,7 @@ export function BotSettings({
     thinkingLevel?: ThinkingLevel | null;
     monthlyTokenBudget?: number | null;
     disabledBuiltinTools?: string[];
-    allowedToolkits?: string[];
+    allowedToolkits?: string[] | null;
   }) => Promise<void>;
   onExport: () => Promise<void>;
   onClear: () => void;
@@ -263,7 +263,8 @@ export function BotSettings({
   // Connected toolkits, so the allowlist can be picked from what actually exists instead of
   // asking the owner to spell slugs. Empty while loading; the section hides until it loads.
   const [connectedToolkits, setConnectedToolkits] = useState<string[]>([]);
-  const [allowedToolkits, setAllowedToolkits] = useState<string[]>(bot.allowedToolkits ?? []);
+  // Null means unscoped: every connected toolkit stays visible. [] means deliberately none.
+  const [allowedToolkits, setAllowedToolkits] = useState<string[] | null>(bot.allowedToolkits);
   // The list on screen is updated before the save returns. This stays on the
   // last list the server accepted so a rejection can undo that preview.
   const persistedDisabledToolsRef = useRef(disabledBuiltinTools);
@@ -295,7 +296,7 @@ export function BotSettings({
   const [toolNameDraft, setToolNameDraft] = useState("");
   // Allowed slugs are included even when nothing is connected, otherwise a slug configured
   // before the account existed could never be removed again.
-  const toolkitChoices = [...new Set([...connectedToolkits, ...allowedToolkits])].sort();
+  const toolkitChoices = [...new Set([...connectedToolkits, ...(allowedToolkits ?? [])])].sort();
   const [credentials, setCredentials] = useState<ModelCredential[]>([]);
   const [catalog, setCatalog] = useState<ModelCatalogEntry[]>([]);
   const [me, setMe] = useState<Me | null>(null);
@@ -312,7 +313,7 @@ export function BotSettings({
       notifyOnFinish?: boolean;
       disabledBuiltinTools?: string[];
       baseDisabledBuiltinTools?: string[];
-      allowedToolkits?: string[];
+      allowedToolkits?: string[] | null;
     }) => Promise<void>
   >(async () => undefined);
   useEffect(() => {
@@ -372,7 +373,7 @@ export function BotSettings({
     notifyOnFinish?: boolean;
     disabledBuiltinTools?: string[];
     baseDisabledBuiltinTools?: string[];
-    allowedToolkits?: string[];
+    allowedToolkits?: string[] | null;
   }) {
     const selected = selectedModel;
     const nextName = (patchOverrides?.name !== undefined ? patchOverrides.name : name).trim();
@@ -487,7 +488,7 @@ export function BotSettings({
     color?: string;
     notifyOnFinish?: boolean;
     disabledBuiltinTools?: string[];
-    allowedToolkits?: string[];
+    allowedToolkits?: string[] | null;
   }) {
     // Serialize full-object auto-saves so an older in-flight request cannot
     // finish after a newer one and clobber fields. Always call through a ref so
@@ -788,18 +789,19 @@ export function BotSettings({
             </span>
             <Switch
               id={`${ids}-toolkit-scope`}
-              checked={allowedToolkits.length > 0}
+              checked={allowedToolkits !== null}
               onCheckedChange={(checked) => {
-                // Switching on starts from every connected toolkit, so scoping a bot cannot
-                // silently take away everything it already had.
-                const next = checked ? toolkitChoices : [];
+                // On starts from every connected toolkit, so scoping a bot cannot silently take
+                // away everything it had. Off is the unscoped state; unchecking the last
+                // toolkit afterwards leaves [], which means none.
+                const next = checked ? toolkitChoices : null;
                 setAllowedToolkits(next);
                 void enqueueSave({ allowedToolkits: next });
               }}
             />
           </label>
         ) : null}
-        {allowedToolkits.length > 0
+        {allowedToolkits !== null
           ? toolkitChoices.map((slug) => (
               <label
                 key={slug}
@@ -815,9 +817,6 @@ export function BotSettings({
                 <Switch
                   id={`${ids}-toolkit-${slug}`}
                   checked={allowedToolkits.includes(slug)}
-                  // The last one stays on: an empty list means every toolkit, so clearing it
-                  // would widen the bot instead of narrowing it.
-                  disabled={allowedToolkits.length === 1}
                   onCheckedChange={(checked) => {
                     const next = checked
                       ? [...allowedToolkits, slug]

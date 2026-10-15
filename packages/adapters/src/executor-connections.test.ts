@@ -10,10 +10,18 @@ describe("per-bot toolkit allowlist", () => {
     { provider: "instagram", displayName: "Instagram" },
   ];
 
-  it("keeps every toolkit when the bot declares none", () => {
-    expect(filterConnectionsByAllowedToolkits(rows, [])).toEqual(rows);
-    // An older row or a fixture without the column means the same as "none declared".
+  it("keeps every toolkit while the bot is not scoped", () => {
+    // Null is the unscoped state: what every bot created before this field existed means, and
+    // what the migration moved every empty list to.
+    expect(filterConnectionsByAllowedToolkits(rows, null)).toEqual(rows);
     expect(filterConnectionsByAllowedToolkits(rows, undefined)).toEqual(rows);
+  });
+
+  it("keeps nothing when the bot is scoped to no connector at all", () => {
+    // An empty list is a decision, not the absence of one. Treating it as "everything" was the
+    // bug this replaced: a bot could not say "I need no connector".
+    expect(filterConnectionsByAllowedToolkits(rows, [])).toEqual([]);
+    expect(filterConnectionsByAllowedToolkits(rows, ["  "])).toEqual([]);
   });
 
   it("keeps only the declared toolkits, ignoring case and padding", () => {

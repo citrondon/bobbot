@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { expect, test } from "@playwright/test";
-import { captureScreenshot, completeOnboarding, signup } from "./helpers";
+import { activeBotId, captureScreenshot, completeOnboarding, rpc, signup } from "./helpers";
 
 const PRESET = {
   version: 1,
@@ -79,6 +79,15 @@ test("imports a bot preset through the create menu", async ({ page }, testInfo) 
     .first()
     .click();
   await expect(page.getByTestId("transcript")).toContainText("Imported from preset.");
+
+  // A preset names the services its bot needs; the import turns those names into the account's
+  // provider slugs. This preset names none, so the bot is scoped to no connector — an empty
+  // list, which only exists once the import wrote the scope at all. A null here would mean the
+  // bot silently fell back to every connected toolkit, which is what this guards against.
+  const imported = await rpc<{ allowedToolkits: string[] | null }>(page, "bots/get", {
+    botId: activeBotId(page),
+  });
+  expect(imported.allowedToolkits).toEqual([]);
 
   await captureScreenshot(page, testInfo, "bot-import-completed");
 });
