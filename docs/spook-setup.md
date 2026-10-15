@@ -89,6 +89,20 @@ Platzhalter mit der eingetragenen Modell-ID. Folgen:
 
 ## Verifizieren
 
+Der schnellste Weg ist das Skript — es fährt die vier Pfade über die API und endet mit
+Exit-Code 0, wenn alles steht:
+
+```bash
+BOBBOT_API_TOKEN=<session-token> pnpm smoke:spook            # Bot wird automatisch gewählt
+BOBBOT_API_TOKEN=<session-token> pnpm smoke:spook "Website Ops"   # oder ein bestimmter Bot
+```
+
+Es prüft Modellverbindung, Auto-Review, einen echten Tool-Call, eine Delegation und die
+Monatsabrechnung. Harte Fehler (Exit 1) sind: kein Run kommt durch, keine Tokens gemeldet,
+ein aufgerufenes Werkzeug ist fehlgeschlagen, keine Monatssummen. Warnungen sind das, was
+das Modell auch einfach lassen kann: eine Antwort ohne Werkzeug, oder eine Aufgabe, die es
+selbst übernimmt statt sie abzugeben.
+
 | Was | Wie |
 |---|---|
 | Auto-Review aktiv | `POST /rpc/autoReview/get` → `{enabled: true, checkerAvailable: true}` |
