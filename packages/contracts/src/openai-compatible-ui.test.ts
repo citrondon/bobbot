@@ -42,27 +42,23 @@ describe("openAiCompatibleConnectReady", () => {
 
   it("identifies SpooK token-pack models and formats their labels", () => {
     expect(isTokenPackModel("claude-sonnet-5")).toBe(true);
-    expect(isTokenPackModel("claude-opus-5-5")).toBe(true);
+    expect(isTokenPackModel("kimi-k3")).toBe(true);
+    expect(isTokenPackModel("grok-4.6")).toBe(true);
+    expect(isTokenPackModel("glm-5.3-flash")).toBe(true);
+    // A retired id still matches the vendor-prefix heuristic, so the label stays a
+    // hint about billing — never a promise that the endpoint serves the model.
     expect(isTokenPackModel("deepseek-v4-flash")).toBe(true);
-    expect(isTokenPackModel("gpt-5.6-fast")).toBe(true);
 
     expect(formatOpenAiCompatibleModelLabel("claude-sonnet-5")).toBe(
       "claude-sonnet-5  📦 [Token-Paket]",
     );
-    expect(formatOpenAiCompatibleModelLabel("deepseek-v4-flash")).toBe(
-      "deepseek-v4-flash  📦 [Token-Paket]",
-    );
+    expect(formatOpenAiCompatibleModelLabel("kimi-k3")).toBe("kimi-k3  📦 [Token-Paket]");
   });
 
   it("sorts token-pack models to the front with claude-sonnet-5 first", () => {
-    const list = ["deepseek-v4-flash", "claude-opus-5-5", "gpt-5.6-fast", "claude-sonnet-5"];
+    const list = ["grok-4.6", "claude-haiku-4-5-20251001", "kimi-k3", "claude-sonnet-5"];
     const sorted = sortProbedModels(list);
-    expect(sorted).toEqual([
-      "claude-sonnet-5",
-      "claude-opus-5-5",
-      "gpt-5.6-fast",
-      "deepseek-v4-flash",
-    ]);
+    expect(sorted).toEqual(["claude-sonnet-5", "kimi-k3", "grok-4.6", "claude-haiku-4-5-20251001"]);
   });
 });
 

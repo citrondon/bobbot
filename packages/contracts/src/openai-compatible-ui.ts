@@ -12,36 +12,36 @@ export function openAiCompatibleProbeSuccessMessage(modelCount: number): string 
     : "Server found. Enter a model name.";
 }
 
-/** Models covered under SpooK API Token Packs (Prepaid / 90% discount). */
+/** Models covered under SpooK API Token Packs (Prepaid / 90% discount).
+ *
+ * Mirror of the live catalog at <https://spookapi.xyz/docs/models> (verified
+ * 16.10.2026). SpooK retires ids without notice, so a stale entry here offers a
+ * model the endpoint answers with `404 Requested model is not available`. Refresh
+ * this list whenever the catalog changes; it only drives the picker's
+ * `📦 [Token-Paket]` label and its sort order, never a request. */
 export const SPOOK_TOKEN_PACK_MODELS: ReadonlySet<string> = new Set([
   // Claude
-  "claude-sonnet-5",
-  "claude-sonnet-4-6",
-  "claude-opus-5-5",
+  "claude-fable-5-1",
+  "claude-fable-5",
   "claude-opus-5",
   "claude-opus-4-8",
   "claude-opus-4-7",
-  "claude-fable-5",
-  // DeepSeek
-  "deepseek-v4-flash",
-  "deepseek-v4-pro",
+  "claude-opus-4-6",
+  "claude-sonnet-5",
+  "claude-sonnet-4-6",
+  "claude-haiku-4-5-20251001",
   // OpenAI
-  "gpt-5.6-fast",
-  "gpt-5.6-luna",
-  "gpt-5.6-sol",
+  "gpt-6-astra",
   "gpt-5.6-terra",
-  "gpt-5.5",
-  // Google
-  "gemini-3.1-pro",
-  "gemini-2.5-pro",
-  // Alibaba & other open-weight / provider flagships
-  "qwen3.7-max",
-  "qwen3.6-plus",
-  "glm-5.3",
-  "glm-5.2",
+  "gpt-5.6-sol",
+  "gpt-5.6-luna",
+  // Qwen, Kimi, Grok, GLM
+  "qwen3.8-max",
+  "qwen3.8-flash",
   "kimi-k3",
-  "grok-4.5",
-  "cursor-fable-5",
+  "grok-4.6",
+  "glm-5.3-flash",
+  "glm-5.3",
 ]);
 
 export function isTokenPackModel(modelId: string): boolean {
@@ -73,13 +73,23 @@ export function sortProbedModels(modelIds: readonly string[]): string[] {
   const priorityOrder: Record<string, number> = {
     "claude-sonnet-5": 1,
     "claude-sonnet-4-6": 2,
-    "claude-opus-5-5": 3,
-    "claude-opus-5": 4,
-    "gpt-5.6-fast": 5,
-    "deepseek-v4-flash": 6,
-    "gemini-3.1-pro": 7,
-    "qwen3.7-max": 8,
-    "grok-4.5": 9,
+    "claude-opus-5": 3,
+    "claude-opus-4-8": 4,
+    "claude-opus-4-7": 5,
+    "claude-opus-4-6": 6,
+    "claude-fable-5": 7,
+    "claude-fable-5-1": 8,
+    "gpt-6-astra": 9,
+    "gpt-5.6-sol": 10,
+    "gpt-5.6-terra": 11,
+    "gpt-5.6-luna": 12,
+    "kimi-k3": 13,
+    "glm-5.3": 14,
+    "glm-5.3-flash": 15,
+    "qwen3.8-max": 16,
+    "qwen3.8-flash": 17,
+    "grok-4.6": 18,
+    "claude-haiku-4-5-20251001": 19,
   };
 
   return [...modelIds].sort((a, b) => {
