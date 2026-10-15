@@ -2,12 +2,11 @@
 
 Continue from a fresh checkout. Everything below is on `main` and pushed.
 
-**Status note (16.10.2026).** The model-provider work — the OpenAI-compatible
-transport fix for hostname endpoints, connector toolkit scoping, and the import
-scoping — sits on branch `citrondon/feat/social-automation` (PR #12) and reaches
-`main` only when that PR is merged. Pull `main` **after** the merge, or check out
-the branch; without it every bot on a public OpenAI-compatible endpoint fails with
-*"Connection error … undici dispatcher"*. Provider setup: `docs/spook-setup.md`.
+**Status note (16.10.2026).** The model-provider work is on `main` (PRs #12–#14, merged):
+the OpenAI-compatible transport fix for hostname endpoints, connector toolkit scoping, the
+import scoping, and `pnpm smoke:spook`. The ordered handover steps — env, SpooK connection,
+bot roster, routines, verification — are in `docs/handover-checklist.md`; the provider itself
+is documented in `docs/spook-setup.md`.
 
 ## 1. Get running on the new machine
 
