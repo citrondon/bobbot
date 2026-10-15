@@ -18,6 +18,7 @@ import { createAssistantMessageEventStream } from "@earendil-works/pi-ai";
 import type { ContextBudget } from "./context-selection.js";
 import { estimateModelContextTokens } from "./model-context.js";
 import { requestedPiCacheWriteRetention, resolvePiCacheRetention } from "./pi-cache-retention.js";
+import { fetchPairedWithDispatcher } from "./undici-fetch.js";
 
 /** Pi initializes absent usage to zero. Only raw numeric fields can prove reported zero. */
 export type ReportedUsageFields = Set<keyof AgentUsage>;
@@ -85,7 +86,15 @@ export function usageReportingFetch(
   reported: ReportedUsageFields,
 ): typeof fetch {
   return async (input, init) => {
-    const response = await fetcher(input, init);
+    // A hostname endpoint makes the openai-compatible provider attach this package's
+    // Agent, and Node's builtin fetch rejects that Agent ("invalid onRequestStart") before
+    // a socket opens. The pairing step the provider applies cannot see through this
+    // wrapper, so pair the transport here whenever the Agent rides along. Without a
+    // dispatcher the caller's fetch stays in charge.
+    const transport = (init as { dispatcher?: unknown } | undefined)?.dispatcher
+      ? fetchPairedWithDispatcher(fetcher)
+      : fetcher;
+    const response = await transport(input, init);
     if (!response.body || !response.headers.get("content-type")?.includes("text/event-stream"))
       return response;
     let buffer = "";

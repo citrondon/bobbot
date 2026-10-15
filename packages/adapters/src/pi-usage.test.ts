@@ -55,6 +55,58 @@ async function run(usage?: object) {
 }
 
 describe("Pi usage accounting", () => {
+  it("pairs the transport for a hostname endpoint the caller injected no fetch for", async () => {
+    // A hostname endpoint makes the openai-compatible provider attach this package's Agent.
+    // Node's builtin fetch rejects that Agent ("invalid onRequestStart method"), so the usage
+    // wrapper must hand the request to the paired transport. The ambient fetch rejects, so the
+    // run only succeeds when the wrapper paired it instead of using it.
+    const server = createServer((_request, response) => {
+      response.writeHead(200, { "content-type": "text/event-stream" });
+      response.end(sse({ prompt_tokens: 1, completion_tokens: 1, total_tokens: 2 }));
+    });
+    server.listen(0, "127.0.0.1");
+    await once(server, "listening");
+    const address = server.address();
+    if (!address || typeof address === "string") throw new Error("Fixture endpoint unavailable");
+    const ambient = vi
+      .spyOn(globalThis, "fetch")
+      .mockRejectedValue(new Error("ambient fetch cannot carry a package Agent"));
+    try {
+      const events: AgentRuntimeEvent[] = [];
+      for await (const event of new PiAgentRuntime().run(
+        {
+          botId: "bot-fixture",
+          threadId: "thread-fixture",
+          runId: "run-paired-transport",
+          prompt: "Hi",
+          instructions: "Answer briefly.",
+          history: [],
+          tools: [],
+          contextStrategy: "retrieval",
+          model: {
+            provider: "openai-compatible",
+            id: "fixture",
+            // "localhost" stays a hostname, so the provider attaches its Agent for it.
+            baseUrl: `http://localhost:${address.port}/v1`,
+            apiKey: "fake-fixture-key",
+            contextWindow: 4096,
+            maxTokens: 256,
+          },
+        },
+        { signal: AbortSignal.timeout(15_000) },
+      )) {
+        events.push(event);
+      }
+      expect(events).toContainEqual(expect.objectContaining({ type: "done", text: "Done" }));
+      expect(ambient).not.toHaveBeenCalled();
+    } finally {
+      ambient.mockRestore();
+      server.close();
+      server.closeAllConnections();
+      await once(server, "close");
+    }
+  }, 30_000);
+
   it.each([false, true])(
     "acknowledges a producer sink only after successful accounting (fails=%s)",
     async (fails) => {
