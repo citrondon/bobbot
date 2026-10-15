@@ -36,6 +36,13 @@ export type AutoReviewProviderKind = "llm" | "jev" | "scripted";
 export const JEV_AUTO_REVIEW_PROVIDER = "jev";
 export const SCRIPTED_AUTO_REVIEW_PROVIDER = "scripted";
 export const DEFAULT_JEV_MODEL = "jev-latest";
+
+/** TypeSafe's own endpoint. */
+export const JEV_TYPESAFE_URL = "https://api.typesafe.ai/v1/systemone";
+/** OpenRouter's Decisions API, which serves the same model. */
+export const JEV_OPENROUTER_URL = "https://openrouter.ai/api/alpha/decisions";
+/** OpenRouter namespaces the model; TypeSafe does not. */
+export const DEFAULT_JEV_OPENROUTER_MODEL = "typesafe/jev-1.13";
 export const DEFAULT_AUTO_REVIEW_MIN_CONFIDENCE = 0.5;
 
 function envFlag(env: NodeJS.ProcessEnv, name: string): boolean {
@@ -63,10 +70,36 @@ export function autoReviewTimeoutMs(env: NodeJS.ProcessEnv = process.env): numbe
   return Math.floor(value);
 }
 
-/** TypeSafe Jev key. Optional; core Auto Review still uses the LLM checker without it. */
+/**
+ * Jev endpoint. Defaults to TypeSafe. Set `BOBBOT_JEV_URL` to
+ * `https://openrouter.ai/api/alpha/decisions` to route through OpenRouter instead.
+ */
+export function jevUrl(env: NodeJS.ProcessEnv = process.env): string {
+  return env.BOBBOT_JEV_URL?.trim().replace(/\/+$/, "") || JEV_TYPESAFE_URL;
+}
+
+function isOpenRouterJev(url: string): boolean {
+  return url.includes("openrouter.ai");
+}
+
+/**
+ * Jev key for the configured endpoint. TypeSafe direct reads `TYPESAFE_API_KEY`;
+ * the OpenRouter endpoint reads `OPENROUTER_API_KEY`. Optional either way: core
+ * Auto Review falls back to the LLM checker when no key resolves.
+ */
 export function typesafeApiKey(env: NodeJS.ProcessEnv = process.env): string | undefined {
-  const value = env.TYPESAFE_API_KEY?.trim();
-  return value || undefined;
+  const direct = env.TYPESAFE_API_KEY?.trim();
+  if (direct) return direct;
+  if (!isOpenRouterJev(jevUrl(env))) return undefined;
+  const viaRouter = env.OPENROUTER_API_KEY?.trim();
+  return viaRouter || undefined;
+}
+
+/** Jev model id for the configured endpoint. `BOBBOT_AUTO_REVIEW_MODEL` wins. */
+export function jevModel(env: NodeJS.ProcessEnv = process.env): string {
+  const explicit = env.BOBBOT_AUTO_REVIEW_MODEL?.trim();
+  if (explicit) return explicit;
+  return isOpenRouterJev(jevUrl(env)) ? DEFAULT_JEV_OPENROUTER_MODEL : DEFAULT_JEV_MODEL;
 }
 
 export function autoReviewMinConfidence(env: NodeJS.ProcessEnv = process.env): number {
@@ -107,7 +140,7 @@ export function resolveAutoReviewChecker(
   if (kind === "jev") {
     return {
       provider: JEV_AUTO_REVIEW_PROVIDER,
-      model: env.BOBBOT_AUTO_REVIEW_MODEL?.trim() || DEFAULT_JEV_MODEL,
+      model: jevModel(env),
     };
   }
   if (kind === "scripted") {

@@ -51,6 +51,7 @@ function fixture() {
     monthlyTokenBudget: null,
     teamChatAmbientEnabled: false,
     teamChatRules: "",
+    allowedToolkits: null,
     webhookConfigured: false,
     spawnKey: null,
   };
@@ -65,6 +66,10 @@ function fixture() {
   const prisma = {
     $transaction: vi.fn(async (work: (tx: unknown) => unknown) => work({})),
     computer: { findFirst: vi.fn(async () => ({ homeKey: "private-home" })) },
+    // The import resolves a preset's service names against the account's connections.
+    connection: {
+      findMany: vi.fn(async () => [{ provider: "linkedin", displayName: "LinkedIn" }]),
+    },
   };
   const deps = { prisma, home: { writeFile } };
   const ctx = {
@@ -193,5 +198,32 @@ describe("file import RPC failures", () => {
       { deleteMemories: true },
     );
     expect(f.skills.create).not.toHaveBeenCalled();
+  });
+
+  it("scopes an imported bot to the connectors its preset names", async () => {
+    const f = fixture();
+    const request = input();
+    // Docker is tooling, not a connector; LinkedIn is the one connected here.
+    request.manifest.integrations = ["LinkedIn", "Docker"];
+    expect((await f.call("import", request)).status).toBe(200);
+    expect(f.createBot).toHaveBeenCalledWith(
+      actor,
+      expect.objectContaining({ allowedToolkits: ["linkedin"] }),
+      expect.anything(),
+    );
+  });
+
+  it("scopes an imported bot to no connector when its preset names none", async () => {
+    // An empty list, not an unscoped bot: reading it as unscoped would hand the bot every
+    // connected toolkit, which is the opposite of what the preset declared.
+    const f = fixture();
+    const request = input();
+    request.manifest.integrations = ["Docker", "SSH"];
+    expect((await f.call("import", request)).status).toBe(200);
+    expect(f.createBot).toHaveBeenCalledWith(
+      actor,
+      expect.objectContaining({ allowedToolkits: [] }),
+      expect.anything(),
+    );
   });
 });

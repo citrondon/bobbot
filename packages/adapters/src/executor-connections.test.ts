@@ -1,7 +1,61 @@
 import type { PrismaClient } from "@bobbot/db";
 import { describe, expect, it, vi } from "vitest";
 import { mergeConnectedPlugins } from "./composio-connector.js";
-import { persistLivePluginConnections, selectRunConnections } from "./executor.js";
+import { persistLivePluginConnections, selectRunConnections, filterConnectionsByAllowedToolkits } from "./executor.js";
+
+describe("per-bot toolkit allowlist", () => {
+  const rows = [
+    { provider: "gmail", displayName: "Gmail" },
+    { provider: "linkedin", displayName: "LinkedIn" },
+    { provider: "instagram", displayName: "Instagram" },
+  ];
+
+  it("keeps every toolkit while the bot is not scoped", () => {
+    // Null is the unscoped state: what every bot created before this field existed means, and
+    // what the migration moved every empty list to.
+    expect(filterConnectionsByAllowedToolkits(rows, null)).toEqual(rows);
+    expect(filterConnectionsByAllowedToolkits(rows, undefined)).toEqual(rows);
+  });
+
+  it("keeps nothing when the bot is scoped to no connector at all", () => {
+    // An empty list is a decision, not the absence of one. Treating it as "everything" was the
+    // bug this replaced: a bot could not say "I need no connector".
+    expect(filterConnectionsByAllowedToolkits(rows, [])).toEqual([]);
+    expect(filterConnectionsByAllowedToolkits(rows, ["  "])).toEqual([]);
+  });
+
+  it("keeps only the declared toolkits, ignoring case and padding", () => {
+    expect(
+      filterConnectionsByAllowedToolkits(rows, [" LinkedIn ", "INSTAGRAM"]).map(
+        (row) => row.provider,
+      ),
+    ).toEqual(["linkedin", "instagram"]);
+  });
+
+  it("keeps nothing for a toolkit nobody connected, instead of failing the run", () => {
+    expect(filterConnectionsByAllowedToolkits(rows, ["notion"])).toEqual([]);
+  });
+
+  // The executor narrows the rows the connector discovers from, not just a provider list.
+  // Applying the filter to the wrong list left every connected toolkit reachable.
+  it("drops unlisted toolkits from the rows tool discovery reads, and keeps other connectors", () => {
+    const runRows = [
+      { id: "gmail", connectorId: "composio", provider: "gmail", status: "connected" },
+      { id: "linkedin", connectorId: "composio", provider: "linkedin", status: "connected" },
+      {
+        id: "internal",
+        connectorId: "installed",
+        provider: "internal-api",
+        status: "connected",
+      },
+    ];
+    const narrowed = filterConnectionsByAllowedToolkits(
+      selectRunConnections(runRows, ["gmail", "linkedin"]),
+      ["linkedin"],
+    );
+    expect(narrowed.map((row) => row.id)).toEqual(["linkedin", "internal"]);
+  });
+});
 
 describe("run connection selection", () => {
   it("uses synchronized account statuses in the current run", async () => {

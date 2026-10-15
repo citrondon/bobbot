@@ -417,6 +417,11 @@ export class ComposioConnector implements ComposioProvider {
     const session = await composio.create(userId, {
       manageConnections: false,
       sandbox: { enable: false },
+      // Direct tools instead of Composio's search/get-schemas/multi-execute meta tools:
+      // the approval gate, Auto Review and per-action rules then see the real tool
+      // name (LINKEDIN_CREATE_LINKED_IN_POST, ...) instead of an opaque batch
+      // wrapper, and one action costs one tool call instead of three.
+      sessionPreset: "direct_tools",
       toolkits: canonicalToolkits,
       ...(Object.keys(connectedAccounts).length > 0 ? { connectedAccounts } : {}),
       ...(needsMultiAccount

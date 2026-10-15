@@ -453,6 +453,10 @@ export default defineConfig(({ mode }) => {
       host: "127.0.0.1",
       port: webPort,
       strictPort: true,
+      // Reaching the dev server through a tunnel (Tailscale) forwards the tunnel
+      // hostname in the Host header. Same declared host as preview; unset means
+      // only localhost, which is Vite's own default anyway.
+      allowedHosts: [previewHost],
       proxy: {
         "/api": { target: api, changeOrigin: true },
         "/rpc": { target: api, changeOrigin: true },

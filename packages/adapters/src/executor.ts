@@ -69,6 +69,7 @@ import {
   CALL_CLIENT_NONCE_PREFIX,
   callIdFromClientNonce,
   connectorKindFromToolName,
+  connectorToolkitScope,
   containsSecret,
   createStreamingRedactor,
   currentMonthStart,
@@ -3442,10 +3443,20 @@ export function createRunExecutor(deps: ExecutorDeps) {
             );
           }
         }
+        // A bot may narrow the connected toolkits it uses. Both lists that reach the connector
+        // layer are narrowed: `connectedConnections` is what the Composio session actually
+        // discovers tools from, while the provider list is only its fallback. Filtering one
+        // and not the other would leave the toolkit reachable through the other.
         const connectedComposio = mergeConnectedPlugins(composioRows, liveSlugs);
-        const connectedPlugins = selectRunConnections(
-          storedConnections,
-          connectedComposio.map((connection) => connection.provider),
+        // The stored scope, not the raw list: an unscoped bot has an empty list that still means
+        // "every connector", so reading the list alone would strip everything it had.
+        const scopedToolkits = connectorToolkitScope(bot);
+        const connectedPlugins = filterConnectionsByAllowedToolkits(
+          selectRunConnections(
+            storedConnections,
+            connectedComposio.map((connection) => connection.provider),
+          ),
+          scopedToolkits,
         );
         const context = {
           operationId: runId,
@@ -3463,7 +3474,10 @@ export function createRunExecutor(deps: ExecutorDeps) {
             displayName: row.displayName,
             providerRef: row.providerRef ?? undefined,
           })),
-          connectedProviders: connectedComposio.map((row) => row.provider),
+          connectedProviders: filterConnectionsByAllowedToolkits(
+            connectedComposio,
+            scopedToolkits,
+          ).map((row) => row.provider),
         };
         const memoryScope = configuredMemory
           ? effectiveMemoryScope(bot.memoryScope, configuredMemory.defaultScope)
@@ -8559,6 +8573,27 @@ export function selectRunConnections<
     const providerKey = row.provider.trim().toLowerCase();
     if (!liveProviders.has(providerKey)) return false;
     return !connectedKeys.has(`composio:${providerKey}`);
+  });
+}
+
+/**
+ * Narrow connected Composio toolkits to the ones a bot declared it uses. A null allowlist means
+ * "not scoped" and keeps everything: that is what every bot created before this field means.
+ * An empty list is a deliberate "no connector". Slugs match the connected account's provider,
+ * so an unknown slug keeps nothing rather than failing the run — a bot can be pointed at a
+ * toolkit before anybody connects it.
+ */
+export function filterConnectionsByAllowedToolkits<
+  T extends { provider: string; connectorId?: string },
+>(rows: T[], allowedToolkits: readonly string[] | null | undefined): T[] {
+  if (allowedToolkits == null) return rows;
+  const allowed = new Set(allowedToolkits.map((slug) => slug.trim().toLowerCase()).filter(Boolean));
+  return rows.filter((row) => {
+    // A row without a connectorId comes from the Composio-only merge, so it is Composio by
+    // construction. Anything else keeps its place: the allowlist is about toolkit slugs, and
+    // an installed connector is not a toolkit.
+    if (row.connectorId !== undefined && row.connectorId !== "composio") return true;
+    return allowed.has(row.provider.trim().toLowerCase());
   });
 }
 

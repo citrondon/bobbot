@@ -1,6 +1,6 @@
 import type { BotImportInput } from "@bobbot/contracts";
 import { describe, expect, it } from "vitest";
-import { prepareBotImport } from "./bot-import.js";
+import { prepareBotImport, presetToolkits } from "./bot-import.js";
 
 function manifestFixture(overrides?: {
   name?: string;
@@ -137,5 +137,39 @@ describe("prepareBotImport", () => {
     expect(prepared.skills).toHaveLength(1);
     expect(prepared.files).toHaveLength(1);
     expect(prepareBotImport({ ...input, includeSkills: false }, []).skills).toHaveLength(0);
+  });
+});
+
+describe("presetToolkits", () => {
+  const connections = [
+    { provider: "gmail", displayName: "Gmail" },
+    { provider: "linkedin", displayName: "LinkedIn" },
+    { provider: "googlecalendar", displayName: "Google Calendar" },
+    { provider: "twitter", displayName: "Twitter" },
+  ];
+
+  it("turns the preset's service names into the connected provider slugs", () => {
+    expect(presetToolkits(["LinkedIn", "Google Calendar"], connections)).toEqual([
+      "googlecalendar",
+      "linkedin",
+    ]);
+  });
+
+  it("matches names regardless of case and padding", () => {
+    expect(presetToolkits(["  gmail ", "LINKEDIN"], connections)).toEqual(["gmail", "linkedin"]);
+  });
+
+  it("resolves the preset label X to the twitter provider", () => {
+    expect(presetToolkits(["X"], connections)).toEqual(["twitter"]);
+  });
+
+  it("returns an empty list for tooling that is not a connector", () => {
+    // A preset for a code bot names Docker and SSH. Those are not toolkits, and the empty list
+    // is the point: it scopes the bot to no connector instead of leaving it unscoped.
+    expect(presetToolkits(["Docker", "SSH", "Semgrep"], connections)).toEqual([]);
+  });
+
+  it("drops a declared service the account has not connected", () => {
+    expect(presetToolkits(["Notion", "LinkedIn"], connections)).toEqual(["linkedin"]);
   });
 });

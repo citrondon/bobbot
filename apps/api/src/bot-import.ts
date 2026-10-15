@@ -36,6 +36,33 @@ function safeRelativePath(raw: string): string | null {
   return segments.join("/");
 }
 
+/** Presets whose label differs from the provider's own display name. X still shows "Twitter". */
+const PRESET_INTEGRATION_ALIASES: Record<string, string> = { x: "twitter" };
+
+/**
+ * A preset names the services its bot needs ("LinkedIn", "Gmail"), but an allowlist holds the
+ * connected provider's slug ("linkedin", "gmail"). Resolve the names against the account's own
+ * connections so an imported bot starts scoped to what its preset declared, instead of silently
+ * keeping every toolkit. Names that match no connection (Docker, SSH, Kubernetes — tooling
+ * rather than connectors) contribute nothing, so a preset that names no connector ends up with
+ * an empty list, which means none.
+ */
+export function presetToolkits(
+  integrations: readonly string[],
+  connections: ReadonlyArray<{ provider: string; displayName: string }>,
+): string[] {
+  const byName = new Map(
+    connections.map((row) => [row.displayName.trim().toLowerCase(), row.provider]),
+  );
+  const slugs = new Set<string>();
+  for (const name of integrations) {
+    const normalized = name.trim().toLowerCase();
+    const slug = byName.get(PRESET_INTEGRATION_ALIASES[normalized] ?? normalized);
+    if (slug) slugs.add(slug);
+  }
+  return [...slugs].sort();
+}
+
 /**
  * Turn an export manifest into the durable parts an import may create.
  * Never throws for per-item problems: anything unusable is dropped with a

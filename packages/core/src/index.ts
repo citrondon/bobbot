@@ -66,6 +66,7 @@ export * from "./thread-subscription.js";
 export * from "./time-separators.js";
 export * from "./token-budget.js";
 export * from "./tool-activity.js";
+export * from "./toolkit-scope.js";
 export * from "./trigger-engine.js";
 export * from "./trigger-filter.js";
 export * from "./trust-effects.js";

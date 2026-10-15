@@ -6,7 +6,7 @@ import {
   type MessageBlock,
   type SpaceBot,
 } from "@bobbot/contracts";
-import { userVisibleMessages } from "@bobbot/core";
+import { connectorToolkitScope, toolkitScopeColumns, userVisibleMessages } from "@bobbot/core";
 import type { Prisma, PrismaClient } from "./client.js";
 import { type ComputerMode, ensureComputerRecord, parseComputerMode } from "./computers.js";
 import { createThreadMessageInTransaction } from "./messages.js";
@@ -58,6 +58,8 @@ function mapBot(
     teamChatAmbientEnabled?: boolean;
     teamChatRules?: string;
     disabledBuiltinTools?: string[];
+    toolkitsScoped?: boolean;
+    allowedToolkits?: string[] | null;
     webhookSecretId?: string | null;
     spawnKey?: string | null;
   },
@@ -97,6 +99,7 @@ function mapBot(
     teamChatAmbientEnabled: bot.teamChatAmbientEnabled ?? false,
     teamChatRules: bot.teamChatRules ?? "",
     disabledBuiltinTools: bot.disabledBuiltinTools ?? [],
+    allowedToolkits: connectorToolkitScope(bot),
     webhookConfigured: Boolean(bot.webhookSecretId),
     spawnKey: bot.spawnKey ?? null,
   };
@@ -393,6 +396,7 @@ export function createRepos(prisma: PrismaClient) {
         modelId?: string | null;
         thinkingLevel?: string | null;
         disabledBuiltinTools?: string[];
+        allowedToolkits?: string[] | null;
         initialMessage?: {
           role: "user" | "bot" | "system";
           blocks: MessageBlock[];
@@ -412,6 +416,10 @@ export function createRepos(prisma: PrismaClient) {
       let modelId = input.modelId ?? null;
       let thinkingLevel = input.thinkingLevel ?? null;
       let disabledBuiltinTools = input.disabledBuiltinTools ?? [];
+      // The same mapping the settings path uses, so the pair cannot drift between create and save.
+      const scopeColumns = toolkitScopeColumns(input.allowedToolkits ?? null);
+      let allowedToolkits = scopeColumns.allowedToolkits ?? [];
+      let toolkitsScoped = scopeColumns.toolkitsScoped;
       if (input.parentBotId) {
         const parent = await prisma.bot.findFirst({
           where: {
@@ -428,6 +436,10 @@ export function createRepos(prisma: PrismaClient) {
         if (thinkingLevel == null) thinkingLevel = parent.thinkingLevel ?? null;
         if (input.disabledBuiltinTools === undefined) {
           disabledBuiltinTools = parent.disabledBuiltinTools;
+        }
+        if (input.allowedToolkits === undefined) {
+          allowedToolkits = parent.allowedToolkits;
+          toolkitsScoped = parent.toolkitsScoped;
         }
       }
       const settings = await prisma.deploymentSettings.findUnique({ where: { id: "default" } });
@@ -467,6 +479,8 @@ export function createRepos(prisma: PrismaClient) {
             modelId,
             thinkingLevel,
             disabledBuiltinTools,
+            allowedToolkits,
+            toolkitsScoped,
           },
         });
         const thread = await tx.thread.create({

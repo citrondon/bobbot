@@ -62,6 +62,11 @@ async function main() {
     process.env.CLOUD_AGENT_PROVIDER = "emulator";
     delete process.env.CURSOR_API_KEY;
     process.env.COMPOSIO_API_KEY = "";
+    // The reviewer is a live call to an external decision endpoint. Left on, it leaks in from a
+    // developer's .env and every consequential action waits for an answer no journey gives, so
+    // the lane stops being about the product and becomes about the reviewer's mood. Its own
+    // tests cover it with a controlled environment; journeys assert the default of running.
+    process.env.BOBBOT_AUTO_REVIEW = "false";
     process.env.BETTER_AUTH_SECRET = "test-secret-test-secret-32chars!";
     process.env.ENCRYPTION_KEY = "test-encryption-key-test-encryption-key";
     process.env.SANDBOX_SUPERVISOR_TOKEN = "test-supervisor-token-test-32chars";

@@ -3,7 +3,8 @@ import type { LlmAutoReviewOptions } from "./auto-review.js";
 import {
   autoReviewMinConfidence,
   autoReviewTimeoutMs,
-  DEFAULT_JEV_MODEL,
+  jevModel,
+  jevUrl,
   LlmAutoReviewProvider,
   resolveAutoReviewProviderKind,
   typesafeApiKey,
@@ -16,6 +17,8 @@ export type CreateAutoReviewProviderOptions = {
   fetch?: typeof fetch;
   apiKey?: string;
   model?: string;
+  /** Overrides `BOBBOT_JEV_URL`. Defaults to TypeSafe's endpoint. */
+  url?: string;
   timeoutMs?: number;
   minConfidence?: number;
   llm?: LlmAutoReviewOptions;
@@ -39,7 +42,8 @@ export function createAutoReviewProvider(
         apiKey,
         fetch: options.fetch,
         timeoutMs: options.timeoutMs ?? autoReviewTimeoutMs(env),
-        model: options.model ?? env.BOBBOT_AUTO_REVIEW_MODEL?.trim() ?? DEFAULT_JEV_MODEL,
+        model: options.model ?? jevModel(env),
+        url: options.url ?? jevUrl(env),
         minConfidence: options.minConfidence ?? autoReviewMinConfidence(env),
       });
     }

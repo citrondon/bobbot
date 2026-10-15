@@ -15,6 +15,7 @@ vi.mock("../../lib/rpc", () => ({
       list: vi.fn(async () => []),
     },
     me: vi.fn(async () => ({})),
+    connections: { list: vi.fn(async () => []) },
   },
 }));
 vi.mock("@lingui/react/macro", () => {
@@ -91,9 +92,11 @@ const bot = {
   modelProvider: null,
   modelId: null,
   thinkingLevel: null,
+  monthlyTokenBudget: null,
   teamChatAmbientEnabled: false,
   teamChatRules: "",
   disabledBuiltinTools: ["remember"],
+  allowedToolkits: [],
   webhookConfigured: false,
   spawnKey: null,
 } as Bot;

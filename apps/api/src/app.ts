@@ -392,7 +392,7 @@ export async function createApp(
     signupAllowlist: env.signupAllowlist,
     email,
     onEmailError: (error) => getLogger().error("transactional email delivery failed", error),
-    extraOrigins: MOBILE_AUTH_ORIGINS,
+    extraOrigins: [...MOBILE_AUTH_ORIGINS, ...env.trustedOrigins],
     beforeDeleteUser: async (userId) => {
       // First, so a provider failure aborts deletion before anything is destroyed.
       await billing?.cancelForDeletedUser(userId);
@@ -999,12 +999,14 @@ export async function createApp(
 
 export function isTrustedOrigin(
   origin: string,
-  env: Pick<AppEnv, "webOrigin" | "apiUrl" | "authUrl">,
+  env: Pick<AppEnv, "webOrigin" | "apiUrl" | "authUrl"> & { trustedOrigins?: string[] },
 ) {
   if (!origin) return true;
   if (origin.startsWith("rakazo://")) return true;
   const allowed = new Set(
-    [env.webOrigin, env.apiUrl, env.authUrl, ...MOBILE_AUTH_ORIGINS].flatMap(originVariants),
+    [env.webOrigin, env.apiUrl, env.authUrl, ...MOBILE_AUTH_ORIGINS, ...(env.trustedOrigins ?? [])].flatMap(
+      originVariants,
+    ),
   );
   return allowed.has(origin);
 }

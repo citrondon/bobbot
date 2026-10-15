@@ -25,6 +25,8 @@ export interface AppEnv {
   authSecret: string;
   authUrl: string;
   webOrigin: string;
+  /** Extra browser origins trusted for auth and API calls, e.g. a tunnel hostname. */
+  trustedOrigins: string[];
   privacyPolicyUrl?: string;
   apiUrl: string;
   apiHost: string;
@@ -163,6 +165,10 @@ export function loadEnv(source: NodeJS.ProcessEnv = process.env): AppEnv {
     authSecret,
     authUrl: source.BETTER_AUTH_URL ?? source.WEB_ORIGIN ?? "http://127.0.0.1:5173",
     webOrigin: source.WEB_ORIGIN ?? "http://127.0.0.1:5173",
+    trustedOrigins: (source.BOBBOT_TRUSTED_ORIGINS ?? "")
+      .split(",")
+      .map((value) => value.trim())
+      .filter(Boolean),
     privacyPolicyUrl: optional(source.PRIVACY_POLICY_URL),
     apiUrl: source.API_URL ?? "http://127.0.0.1:3100",
     apiHost: source.API_HOST ?? "127.0.0.1",
