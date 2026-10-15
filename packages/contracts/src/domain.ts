@@ -33,6 +33,15 @@ export type ThinkingLevel = z.infer<typeof ThinkingLevelSchema>;
 
 export const AGENT_SECRET_NAME_PATTERN = /^[A-Z_][A-Z0-9_]{0,63}$/;
 
+/**
+ * Connector toolkit slugs a bot may use, matched case-insensitively against its connected
+ * accounts. An empty list means every connected toolkit, which is what bots created before
+ * this field mean. Slugs are free-form so a bot can name a toolkit before it is connected.
+ */
+export const ConnectorToolkitListSchema = z
+  .array(z.string().trim().min(1).max(80))
+  .max(50);
+
 export const AgentSecretSchema = z.object({
   id: Id,
   name: z.string().regex(AGENT_SECRET_NAME_PATTERN),
@@ -78,6 +87,7 @@ export const BotSchema = z.object({
   teamChatAmbientEnabled: z.boolean(),
   teamChatRules: z.string(),
   disabledBuiltinTools: z.array(z.string()).default([]),
+  allowedToolkits: ConnectorToolkitListSchema.default([]),
   webhookConfigured: z.boolean(),
   /** Present when created with an idempotency key (e.g. onboarding:first). */
   spawnKey: z.string().nullable(),
@@ -355,6 +365,7 @@ export const UpdateBotInput = z
     teamChatAmbientEnabled: z.boolean().optional(),
     teamChatRules: z.string().max(TEAM_CHAT_RULES_MAX_LENGTH).optional(),
     disabledBuiltinTools: DisabledBuiltinToolsSchema.optional(),
+    allowedToolkits: ConnectorToolkitListSchema.optional(),
   })
   .superRefine((value, ctx) => {
     const providerProvided = value.modelProvider !== undefined;

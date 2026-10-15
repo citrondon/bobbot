@@ -157,6 +157,7 @@ export function createBotsRouter(ctx: BotsRouterContext) {
           modelId: source.modelId,
           thinkingLevel: source.thinkingLevel,
           disabledBuiltinTools: source.disabledBuiltinTools,
+          allowedToolkits: source.allowedToolkits,
         })
         .catch((error: unknown) => {
           throw mapSpaceLifecycleError(error);
@@ -352,6 +353,9 @@ export function createBotsRouter(ctx: BotsRouterContext) {
           ...(input.teamChatRules !== undefined ? { teamChatRules: input.teamChatRules } : {}),
           ...(input.disabledBuiltinTools !== undefined
             ? { disabledBuiltinTools: input.disabledBuiltinTools }
+            : {}),
+          ...(input.allowedToolkits !== undefined
+            ? { allowedToolkits: input.allowedToolkits }
             : {}),
         },
       });

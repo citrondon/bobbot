@@ -15,6 +15,7 @@ vi.mock("../../lib/rpc", () => ({
       list: vi.fn().mockResolvedValue([]),
     },
     me: vi.fn().mockResolvedValue(null),
+    connections: { list: vi.fn().mockResolvedValue([]) },
   },
 }));
 vi.mock("@lingui/react/macro", () => {
@@ -100,6 +101,7 @@ function bot(description = "Billing"): Bot {
     teamChatRules: "",
     monthlyTokenBudget: null,
     disabledBuiltinTools: [],
+    allowedToolkits: [],
     webhookConfigured: false,
     spawnKey: null,
   };

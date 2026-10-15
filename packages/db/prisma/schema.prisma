@@ -434,6 +434,10 @@ model Bot {
   /// because a new ceiling has its own warning line.
   budgetWarnedAt    DateTime?
   disabledBuiltinTools String[] @default([])
+  /// Connector toolkit slugs this bot may use. Empty means every connected toolkit stays
+  /// visible, so existing bots are unchanged. Unknown slugs are kept and simply match
+  /// nothing, so a bot can be configured before the account is connected.
+  allowedToolkits   String[] @default([])
   webhookSecretId   String?
   teamChatAmbientEnabled Boolean @default(false)
   teamChatRules          String  @default("")

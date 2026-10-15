@@ -1,7 +1,33 @@
 import type { PrismaClient } from "@bobbot/db";
 import { describe, expect, it, vi } from "vitest";
 import { mergeConnectedPlugins } from "./composio-connector.js";
-import { persistLivePluginConnections, selectRunConnections } from "./executor.js";
+import { persistLivePluginConnections, selectRunConnections, filterConnectionsByAllowedToolkits } from "./executor.js";
+
+describe("per-bot toolkit allowlist", () => {
+  const rows = [
+    { provider: "gmail", displayName: "Gmail" },
+    { provider: "linkedin", displayName: "LinkedIn" },
+    { provider: "instagram", displayName: "Instagram" },
+  ];
+
+  it("keeps every toolkit when the bot declares none", () => {
+    expect(filterConnectionsByAllowedToolkits(rows, [])).toEqual(rows);
+    // An older row or a fixture without the column means the same as "none declared".
+    expect(filterConnectionsByAllowedToolkits(rows, undefined)).toEqual(rows);
+  });
+
+  it("keeps only the declared toolkits, ignoring case and padding", () => {
+    expect(
+      filterConnectionsByAllowedToolkits(rows, [" LinkedIn ", "INSTAGRAM"]).map(
+        (row) => row.provider,
+      ),
+    ).toEqual(["linkedin", "instagram"]);
+  });
+
+  it("keeps nothing for a toolkit nobody connected, instead of failing the run", () => {
+    expect(filterConnectionsByAllowedToolkits(rows, ["notion"])).toEqual([]);
+  });
+});
 
 describe("run connection selection", () => {
   it("uses synchronized account statuses in the current run", async () => {
