@@ -123,6 +123,19 @@ Europe/Berlin):
 
 Routinen laufen erst, wenn sie aktiv geschaltet sind.
 
+**Stand 16.10.2026 (Karos Pfad):** Die beiden Social-Queue-Routinen sind **aktiv**, Kadenz
+Mo–Fr, Zeitzone Europe/Berlin (LinkedIn 08:30, Instagram 08:35). Die dritte Routine
+(`Wochenrückblick`) bleibt aus. Damit sie unbeaufsichtigt posten können, existieren drei
+`always_allow`-Regeln für Werkzeuge (`action_approval_rules`): die beiden Publish-Aufrufe und
+der Instagram-Container-Schritt. Ohne diese Regeln beurteilt das Auto-Review jeden Publish als
+folgenreich und antwortet „ask" — der Lauf parkt dann auf einer Freigabekarte, und um 08:30
+antwortet niemand (genau das war am 15.10. zu sehen).
+
+Nachweis statt Vertrauen: `pnpm verify:social <runId>` liest den Lauf-Beleg und die
+Werkzeug-Ereignisse. Exit 0 = veröffentlicht, 1 = nicht veröffentlicht (auch: geparkt),
+2 = Aufruf-/ID-Fehler. Der Bot kann „veröffentlicht" schreiben, ohne ein Werkzeug zu rufen —
+für eine Marke ist der stille Nicht-Post der teuerste Fehler.
+
 ## 6. Verifizieren
 
 ```bash
