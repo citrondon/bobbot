@@ -8,6 +8,10 @@
 
 **Tech Stack:** BobBot (Spi runtime auf SpooK, `kimi-k3`), Composio-Connector (LinkedIn + Instagram), Graphile-Worker (Routinen), Auto-Review-Gate über Jev/OpenRouter, Team-Home `data/homes/team-e7c6d161a53b0b63d7313c2fdb51ff40/shared/`.
 
+**Evidenz-Regel für jeden Task:** Für jeden Zustand, den du behauptest, den **exakten Befehl und
+die vollständige Rohausgabe** wörtlich berichten — Vorher- und Nachher-Snapshot gleichermaßen,
+damit ein Prüfer es nachfahren und identisch sehen kann. Keine Zusammenfassungen von Zahlen.
+
 ---
 
 ## Ist-Stand (verifiziert am 16.10.2026)
@@ -28,7 +32,7 @@
 2. **Bilder sind Testbilder von GitHub.** Die Routine-Prompts nennen feste URLs aus `citrondon/bobbot-social-test-images` (`01-montag.jpg` …). Instagram braucht eine **öffentlich erreichbare** Bild-URL — für Karos Fotos ist das eine offene Entscheidung (Datenschutz!).
 3. **Kein Nachweis in der Antwort.** Ein Lauf hat am 15.10. „veröffentlicht, Medien-IDs …" geschrieben, **ohne ein einziges Werkzeug aufzurufen** (0 `agent.tool.called`). Bei einer Brand ist ein stiller Nicht-Post der schlimmste Fehler.
 4. **Konto ist nicht geprüft.** Verbunden ist *ein* Instagram- und *ein* LinkedIn-Konto — ob das Karos Brand-Konto ist (Instagram braucht Business/Creator), steht nirgends.
-5. **Aufräum-Reste.** Eine zweite Instagram-Verbindung hängt auf `pending`; `twitter` ist `revoked`.
+5. **Aufräum-Reste.** Die zweite Instagram-Verbindung ist `revoked` (Task 2); `twitter` ist `revoked`.
 6. **Keine Bildquelle.** Es gibt kein Bildgenerierungs-Werkzeug im Werkzeugkasten — Karos Fotos müssen aus seinem Bestand kommen (oder extern erzeugt werden).
 7. **Keine Verifikation im Repo.** Ob ein Post wirklich draußen ist, prüft heute nur ein Blick in die DB von Hand.
 
@@ -101,7 +105,7 @@ docker exec -i compose-postgres-1 psql -U rakazo -d rakazo -c \
   "select id, status, \"providerRef\", \"createdAt\"::timestamp(0) from connections where provider='instagram' order by \"createdAt\";"
 ```
 
-Erwartet (Stand 16.10.): eine `connected`-Zeile (`ca_4wbQYfOXofMA`) und eine `pending`-Zeile (`ca_x__oyfB7ViIX`).
+Erwartet **vor** Task 2: eine `connected`-Zeile (`ca_4wbQYfOXofMA`) und eine `pending`-Zeile (`ca_x__oyfB7ViIX`). Nach Task 2: eine `connected`-Zeile und eine `revoked`-Zeile (die Zeile bleibt als `revoked` stehen — `pickReusableConnection` gibt sie nie zurück, und ein Test erwartet genau dieses Muster).
 
 - [ ] **Step 2: Die pending-Zeile zurückziehen**
 
