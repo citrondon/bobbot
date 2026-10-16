@@ -104,6 +104,12 @@ Aufruf wurden zu 11 370 + 0, und ein Lauf auf dem Chief-Thread fiel von 47–605
 Aufgefallen ist es an den Cache-Read-Tokens in `usage/month` — genau dafür lohnt der Blick
 dort.
 
+**Monatslimits sind Richtlinie, kein Roster-Bestandteil.** Hier laufen GrokCoder 12 M,
+ExecutiveChief 10 M, Permit & Red-Tape Researcher 9 M, Competitor Watch 6 M und die übrigen
+4 M. Ohne Limit läuft ein Bot unbegrenzt; der Wächter greift nur, wenn eins gesetzt ist, und
+stoppt dann hart („Raise or clear the budget in the bot settings to continue"). Der
+Smoke-Test warnt ab 80 % Verbrauch.
+
 ## 5. Routinen prüfen
 
 Nach dem Import unter *Routinen* prüfen, ob die geplanten Läufe aktiv sind (Zeitzone
