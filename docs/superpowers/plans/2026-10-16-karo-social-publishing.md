@@ -11,6 +11,9 @@
 **Evidenz-Regel für jeden Task:** Für jeden Zustand, den du behauptest, den **exakten Befehl und
 die vollständige Rohausgabe** wörtlich berichten — Vorher- und Nachher-Snapshot gleichermaßen,
 damit ein Prüfer es nachfahren und identisch sehen kann. Keine Zusammenfassungen von Zahlen.
+Für jedes Prüfkommando gilt: selbst ausführen und **Rohausgabe plus Exit-Code** wörtlich berichten;
+niemals ein erwartetes Ergebnis als beobachtetes schreiben — was du nicht ausgeführt hast, steht
+als „nicht ausgeführt" da.
 
 ---
 
@@ -28,7 +31,7 @@ damit ein Prüfer es nachfahren und identisch sehen kann. Keine Zusammenfassunge
 
 **Was fehlt:**
 
-1. **Inhalt ist Platzhalter.** `shared/social-queue.md` sagt selbst: *„(Playtest-Platzhalter. Für Karo stünde hier ihr echter Plan.)"* — fünf Zeilen Mo–Fr ohne Bilder, Hashtags, Ort oder Karos Stimme.
+1. **Inhalt ist kein Platzhalter mehr (Task 4).** `shared/social-queue.md` war der Playtest-Text; seit Task 4 ist sie nur noch ein Verweis auf `shared/karo/social-plan.md` — fünf Blöcke Mo–Fr mit Motiv, Stichpunkten, Hashtags und Ort. Die Bild-URLs fehlen bis Task 5.
 2. **Bilder sind Testbilder von GitHub.** Die Routine-Prompts nennen feste URLs aus `citrondon/bobbot-social-test-images` (`01-montag.jpg` …). Instagram braucht eine **öffentlich erreichbare** Bild-URL — für Karos Fotos ist das eine offene Entscheidung (Datenschutz!).
 3. **Kein Nachweis in der Antwort.** Ein Lauf hat am 15.10. „veröffentlicht, Medien-IDs …" geschrieben, **ohne ein einziges Werkzeug aufzurufen** (0 `agent.tool.called`). Bei einer Brand ist ein stiller Nicht-Post der schlimmste Fehler.
 4. **Konto geprüft (Task 1, 16.10.).** Verbunden sind **nicht** Karos Konten: ein privates LinkedIn-Profil (Pascal Hintermaier) und Instagram `@beyond_averagerdaily` (`MEDIA_CREATOR`). Belege in `shared/karo/social-accounts.md`.
@@ -155,9 +158,11 @@ Erwartet unter anderem: `LINKEDIN_CREATE_LINKED_IN_POST`, `LINKEDIN_GET_MY_INFO`
 
 - [ ] **Step 2: Namen mit Zweck und Parametern festhalten**
 
-Eine Zeile pro Werkzeug in `social-tools.md`: Name, wofür, welche Parameter. Aus Task 3 belegt:
-Instagram braucht eine öffentlich erreichbare `image_url` und eine `caption`; LinkedIn heißt der
-Text-Parameter **`commentary`** (nicht `text`).
+Eine Zeile pro Werkzeug in `social-tools.md`: **alle** Werkzeuge namentlich, und die des
+Publishing-Pfads zusätzlich mit belegten Parametern. Aus Task 3 belegt: Instagram braucht eine
+öffentlich erreichbare `image_url` und eine `caption`; LinkedIn heißt der Text-Parameter
+**`commentary`** (nicht `text`). Für die übrigen ~50 Werkzeuge genügt der Name — Task 6 nennt
+ohnehin nur Werkzeuge, die dort stehen.
 **Diese Datei ist die Wahrheit für Task 6** — die Routine-Prompts dürfen nur Werkzeuge nennen,
 die hier stehen.
 
@@ -180,7 +185,7 @@ Struktur, ein Block je Werktag:
 ## Donnerstag
 - Motiv: Motivwahl: mit einer Idee kommen, nicht mit einem fertigen Bild
 - Bild: https://<öffentliche URL zu Karos Foto>/04-motivwahl.jpg
-- Stichpunkte: erste Anfrage, Skizze statt Vorlage, Vorlauf bis zum Termin
+- Stichpunkte: eine Idee beschreiben statt eine Vorlage kopieren; Referenzbild als Richtung, nicht als Auftrag
 - Hashtags: #fineline #linework #tattoomannheim
 - Ort: Mannheim
 ```
