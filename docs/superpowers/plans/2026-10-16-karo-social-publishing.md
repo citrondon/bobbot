@@ -32,11 +32,11 @@ als „nicht ausgeführt" da.
 **Was fehlt:**
 
 1. **Inhalt ist kein Platzhalter mehr (Task 4).** `shared/social-queue.md` war der Playtest-Text; seit Task 4 ist sie nur noch ein Verweis auf `shared/karo/social-plan.md` — fünf Blöcke Mo–Fr mit Motiv, Stichpunkten, Hashtags und Ort. Die Bild-URLs fehlen bis Task 5.
-2. **Bilder sind Testbilder von GitHub.** Die Routine-Prompts nennen feste URLs aus `citrondon/bobbot-social-test-images` (`01-montag.jpg` …). Instagram braucht eine **öffentlich erreichbare** Bild-URL — für Karos Fotos ist das eine offene Entscheidung (Datenschutz!).
+2. **Bilder liegen öffentlich, aber nur als Platzhalter (Task 5).** Repo `citrondon/karo-social-images` (public), fünf 1080×1080 JPEGs — es sind die **Playtest-Bilder**, Karos echte Fotos fehlen noch. Die Prompts nennen keine festen URLs mehr, sondern lesen die `Bild:`-Zeile aus Karos Plan.
 3. **Kein Nachweis in der Antwort.** Ein Lauf hat am 15.10. „veröffentlicht, Medien-IDs …" geschrieben, **ohne ein einziges Werkzeug aufzurufen** (0 `agent.tool.called`). Bei einer Brand ist ein stiller Nicht-Post der schlimmste Fehler.
 4. **Konto geprüft (Task 1, 16.10.).** Verbunden sind **nicht** Karos Konten: ein privates LinkedIn-Profil (Pascal Hintermaier) und Instagram `@beyond_averagerdaily` (`MEDIA_CREATOR`). Belege in `shared/karo/social-accounts.md`.
 5. **Aufräum-Reste.** Die zweite Instagram-Verbindung ist `revoked` (Task 2); `twitter` ist `revoked`.
-6. **Keine Bildquelle.** Es gibt kein Bildgenerierungs-Werkzeug im Werkzeugkasten — Karos Fotos müssen aus seinem Bestand kommen (oder extern erzeugt werden).
+6. **Keine Bildquelle für echte Fotos.** Es gibt kein Bildgenerierungs-Werkzeug; die Platzhalter liegen bereit, Karos Aufnahmen müssen geliefert und unter denselben Dateinamen getauscht werden (Task 5, Schritt 4).
 7. **Keine Verifikation im Repo.** Ob ein Post wirklich draußen ist, prüft heute nur ein Blick in die DB von Hand.
 
 ## Entscheidungen, die vor Task 5 fallen müssen
