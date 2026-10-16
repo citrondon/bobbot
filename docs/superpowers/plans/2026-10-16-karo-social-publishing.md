@@ -41,7 +41,7 @@ als „nicht ausgeführt" da.
 
 ## Entscheidungen, die vor Task 5 fallen müssen
 
-1. **Konto:** Verbunden sind die Konten des Operators — ein **privates** LinkedIn-Profil (Pascal Hintermaier, keine Unternehmensseite) und Instagram `@beyond_averagerdaily` (creator). Entscheiden: mit diesen posten, oder Karos Instagram-Business-Account und eine LinkedIn-Seite verbinden? Technisch ist der Instagram-Account bereit (`MEDIA_CREATOR`).
+1. **Konto — entschieden (16.10.):** Es wird vorerst über die **Testkonten** gepostet (Instagram `@beyond_averagerdaily`, `MEDIA_CREATOR`; privates LinkedIn-Profil). Karo verbindet ihre eigenen Konten **später**; Task 9 prüft den Pfad auf den Testkonten. Die Kontodaten stehen in `shared/karo/social-accounts.md`.
 2. **Medien:** Wo liegen Karos Fotos öffentlich? Optionen: ein privates GitHub-Repo mit Raw-URLs (wie der Playtest), der BobBot-Artefakt-Store, oder ein eigener Webspace. Instagram verlangt eine öffentliche URL, LinkedIn nicht.
 3. **Freigabe:** Soll die Routine direkt posten, oder soll jeder Post als Freigabekarte bei dir landen (Auto-Review fragt bei folgenreichen Aktionen ohnehin nach)?
 4. **Kadenz:** Täglich Mo–Fr wie im Playtest, oder z. B. Di/Do/Fr mit je einem Karussell?
