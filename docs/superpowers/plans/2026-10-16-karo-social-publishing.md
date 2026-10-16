@@ -27,14 +27,14 @@
 1. **Inhalt ist Platzhalter.** `shared/social-queue.md` sagt selbst: *„(Playtest-Platzhalter. Für Karo stünde hier ihr echter Plan.)"* — fünf Zeilen Mo–Fr ohne Bilder, Hashtags, Ort oder Karos Stimme.
 2. **Bilder sind Testbilder von GitHub.** Die Routine-Prompts nennen feste URLs aus `citrondon/bobbot-social-test-images` (`01-montag.jpg` …). Instagram braucht eine **öffentlich erreichbare** Bild-URL — für Karos Fotos ist das eine offene Entscheidung (Datenschutz!).
 3. **Kein Nachweis in der Antwort.** Ein Lauf hat am 15.10. „veröffentlicht, Medien-IDs …" geschrieben, **ohne ein einziges Werkzeug aufzurufen** (0 `agent.tool.called`). Bei einer Brand ist ein stiller Nicht-Post der schlimmste Fehler.
-4. **Konto ist nicht geprüft.** Verbunden ist *ein* Instagram- und *ein* LinkedIn-Konto — ob das Karos Brand-Konto ist (Instagram braucht Business/Creator), steht nirgends.
+4. **Konto geprüft (Task 1, 16.10.).** Verbunden sind **nicht** Karos Konten: ein privates LinkedIn-Profil (Pascal Hintermaier) und Instagram `@beyond_averagerdaily` (`MEDIA_CREATOR`). Belege in `shared/karo/social-accounts.md`.
 5. **Aufräum-Reste.** Eine zweite Instagram-Verbindung hängt auf `pending`; `twitter` ist `revoked`.
 6. **Keine Bildquelle.** Es gibt kein Bildgenerierungs-Werkzeug im Werkzeugkasten — Karos Fotos müssen aus seinem Bestand kommen (oder extern erzeugt werden).
 7. **Keine Verifikation im Repo.** Ob ein Post wirklich draußen ist, prüft heute nur ein Blick in die DB von Hand.
 
 ## Entscheidungen, die vor Task 5 fallen müssen
 
-1. **Konto:** Karos Instagram-Business-Account und ihr LinkedIn verbinden — oder weiter über das Testkonto posten?
+1. **Konto:** Verbunden sind die Konten des Operators — ein **privates** LinkedIn-Profil (Pascal Hintermaier, keine Unternehmensseite) und Instagram `@beyond_averagerdaily` (creator). Entscheiden: mit diesen posten, oder Karos Instagram-Business-Account und eine LinkedIn-Seite verbinden? Technisch ist der Instagram-Account bereit (`MEDIA_CREATOR`).
 2. **Medien:** Wo liegen Karos Fotos öffentlich? Optionen: ein privates GitHub-Repo mit Raw-URLs (wie der Playtest), der BobBot-Artefakt-Store, oder ein eigener Webspace. Instagram verlangt eine öffentliche URL, LinkedIn nicht.
 3. **Freigabe:** Soll die Routine direkt posten, oder soll jeder Post als Freigabekarte bei dir landen (Auto-Review fragt bei folgenreichen Aktionen ohnehin nach)?
 4. **Kadenz:** Täglich Mo–Fr wie im Playtest, oder z. B. Di/Do/Fr mit je einem Karussell?
@@ -87,8 +87,11 @@ docker exec -i compose-postgres-1 psql -U rakazo -d rakazo -t -A -c \
 
 Ergebnis nach `shared/karo/social-accounts.md`: Plattform, Handle, Kontotyp, Datum.
 
-**Achtung:** Ist der Instagram-Account nicht `business` oder `creator`, kann die Graph-API keine
-Posts anlegen — dann muss Karo das Konto umstellen, **bevor** Task 9 läuft.
+**Achtung:** Ist der **verbundene** Instagram-Account nicht `business` oder `creator`, kann die
+Graph-API keine Posts anlegen. Der aktuell verbundene Account (`@beyond_averagerdaily`) ist
+`MEDIA_CREATOR` — technisch also bereit, aber er gehört dem Operator, nicht Karo. Für Task 9 heißt
+das: entweder mit diesem Konto posten (Entscheidung 1), oder Karo verbindet ihre eigenen Konten,
+bevor der Test läuft.
 
 ## Task 2: Doppelte Instagram-Verbindung aufräumen
 
@@ -599,6 +602,8 @@ docker exec -i compose-postgres-1 psql -U rakazo -d rakazo -c \
 ```
 
 Ergebnis in `docs/handover-checklist.md` (Abschnitt 5) nachtragen, damit der Kollege denselben Stand sieht.
+Dort **nur Kadenz und Zustand** eintragen — keine Kontodaten: Namen und Handles sind
+personenbezogen, und `docs/` ist (anders als `data/`) versioniert.
 
 ## Rollback
 
