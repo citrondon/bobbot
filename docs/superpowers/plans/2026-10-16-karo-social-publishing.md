@@ -8,6 +8,10 @@
 
 **Tech Stack:** BobBot (Spi runtime auf SpooK, `kimi-k3`), Composio-Connector (LinkedIn + Instagram), Graphile-Worker (Routinen), Auto-Review-Gate über Jev/OpenRouter, Team-Home `data/homes/team-e7c6d161a53b0b63d7313c2fdb51ff40/shared/`.
 
+**Evidenz-Regel für jeden Task:** Für jeden Zustand, den du behauptest, den **exakten Befehl und
+die vollständige Rohausgabe** wörtlich berichten — Vorher- und Nachher-Snapshot gleichermaßen,
+damit ein Prüfer es nachfahren und identisch sehen kann. Keine Zusammenfassungen von Zahlen.
+
 ---
 
 ## Ist-Stand (verifiziert am 16.10.2026)
@@ -28,7 +32,7 @@
 2. **Bilder sind Testbilder von GitHub.** Die Routine-Prompts nennen feste URLs aus `citrondon/bobbot-social-test-images` (`01-montag.jpg` …). Instagram braucht eine **öffentlich erreichbare** Bild-URL — für Karos Fotos ist das eine offene Entscheidung (Datenschutz!).
 3. **Kein Nachweis in der Antwort.** Ein Lauf hat am 15.10. „veröffentlicht, Medien-IDs …" geschrieben, **ohne ein einziges Werkzeug aufzurufen** (0 `agent.tool.called`). Bei einer Brand ist ein stiller Nicht-Post der schlimmste Fehler.
 4. **Konto geprüft (Task 1, 16.10.).** Verbunden sind **nicht** Karos Konten: ein privates LinkedIn-Profil (Pascal Hintermaier) und Instagram `@beyond_averagerdaily` (`MEDIA_CREATOR`). Belege in `shared/karo/social-accounts.md`.
-5. **Aufräum-Reste.** Eine zweite Instagram-Verbindung hängt auf `pending`; `twitter` ist `revoked`.
+5. **Aufräum-Reste.** Die zweite Instagram-Verbindung ist `revoked` (Task 2); `twitter` ist `revoked`.
 6. **Keine Bildquelle.** Es gibt kein Bildgenerierungs-Werkzeug im Werkzeugkasten — Karos Fotos müssen aus seinem Bestand kommen (oder extern erzeugt werden).
 7. **Keine Verifikation im Repo.** Ob ein Post wirklich draußen ist, prüft heute nur ein Blick in die DB von Hand.
 
@@ -104,7 +108,7 @@ docker exec -i compose-postgres-1 psql -U rakazo -d rakazo -c \
   "select id, status, \"providerRef\", \"createdAt\"::timestamp(0) from connections where provider='instagram' order by \"createdAt\";"
 ```
 
-Erwartet (Stand 16.10.): eine `connected`-Zeile (`ca_4wbQYfOXofMA`) und eine `pending`-Zeile (`ca_x__oyfB7ViIX`).
+Erwartet **vor** Task 2: eine `connected`-Zeile (`ca_4wbQYfOXofMA`) und eine `pending`-Zeile (`ca_x__oyfB7ViIX`). Nach Task 2: eine `connected`-Zeile und eine `revoked`-Zeile. Die Zeile bleibt als `revoked` stehen — das ist der Normalzustand hier (`pickReusableConnection` gibt sie nie zurück, `connections/tools` liest nur `connected`, und ein Test erwartet genau dieses Muster).
 
 - [ ] **Step 2: Die pending-Zeile zurückziehen**
 
@@ -151,8 +155,9 @@ Erwartet unter anderem: `LINKEDIN_CREATE_LINKED_IN_POST`, `LINKEDIN_GET_MY_INFO`
 
 - [ ] **Step 2: Namen mit Zweck und Parametern festhalten**
 
-Eine Zeile pro Werkzeug in `social-tools.md`: Name, wofür, welche Parameter (Instagram braucht
-eine öffentlich erreichbare `image_url`, LinkedIn einen `text`).
+Eine Zeile pro Werkzeug in `social-tools.md`: Name, wofür, welche Parameter. Aus Task 3 belegt:
+Instagram braucht eine öffentlich erreichbare `image_url` und eine `caption`; LinkedIn heißt der
+Text-Parameter **`commentary`** (nicht `text`).
 **Diese Datei ist die Wahrheit für Task 6** — die Routine-Prompts dürfen nur Werkzeuge nennen,
 die hier stehen.
 
@@ -281,6 +286,12 @@ sonst steht die Routine irgendwann auf einem gelöschten Bild und bricht ab.
 Beide Prompts bekommen **Pflicht-Nachweis** hinein: ein Werkzeugaufruf ist Pflicht, und die
 Antwort muss die ID aus der Werkzeug-Antwort nennen. Das ist die Antwort auf den Fall vom 15.10.,
 wo ein Lauf „veröffentlicht, Medien-IDs …" schrieb, ohne ein Werkzeug zu rufen.
+
+**Werkzeugnamen aus Task 3** (`shared/karo/social-tools.md`): der Instagram-Container heißt
+`INSTAGRAM_POST_IG_USER_MEDIA` — die Composio-Beschreibung verweist auf ein
+`INSTAGRAM_CREATE_MEDIA_CONTAINER`, **das es nicht gibt**. Belegte Parameter: Instagram
+`ig_user_id`, `image_url`, `caption`; Publish `ig_user_id`, `creation_id` (aus `data.id` des
+Containers); LinkedIn `author` (`urn:li:person:<id>` aus `LINKEDIN_GET_MY_INFO`), `commentary`.
 
 - [ ] **Step 1: LinkedIn-Prompt ersetzen**
 
