@@ -450,6 +450,13 @@ main().catch((error) => {
 });
 ```
 
+> **Nach dem Bau (belegt, 16.10.).** Die ausgelieferte Datei weicht in drei Punkten von diesem Entwurf ab, und sie ist die Wahrheit:
+> 1. **Sprache: Englisch.** Kopfkommentar, interne Kommentare und Ausgabe sind englisch — so wie `scripts/smoke-spook.ts`, `scripts/import-roster.ts` und `scripts/lib/api.ts`. Der Entwurf oben war deutsch.
+> 2. **Exit-Codes: 0 / 1 / 2**, im Kopfkommentar dokumentiert. `2` = Aufruf ohne `runId` oder unbekannte `runId`; der Entwurf nannte nur 0 und 1.
+> 3. **Ein geparkter Publish zählt nicht als Post** — aber nur, wenn **alle** Aufrufe geparkt sind: `paused > 0 && paused >= calls`, mit eigener Meldung (`WAITING FOR APPROVAL`).
+>
+> **Wichtig, was `paused` im Beleg wirklich ist** (belegt an drei echten Läufen): `paused` zählt **geparkte Abschlüsse über die Lauf-Historie, keinen Zustand**. Ein Publish, der geparkt, freigegeben und dann ausgeführt wurde, steht als `calls: 2, paused: 1` da — er ging live. Die erste Fassung prüfte `paused > 0` und hätte damit **jeden echten Post als „nicht veröffentlicht" gemeldet** (Exit 0 wäre unerreichbar gewesen). Die Bedingung `paused >= calls` trifft nur den Fall „gerufen, nie ausgeführt" (`calls: 1, paused: 1`). Dieser Zweig hat in dieser Datenbank **kein echtes Vorbild** — er ist aus dem Test-Fixture in `packages/core/src/run-receipt.test.ts` abgeleitet, nicht live belegt.
+
 - [ ] **Step 2: Einzeiler eintragen**
 
 In `package.json` direkt unter `"smoke:spook"`:
@@ -463,7 +470,7 @@ In `package.json` direkt unter `"smoke:spook"`:
 ```bash
 cd /home/phh/rakazo
 npx biome check --write scripts/verify-social-post.ts
-npx tsc --noEmit -p scripts/tsconfig.json   # erwartet: keine Ausgabe
+npx tsc --noEmit -p scripts/tsconfig.json   # erwartet: keine Ausgabe auf stdout; npx schreibt zwei "npm warn"-Zeilen auf stderr
 ```
 
 - [ ] **Step 4: Gegen einen echten, guten Lauf testen**
@@ -475,13 +482,15 @@ docker exec -i compose-postgres-1 psql -U rakazo -d rakazo -t -A -c \
    order by r.\"createdAt\" desc limit 1;"
 ```
 
-Erwartet: eine `runId`. Damit:
+Erwartet: eine `runId`. Damit (Token vorher aus der `session`-Tabelle in eine 0600-Datei holen, nie ausgeben, am Ende löschen):
 
 ```bash
-BOBBOT_API_TOKEN=$(cat /tmp/bobbot.token) pnpm verify:social <runId>
+BOBBOT_API_TOKEN=$(cat /tmp/task7.token) pnpm verify:social <runId>
 ```
 
-Erwartet: `veröffentlicht über INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH`, Exit 0.
+Erwartet: `published over INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH` auf **stdout** und Exit 0. `pnpm` stellt zwei Bannerzeilen voran (`> rakazo@0.1.0 verify:social` und den `tsx`-Aufruf mit **quotierter** runId).
+
+**Vorsicht: der erste Treffer dieser Abfrage ist ein Sonderfall** (belegt am 16.10.). `cmv9f8ady00pnwifeo4ex7cv4` hat den Publish **geparkt, dann freigegeben, dann ausgeführt** — im Beleg steht `calls: 2, paused: 1`, die Ereignisse zeigen `completed … paused` gefolgt von `completed … succeeded`. Genau diesen Lauf hat die erste Fassung des Skripts (`paused > 0`) fälschlich mit Exit 1 abgelehnt. Er **muss** Exit 0 liefern; tut er das nicht, ist die Park-Prüfung zu streng.
 
 - [ ] **Step 5: Gegen den Fehlfall testen (der Lauf vom 15.10. mit 0 Werkzeugen)**
 
@@ -495,16 +504,23 @@ docker exec -i compose-postgres-1 psql -U rakazo -d rakazo -t -A -c \
 Erwartet: eine `runId`. Damit:
 
 ```bash
-BOBBOT_API_TOKEN=$(cat /tmp/bobbot.token) pnpm verify:social <runId>
+BOBBOT_API_TOKEN=$(cat /tmp/task7.token) pnpm verify:social <runId>
 ```
 
-Erwartet: `NICHT VERÖFFENTLICHT: kein Publish-Werkzeug aufgerufen`, Exit 1.
+Erwartet: `NOT PUBLISHED: no publish tool was called` auf **stderr** und Exit 1. Achtung: `pnpm` hängt in diesem Fall `ELIFECYCLE  Command failed with exit code 1.` an **stdout** — wer auf die ganze Ausgabe matcht, sieht die Meldung „nicht gefunden". Zusätzlich prüfen: unbekannte `runId` und Aufruf ohne Argument müssen **Exit 2** liefern.
 
 - [ ] **Step 6: Committen**
 
 ```bash
 git add scripts/verify-social-post.ts package.json
 git commit -m "chore(scripts): prove a social post from the run events, not the reply"
+```
+
+Zwei Nachbesserungen kamen in derselben Aufgabe dazu (beide belegt, beide committet):
+
+```bash
+git commit -m "fix(scripts): do not report a parked publish as a post"                # d50006a3
+git commit -m "fix(scripts): only an entirely parked publish counts as not posted"   # 209039c4
 ```
 
 ## Task 8: Freigabe-Flow klären (Entscheidung 3)
