@@ -29,6 +29,7 @@
     "test:topology": "tsx packages/testkit/src/cli/topology.ts",
     "test:canary": "tsx packages/testkit/src/cli/canary.ts",
     "smoke:spook": "tsx scripts/smoke-spook.ts",
+    "verify:social": "tsx scripts/verify-social-post.ts",
     "roster:import": "tsx scripts/import-roster.ts",
     "test:pi": "vitest run packages/testkit/src/model-emulator.test.ts packages/testkit/src/pi-offline.test.ts",
     "test:evals": "tsx packages/testkit/src/cli/evals.ts",
