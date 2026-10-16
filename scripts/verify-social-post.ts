@@ -14,11 +14,12 @@
  *   2  the run id is missing or the API does not know it
  *
  * A publish tool that was called but parked at an approval gate counts as not published: the
- * receipt folds such a call as `calls: 1, failures: 0, paused: 1`, and the check fires on any
- * parked call to a publish tool. That case gets its own message, so "never called" and "called
- * but parked" do not look alike in a log. The check reads the parked count, not whether a later
- * call to the same tool succeeded, so a run whose publish was parked and then approved also
- * exits 1.
+ * receipt folds such a call as `calls: 1, failures: 0, paused: 1`, and the check fires when every
+ * call to a publish tool was parked, so the tool never executed. That case gets its own message,
+ * so "never called" and "called but never executed" do not look alike in a log. `paused` counts
+ * paused completions over the run's history, not a current state, so a tool that was parked,
+ * approved, and then executed carries `calls: 2, paused: 1`; the check reads the parked count
+ * against the call count and leaves that run to report the post, because a call did run.
  *
  * Environment:
  *   BOBBOT_API_URL    API base URL. Default http://127.0.0.1:3100
@@ -49,8 +50,8 @@ async function main(): Promise<void> {
   const called = receipt.tools.map((tool) => `${tool.name}x${tool.calls}`);
   const published = receipt.tools.filter((tool) => PUBLISH_TOOLS.has(tool.name));
   const failed = receipt.tools.filter((tool) => tool.failures > 0);
-  // Called but held at an approval gate: a parked publish is not a post, whatever else ran.
-  const parked = published.filter((tool) => tool.paused > 0);
+  // Every call parked at an approval gate: the publish never executed, so it is not a post.
+  const parked = published.filter((tool) => tool.paused > 0 && tool.paused >= tool.calls);
   console.log(`run ${runId}: ${receipt.status} · ${called.join(", ") || "no tools"}`);
   if (failed.length > 0) {
     console.error(`FAILED: ${failed.map((tool) => tool.name).join(", ")}`);
